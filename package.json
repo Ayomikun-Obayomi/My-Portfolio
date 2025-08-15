@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://ayomikun-obayomi.github.io/ux-portfolio",
+  "homepage": "https://ayomikun-obayomi.github.io/My-Portfolio",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
