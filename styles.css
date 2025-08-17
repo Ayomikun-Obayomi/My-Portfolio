@@ -278,11 +278,32 @@ body {
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
 }
 
 .project-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.project-card__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    text-decoration: none;
+    color: transparent;
+}
+
+.project-card__link:hover {
+    color: transparent;
+}
+
+.project-card__link:focus {
+    outline: 2px solid #8b5cf6;
+    outline-offset: 2px;
 }
 
 .project-card__image-container {
