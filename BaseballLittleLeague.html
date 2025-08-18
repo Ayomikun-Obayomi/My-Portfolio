@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baseball Little League - Ayo Portfolio</title>
+    <title>Baseball Little League Case Study</title>
     <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
 </head>
 <body>
     <header class="header">
@@ -20,182 +23,451 @@
         </nav>
     </header>
 
-    <div class="project-banner">
-        <div class="project-banner__content">
-            <div class="project-banner__overlay">
-                <h1 class="project-banner__title">Baseball Little League</h1>
-                <p class="project-banner__subtitle">Streamlining youth sports management through intuitive design</p>
-            </div>
-        </div>
-        <img src="bannerforLittleLeague.png" alt="Baseball Little League Banner" class="project-banner__image">
-    </div>
-
+    <!-- Main Content -->
     <main class="main">
-        <section class="project-hero">
-            <div class="project-hero__content">
-                <div class="project-hero__tags">
-                    <span class="project-hero__tag">University-Sponsored Project</span>
-                    <span class="project-hero__tag">Sports Productivity</span>
-                    <span class="project-hero__tag">B2C</span>
-                    <span class="project-hero__tag">Product Design</span>
-                </div>
-                <h1 class="project-hero__title">Baseball Little League</h1>
-                <p class="project-hero__subtitle">A mobile app designed to streamline team management and communication for youth baseball leagues</p>
+        <section class="case-study">
+            <!-- Hero Banner -->
+            <div class="case-study__hero-banner">
+                <img src="bannerforLittleLeague.png" alt="Baseball Little League App Banner" class="case-study__hero-banner-image">
             </div>
-        </section>
 
-        <section class="project-overview">
-            <div class="project-overview__container">
-                <div class="project-overview__content">
-                    <h2 class="project-overview__title">Project Overview</h2>
-                    <p class="project-overview__text">
-                        The Baseball Little League project was a university-sponsored initiative to create a comprehensive mobile application 
-                        that addresses the challenges faced by youth baseball leagues in managing schedules, player communication, and team coordination.
-                    </p>
-                    <p class="project-overview__text">
-                        The goal was to design an intuitive interface that would be easy for coaches, parents, and players of all ages to use, 
-                        while providing powerful tools for league administration and team management.
-                    </p>
+            <!-- Hero Section -->
+            <section class="case-study__hero-section">
+                <h1 class="case-study__hero-title">
+                    Baseball Little League: <span class="case-study__hero-title-highlight">Facilitating seamless communication between Coaches and Parents</span>
+                </h1>
+                <div class="case-study__hero-subtitle">
+                    <div class="case-study__project-details">
+                        <div class="case-study__project-detail-item">
+                            <span class="case-study__project-detail-label">Sponsored project through Purdue University</span>
+                        </div>
+                        <div class="case-study__project-detail-item">
+                            <span class="case-study__project-detail-label">Client:</span> Tim Porter
+                        </div>
+                        <div class="case-study__project-detail-item">
+                            <span class="case-study__project-detail-label">Product Sector:</span> Sports, Communication
+                        </div>
+                        <div class="case-study__project-detail-item">
+                            <span class="case-study__project-detail-label">Team:</span> 8 UX Designers where I was responsible for stakeholder conversation and prototyped the onboarding state for our users
+                        </div>
+                        <div class="case-study__project-detail-item">
+                            <span class="case-study__project-detail-label">Duration:</span> 4 months
+                        </div>
+                        <div class="case-study__project-detail-item">
+                            <span class="case-study__project-detail-label">Deliverables:</span> Presentation, Documentation, and High - Fidelity Prototypes
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Discovery Section -->
+            <section class="case-study__section">
+                <h3 class="case-study__section-title">Discovery</h3>
+                <p class="case-study__section-text">
+                    In our kickoff meeting with Tim Porter, we learned that the League aims to reduce the rates of children having to drop out of his Little League program due to a lack of effective communication between him, his coaches, and all of the parents. With our help, they hope to provide parents and coaches with a better organizational experience next season.
+                </p>
+            </section>
+
+            <!-- Understanding the Current Experience Section -->
+            <section class="case-study__section">
+                <h3 class="case-study__section-title">Understanding the Current Experience</h3>
+                <p class="case-study__section-text">
+                    During that same meeting, our client shared the challenges coaches and parents faced last season, which led us to discover that:
+                </p>
+                <div class="case-study__cards-grid">
+                    <!-- Card 1 -->
+                    <div class="case-study__card" style="border: 1px solid #e0e0e0;">
+                        <div class="case-study__card-icon">
+                            <span class="case-study__card-icon-wrapper">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Email icon representing communication overload" role="img">
+                                    <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 2v.01L12 13 4 6.01V6h16zm0 12H4V8.99l8 6.99 8-6.99V18z" fill="#9B6FD9"/>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="case-study__current-experience-title">Coaches' communication overload</div>
+                        <div class="case-study__current-experience-description">
+                            Coaches send around 300 emails to parents about league updates, leading to information overload and added workload.
+                        </div>
+                    </div>
+                    
+                    <!-- Card 2 -->
+                    <div class="case-study__card case-study__card--small" style="border: 1px solid #e0e0e0;">
+                        <div class="case-study__card-icon">
+                            <span class="case-study__card-icon-wrapper">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Smiley face icon representing user experience" role="img">
+                                    <circle cx="12" cy="12" r="10" stroke="#9B6FD9" stroke-width="2" fill="none"/>
+                                    <path d="M8 11c.5-.5 1.5-.5 2 0" stroke="#9B6FD9" stroke-width="1.5" stroke-linecap="round"/>
+                                    <path d="M16 11c.5-.5 1.5-.5-2 0" stroke="#9B6FD9" stroke-width="1.5" stroke-linecap="round"/>
+                                    <path d="M9 16c1.5-1 4.5-1 6 0" stroke="#9B6FD9" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="case-study__current-experience-title">Parents' information fatigue</div>
+                        <div class="case-study__current-experience-description">
+                            Parents struggled to keep up, often forgetting key details and missing practices or games.
+                        </div>
+                    </div>
+                </div>
+                <p class="case-study__section-text">
+                    Understanding these challenges helped us better identify our users' needs and focus our research on improving communication between coaches and parents for next season.
+                </p>
+            </section>
+            
+
+            
+            <!-- Channels of Communication Section -->
+            <section class="case-study__section case-study__section--large">
+                <div class="case-study__section-label">FEATURES</div>
+                <h3 class="case-study__section-title">Channels of Communication</h3>
+                <div class="case-study__communication-cards">
+                    <!-- Messages Card -->
+                    <div class="case-study__communication-card" style="border: 1px solid #e0e0e0;">
+                        <div class="case-study__communication-card-title">Messages</div>
+                        <div class="case-study__communication-card-description">Reduces the stress and mental capacity to read or respond to messages.</div>
+                        <div style="width: 100%; display: flex; justify-content: center;">
+                            <div style="border-radius: 20px; max-width: 540px; width: 100%; margin: 0 auto; display: flex; justify-content: center; overflow: hidden;">
+                                <img src="https://static1.squarespace.com/static/6580d3c3d590237476692b5e/t/676eff86b753a958278578a6/1735327623368/yes+again.png" alt="Messages app screenshot" style="width: 100%; height: auto; object-fit: cover; border-radius: 20px; display: block;" />
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Calendar Card -->
+                    <div class="case-study__communication-card" style="border: 1px solid #e0e0e0;">
+                        <div class="case-study__communication-card-title">Calendar</div>
+                        <div class="case-study__communication-card-description">Plan and schedule around the kids league events.</div>
+                        <div style="width: 100%; display: flex; justify-content: center;">
+                            <div style="border-radius: 20px; max-width: 540px; width: 100%; margin: 0 auto; display: flex; justify-content: center; overflow: hidden;">
+                                <img src="https://static1.squarespace.com/static/6580d3c3d590237476692b5e/t/677c34652aa8160fae5e6099/1736193125964/calendar_pt4.png" alt="Calendar app screenshot" style="width: 100%; height: auto; object-fit: cover; border-radius: 20px; display: block;" />
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Availability -->
+                    <div class="case-study__communication-card" style="border: 1px solid #e0e0e0;">
+                        <div class="case-study__communication-card-title">Availability</div>
+                        <div class="case-study__communication-card-description">Manage who can attend and cannot attend.</div>
+                        <div style="width: 100%; display: flex; justify-content: center;">
+                            <div style="border-radius: 20px; max-width: 540px; width: 100%; margin: 0 auto; display: flex; justify-content: center; overflow: hidden;">
+                                <img src="https://static1.squarespace.com/static/6580d3c3d590237476692b5e/t/677320f93414db375b34a6b5/1735598329789/uty.png" alt="Availability" style="width: 100%; height: auto; object-fit: cover; border-radius: 20px; display: block;" />
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Announcements -->
+                    <div class="case-study__communication-card" style="border: 1px solid #e0e0e0;">
+                        <div class="case-study__communication-card-title">Announcements</div>
+                        <div class="case-study__communication-card-description">Quickly report conflicts within league events.</div>
+                        <div style="width: 100%; display: flex; justify-content: center;">
+                            <div style="border-radius: 20px; max-width: 540px; width: 100%; margin: 0 auto; display: flex; justify-content: center; overflow: hidden;">
+                                <img src="https://static1.squarespace.com/static/6580d3c3d590237476692b5e/t/6773225b90223b7c75283df1/1735598683937/u.png" alt="Announcements app screenshot" style="width: 100%; height: auto; object-fit: cover; border-radius: 20px; display: block;" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+
+
+            <!-- Competitive Audit Section -->
+            <section class="case-study__section case-study__section--spaced">
+                <h3 class="case-study__section-title">Competitive Audit</h3>
+                <div class="case-study__section-subtitle">
+                    In what ways do communication apps promote alignment within an organization?
+                </div>
+                <div class="case-study__section-text">
+                    With a clear understanding of the league's challenges and current experience, our team conducted a competitive audit using the question above to guide our thinking. We found that applications like <strong>Slack, Team App, Team Snap, and Team Sideline</strong> share common features with our proposed solution, including Messaging, Calendar, Availability, and Announcements.
                 </div>
                 
-                <div class="project-overview__details">
-                    <div class="project-detail">
-                        <h3 class="project-detail__title">Role</h3>
-                        <p class="project-detail__text">Lead Product Designer</p>
-                    </div>
-                    <div class="project-detail">
-                        <h3 class="project-detail__title">Timeline</h3>
-                        <p class="project-detail__text">12 weeks</p>
-                    </div>
-                    <div class="project-detail">
-                        <h3 class="project-detail__title">Tools</h3>
-                        <p class="project-detail__text">Figma, Sketch, InVision</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="project-showcase">
-            <div class="project-showcase__container">
-                <h2 class="project-showcase__title">Key Features</h2>
-                <div class="project-showcase__grid">
-                    <div class="showcase-item">
-                        <img src="Calendarinspo.png" alt="Calendar Interface" class="showcase-item__image">
-                        <div class="showcase-item__content">
-                            <h3 class="showcase-item__title">Smart Calendar</h3>
-                            <p class="showcase-item__description">
-                                Interactive calendar with practice schedules, game times, and RSVP functionality. 
-                                Parents can easily respond to events and receive reminders.
-                            </p>
+                <!-- Three Cards Row Section -->
+                <div class="case-study__competitive-cards">
+                    <!-- Left Card -->
+                    <div class="case-study__competitive-card" style="border: 1px solid #e0e0e0;">
+                        <div class="case-study__competitive-card-image-container">
+                            <img src="./Inspiration from Slack.jpg" alt="Slack use case" class="case-study__competitive-card-img" />
+                        </div>
+                        <div class="case-study__insight-card-content">
+                            <div class="case-study__competitive-card-title">Slack's approach to Messages</div>
+                            <div class="case-study__competitive-card-description">Slack allows users to create dedicated channels for specific topics, giving them more control over how conversations are organized.</div>
                         </div>
                     </div>
                     
-                    <div class="showcase-item">
-                        <div class="showcase-item__content">
-                            <h3 class="showcase-item__title">Team Communication</h3>
-                            <p class="showcase-item__description">
-                                Built-in messaging system for coaches to communicate with parents and players. 
-                                Group announcements and individual messages supported.
-                            </p>
+                    <!-- Center Card -->
+                    <div class="case-study__competitive-card" style="border: 1px solid #e0e0e0;">
+                        <div class="case-study__competitive-card-image-container">
+                            <img src="./availabilityfromSnap.png" alt="Team Snap use case" class="case-study__competitive-card-img" />
                         </div>
-                        <img src="designexploration-2.png" alt="Communication Interface" class="showcase-item__image">
-                    </div>
-                    
-                    <div class="showcase-item">
-                        <img src="designexploration-3.png" alt="Player Management" class="showcase-item__image">
-                        <div class="showcase-item__content">
-                            <h3 class="showcase-item__title">Player Management</h3>
-                            <p class="showcase-item__description">
-                                Comprehensive player profiles with medical information, emergency contacts, 
-                                and performance tracking for coaches and parents.
-                            </p>
+                        <div class="case-study__insight-card-content">
+                            <div class="case-study__competitive-card-title">Team Snap's approach to Availability</div>
+                            <div class="case-study__competitive-card-description">Know who's available for the game ahead of time, no more guessing when players arrive or scrambling to decide whether to cancel or proceed.</div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="project-process">
-            <div class="project-process__container">
-                <h2 class="project-process__title">Design Process</h2>
-                <div class="process-steps">
-                    <div class="process-step">
-                        <div class="process-step__number">01</div>
-                        <h3 class="process-step__title">Research & Discovery</h3>
-                        <p class="process-step__description">
-                            Conducted interviews with coaches, parents, and league administrators to understand 
-                            pain points and workflow challenges in youth sports management.
-                        </p>
-                    </div>
                     
-                    <div class="process-step">
-                        <div class="process-step__number">02</div>
-                        <h3 class="process-step__title">User Personas</h3>
-                        <p class="process-step__description">
-                            Developed detailed personas for coaches, parents, and league administrators 
-                            to guide design decisions and feature prioritization.
-                        </p>
-                    </div>
-                    
-                    <div class="process-step">
-                        <div class="process-step__number">03</div>
-                        <h3 class="process-step__title">Wireframing & Prototyping</h3>
-                        <p class="process-step__description">
-                            Created low-fidelity wireframes and interactive prototypes to test user flows 
-                            and gather feedback from stakeholders.
-                        </p>
-                    </div>
-                    
-                    <div class="process-step">
-                        <div class="process-step__number">04</div>
-                        <h3 class="process-step__title">User Testing & Iteration</h3>
-                        <p class="process-step__description">
-                            Conducted usability testing with target users and iterated on designs based on 
-                            feedback and observed behavior patterns.
-                        </p>
+                    <!-- Right Card -->
+                    <div class="case-study__competitive-card case-study__competitive-card--sideline" style="border: 1px solid #e0e0e0;">
+                        <div class="case-study__competitive-card-image-container">
+                            <img src="./Calendarinspo.png" alt="Team Sideline use case" class="case-study__competitive-card-img" />
+                        </div>
+                        <div class="case-study__insight-card-content">
+                            <div class="case-study__competitive-card-title">Team Sideline's approach to Calendar</div>
+                            <div class="case-study__competitive-card-description">Easily view all scheduled events at a glance with a calendar and event list organized by date, type, and team.</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="project-results">
-            <div class="project-results__container">
-                <h2 class="project-results__title">Results & Impact</h2>
-                <div class="results-grid">
-                    <div class="result-item">
-                        <h3 class="result-item__title">Improved Communication</h3>
-                        <p class="result-item__text">
-                            85% reduction in missed practices and games due to improved notification system
-                        </p>
+            <!-- Interviews Section -->
+            <section class="case-study__section case-study__section--spaced">
+                <h3 class="case-study__section-title">Interviews</h3>
+                <div class="case-study__section-subtitle">
+                    Our interviewee mentioned that regularly, when there are games or practice cancelations, at least 26.6% will still show up to drop off their children even after communication of the cancelation had been initiated hours ago.
+                </div>
+                <div class="case-study__section-text">
+                    We talked to a former member of the board who informed us about the details above when updates aren't received by the parents. This made us curious to understand how communication tends to fall through when updates are sent out through a journey map.
+                </div>
+                <!-- Journey Map Image Section -->
+                <div class="journey-map-viewer">
+                    <img src="./melissa-journey-map.png" alt="Journey map for communication pain points" style="width: 100%; height: auto; border-radius: 12px;" id="journey-map-image" class="case-study__journey-map-image" onclick="openImageModal(this)" />
+                    <p class="case-study__section-caption">
+                        A scenario based journey map helping the team empathize with parents (Click to enlarge)
+                    </p>
+                </div>
+            </section>
+
+            <!-- Analysis Section -->
+            <section class="case-study__section case-study__section--spaced">
+                <h3 class="case-study__section-title">Analysis</h3>
+                                <p class="case-study__section-text">
+                    With the help of the journey map, we were able to pinpoint where communication breaks down, primarily through <strong>emails</strong> and <strong>text messages</strong> which often fails to assist parents with league updates effectively. This creates confusion, missed updates, and unnecessary stress for both parents and coaches.
+                    <br>
+                         <br>To address this, we created an affinity diagram to analyze features that could offer both parents and coaches a seamless experience aligned with their day-to-day responsibilities.</br>
+                </p>
+                
+                <div class="affinity-diagram-viewer">
+                    <img src="./Affinity Diagram.webp" alt="Affinity Diagram showing feature analysis" style="width: 100%; height: auto; border-radius: 12px;" id="affinity-diagram-image" class="case-study__affinity-diagram-image" onclick="openImageModal(this)" />
+                    <p class="case-study__section-caption">
+                        Our Affinity Diagram created during one of our collaborative sessions (Click to enlarge)
+                    </p>
+                </div>
+            </section>
+
+            <!-- Main Insights Section -->
+            <section class="case-study__section case-study__section--spaced">
+                <h3 class="case-study__section-title">Main Insights</h3>
+                <p class="case-study__section-text">
+                    From our analysis, we identified key themes that revealed the need for specific features designed to support both coaches and parents in the long run.
+                </p>
+                <div class="case-study__insights-cards">
+                    <!-- Team Attendance Card -->
+                    <div class="case-study__insight-card case-study__card--mobile" style="border: 1px solid #e0e0e0;">
+                        <div class="case-study__insight-card-icon">
+                            <span class="case-study__insight-card-icon-wrapper">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Calendar with checkmark icon representing team attendance tracking" role="img">
+                                    <rect x="3" y="5" width="18" height="16" rx="2" stroke="#9B6FD9" stroke-width="2"/>
+                                    <path d="M16 3V7" stroke="#9B6FD9" stroke-width="2" stroke-linecap="round"/>
+                                    <path d="M8 3V7" stroke="#9B6FD9" stroke-width="2" stroke-linecap="round"/>
+                                    <path d="M3 11H21" stroke="#9B6FD9" stroke-width="2" stroke-linecap="round"/>
+                                    <path d="M9.5 15l2 2 3-3" stroke="#9B6FD9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="case-study__insight-card-content">
+                            <div class="case-study__card-title">Team Attendance</div>
+                            <div class="case-study__card-description">
+                                Coaches rely on player accountability for league events to determine if games should proceed or be canceled.
+                            </div>
+                        </div>
                     </div>
-                    <div class="result-item">
-                        <h3 class="result-item__title">Time Savings</h3>
-                        <p class="result-item__text">
-                            Coaches reported saving 3-4 hours per week on administrative tasks
-                        </p>
+                    
+                    <!-- League Calendar Card -->
+                    <div class="case-study__insight-card case-study__card--mobile" style="border: 1px solid #e0e0e0;">
+                        <div class="case-study__insight-card-icon">
+                            <span class="case-study__insight-card-icon-wrapper">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Calendar icon representing league schedule and events" role="img">
+                                    <rect x="3" y="5" width="18" height="16" rx="2" stroke="#9B6FD9" stroke-width="2"/>
+                                    <path d="M16 3V7" stroke="#9B6FD9" stroke-width="2" stroke-linecap="round"/>
+                                    <path d="M8 3V7" stroke="#9B6FD9" stroke-width="2" stroke-linecap="round"/>
+                                    <path d="M3 11H21" stroke="#9B6FD9" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="case-study__insight-card-content">
+                            <div class="case-study__card-title">League Calendar</div>
+                            <div class="case-study__card-description">
+                                Without visibility into upcoming events, parents struggle to schedule time off work to attend and support their child's league events.
+                            </div>
+                        </div>
                     </div>
-                    <div class="result-item">
-                        <h3 class="result-item__title">User Satisfaction</h3>
-                        <p class="result-item__text">
-                            92% of users rated the app as "easy to use" and "helpful"
-                        </p>
+                    
+                    <!-- League Alerts Card -->
+                    <div class="case-study__insight-card case-study__insight-card--alerts case-study__card--mobile" style="border: 1px solid #e0e0e0;">
+                        <div class="case-study__insight-card-icon case-study__insight-card-icon--absolute">
+                            <span class="case-study__insight-card-icon-wrapper">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Bell notification icon representing league alerts and updates" role="img">
+                                    <path d="M12 22a2 2 0 0 0 2-2H10a2 2 0 0 0 2 2zm6-6V11c0-3.07-1.63-5.64-5-6.32V4a1 1 0 1 0-2 0v.68C7.63 5.36 6 7.92 6 11v5l-1.29 1.29A1 1 0 0 0 6 19h12a1 1 0 0 0 .71-1.71L18 16z" stroke="#9B6FD9" stroke-width="2" fill="none"/>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="case-study__insight-card-content">
+                            <div class="case-study__card-title">League Alerts</div>
+                            <div class="case-study__card-description">
+                                Coaches need a more efficient and effective way to share league updates with parents, one that respects their time and schedules, as emails and text messages caused more stress than clarity.
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="project-navigation">
-            <div class="project-navigation__container">
-                <a href="index.html#work" class="project-navigation__link project-navigation__link--back">
-                    ← Back to Work
-                </a>
-                <a href="GuildGaming.html" class="project-navigation__link project-navigation__link--next">
-                    Next Project: Guild Gaming →
-                </a>
-            </div>
+            <!-- Ideation Section -->
+            <section class="case-study__section case-study__section--spaced">
+                <h3 class="case-study__section-title">Ideation</h3>
+                <div class="case-study__section-subtitle">
+                    Shortcomings + a new direction for a more pragmatic solution
+                </div>
+                <p class="case-study__section-text">
+                    With the features in mind, we started sketching out how they might look, but then a key question came up: "<strong>What device makes the most sense for parents to use these features?</strong>" In a previous meeting, we learned that the league currently uses a desktop to manage game schedules and view past results. This suggested that designing for desktop wouldn't meet the needs of parents, who are often on the go and require quick, mobile access to updates.
+                </p>
+                <div class="case-study__section-subtitle--small">
+                    Inevitable, Unavoidable Tradeoffs
+                </div>
+                <p class="case-study__section-text">
+                    When designing the announcement feature, our team had a few different ideas on how coaches should create alerts or updates with ease. Here's a look at what we explored and why:
+                </p>
+                <div class="case-study__idea-title">
+                    Idea 1: Vertical Duration with Push Notifications
+                </div>
+                <div class="case-study__design-exploration">
+                    <img src="designexploration-1.png" alt="Design exploration 1" class="case-study__design-exploration-image" id="design-exploration-1" onclick="openImageModal(this)">
+                    <p class="case-study__section-caption">
+                        (Click to enlarge)
+                    </p>
+                </div>
+                <div class="case-study__idea-title">
+                    Idea 2: Description + Vertical Duration
+                </div>
+                <div class="case-study__design-exploration">
+                    <img src="designexploration-2.png" alt="Design exploration 2" class="case-study__design-exploration-image" id="design-exploration-2" onclick="openImageModal(this)">
+                    <p class="case-study__section-caption">
+                        (Click to enlarge)
+                    </p>
+                </div>
+                <div class="case-study__idea-title">
+                    Idea 3: Headline with Description + Horizontal Duration
+                </div>
+                <div class="case-study__design-exploration">
+                    <img src="designexploration-3.png" alt="Design exploration 3" class="case-study__design-exploration-image" id="design-exploration-3" onclick="openImageModal(this)">
+                    <p class="case-study__section-caption">
+                        (Click to enlarge)
+                    </p>
+                </div>
+
+                <!-- Final Screens Section -->
+                <section class="case-study__final-screens">
+                    <div class="case-study__section-label">
+                        FINAL SCREENS
+                    </div>
+                    <!-- Coaches Subsection -->
+                    <div class="case-study__final-screens-subtitle case-study__final-screens-subtitle--coaches">
+                        Coaches 🎉
+                    </div>
+                    <p class="case-study__section-text">
+                        Coaches, with the help of these three features, can holistically deliver information to parents in a concise manner.
+                    </p>
+                    <div class="case-study__final-screens-image">
+                        <div class="placeholder-container">
+                            <div class="placeholder-icon">🎯</div>
+                            <div class="placeholder-text">Final Screens for Coaches</div>
+                            <div class="placeholder-subtext">Content coming soon...</div>
+                        </div>
+                    </div>
+                    <!-- Parents Subsection -->
+                    <div class="case-study__final-screens-subtitle case-study__final-screens-subtitle--parents">
+                        Parents 🧑‍🤝‍🧑
+                    </div>
+                    <p class="case-study__section-text">
+                        Parents lead busy lives, and these features offer stability in their lives while dealing with league conflicts and events.
+                    </p>
+                    <div class="case-study__final-screens-image">
+                        <div class="placeholder-container">
+                            <div class="placeholder-icon">🎯</div>
+                            <div class="placeholder-text">Solution to Parents</div>
+                            <div class="placeholder-subtext">Content coming soon...</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Bonus Screens Section -->
+                <section class="case-study__section case-study__section--large">
+                    <div class="case-study__section-label">BONUS SCREENS</div>
+                </section>
+
+                <!-- Onboarding Experience Section -->
+                <section class="case-study__section">
+                    <h3 class="case-study__section-title">Onboarding Experience</h3>
+                    <div class="case-study__final-screens-image">
+                        <div class="placeholder-container">
+                            <div class="placeholder-icon">🎯</div>
+                            <div class="placeholder-text">Onboarding Experience</div>
+                            <div class="placeholder-subtext">Content coming soon...</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Login Section -->
+                <section class="case-study__section">
+                    <h3 class="case-study__section-title">Login</h3>
+                    <div class="case-study__final-screens-image">
+                        <div class="placeholder-container">
+                            <div class="placeholder-icon">🎯</div>
+                            <div class="placeholder-text">Login Experience</div>
+                            <div class="placeholder-subtext">Content coming soon...</div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Conclusion Section -->
+            <section class="case-study__conclusion">
+                <div class="case-study__conclusion-content">
+                    <div class="case-study__conclusion-label">
+                        CONCLUSION
+                    </div>
+                    <h2 class="case-study__reflection-title">
+                        Reflection + Next steps
+                    </h2>
+                    <p class="case-study__reflection-text">
+                        This project taught me a lot, not just about the design process, but also from the teammates I worked alongside. I'm grateful for the guidance, collaboration, and insights I gained throughout the experience. Here are a few key takeaways and ideas we hope to explore further:
+                    </p>
+                    <ol class="case-study__reflection-text case-study__reflection-list">
+                        <li><strong>Hard-to-Reach Users</strong><br>
+                            Finding coaches and parents who understood Little League communication challenges was difficult. Sometimes improvisation is needed when direct access to a user group isn't possible, by reaching out to peers.</li>
+                        <li><strong>Learning from Leadership</strong><br>
+                            Working with more experienced teammates provided an opportunity to observe how they led meetings, organized tasks, and communicated with stakeholders. I'm grateful for their encouragement during desk crits and client check-ins.</li>
+                        <li><strong>Design Isn't Linear</strong><br>
+                            This project helped me understand that the design process involves constant iteration. We frequently circled back to research or made changes based on testing feedback, emphasizing that flexibility was key to progress.</li>
+                        <li><strong>More Testing (If We Had Time)</strong><br>
+                            I would have loved to conduct heuristic evaluations, as recommended by our professor, to assess how well our solution met user expectations and where improvements were still needed.</li>
+                        <li><strong>Ideas We Hoped to Include</strong><br>
+                            Due to time limits, not every brainstormed idea could be included. Here are two features we would still love to explore:
+                            <ul>
+                                <li>DocuSign Integration for easier sharing of important forms.</li>
+                                <li>Calendar Syncing to help parents plan ahead and avoid missing games.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </section>
         </section>
-    </main>
+    </div>
 
     <script src="index.js"></script>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="image-modal">
+        <div class="image-modal-content">
+            <span class="image-modal-close" onclick="closeImageModal()">&times;</span>
+            <img id="modalImage" class="image-modal-img" alt="">
+            <div id="modalCaption" class="image-modal-caption"></div>
+        </div>
+    </div>
 </body>
 </html>
