@@ -96,6 +96,16 @@ section:first-of-type {
     margin-bottom: 4px;
 }
 
+/* Add gap before FEATURES section */
+.case-study__section + .case-study__section--large {
+    margin-top: 48px;
+}
+
+/* Add gap before Competitive Audit section */
+.case-study__section--large + .case-study__section--spaced {
+    margin-top: 48px;
+}
+
 /* Header and Navigation */
 .header {
     position: fixed;
