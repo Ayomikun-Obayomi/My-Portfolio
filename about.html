@@ -30,66 +30,123 @@
         </section>
 
         <section class="about-content">
-            <div class="about-content__container">
-                <div class="about-content__left">
-                    <div class="profile-card">
-                        <img src="Me.jpeg" alt="Ayo - Product Designer" class="profile-card__image">
+            <div class="bento-grid">
+                <!-- Profile Image Card -->
+                <div class="bento-grid__card bento-grid__profile" style="border: 1px solid #e0e0e0;">
+                    <img 
+                        src="Me.jpeg" 
+                        alt="This is who I am" 
+                        class="bento-grid__profile-image"
+                    />
+                </div>
+                
+                <!-- Location Card -->
+                <div class="bento-grid__card bento-grid__location" style="border: 1px solid #e0e0e0;">
+                    <div class="bento-grid__location-content">
+                        <div class="bento-grid__location-pin">📍</div>
+                        <div class="bento-grid__location-city">West Lafayette, Indiana</div>
+                        <div class="bento-grid__location-subtitle">We love corn out here</div>
                     </div>
-                    
-                    <div class="info-card">
-                        <div class="info-card__icon">📍</div>
-                        <h3 class="info-card__title">West Lafayette, Indiana</h3>
-                        <p class="info-card__text">We love corn out here</p>
+                </div>
+                
+                <!-- Interests Card -->
+                <div class="bento-grid__card bento-grid__interests" style="border: 1px solid #e0e0e0;">
+                    <div class="bento-grid__interests-title">Interests</div>
+                                    <div class="bento-grid__interests-grid">
+                    <div class="bento-grid__interests-item" onclick="openInterestModal('Soccer', 'Playing soccer has taught me the value of teamwork and collaboration - skills I bring to every UX project. Working with diverse teammates helps me understand different perspectives and create solutions that serve everyone\'s needs.')">
+                        <span class="bento-grid__interests-emoji">⚽</span>
+                        <span>Soccer</span>
                     </div>
-                    
-                    <div class="info-card">
-                        <h3 class="info-card__title">Interests</h3>
-                        <div class="interests-grid">
-                            <div class="interest-item">
-                                <span class="interest-icon">⚽</span>
-                                <span class="interest-text">Soccer</span>
-                            </div>
-                            <div class="interest-item">
-                                <span class="interest-icon">🏃</span>
-                                <span class="interest-text">Jogging</span>
-                            </div>
-                            <div class="interest-item">
-                                <span class="interest-icon">📸</span>
-                                <span class="interest-text">Photography</span>
-                            </div>
-                            <div class="interest-item">
-                                <span class="interest-icon">🍃</span>
-                                <span class="interest-text">Nature walks</span>
-                            </div>
-                            <div class="interest-item">
-                                <span class="interest-icon">🎵</span>
-                                <span class="interest-text">Music</span>
-                            </div>
-                            <div class="interest-item">
-                                <span class="interest-icon">💪</span>
-                                <span class="interest-text">Calisthenics</span>
-                            </div>
+                    <div class="bento-grid__interests-item" onclick="openInterestModal('Nature Walks', 'Exploring nature trails gives me fresh perspectives and sharpens my critical thinking. These moments of discovery help me approach UX problems with renewed creativity and see solutions from unexpected angles.')">
+                        <span class="bento-grid__interests-emoji">🥾</span>
+                        <span>Nature walks</span>
+                    </div>
+                    <div class="bento-grid__interests-item" onclick="openInterestModal('Jogging', 'Jogging helps me clear my mind and stay energized. It\'s my daily ritual for maintaining both physical and mental well-being, which is crucial for staying focused during long design sessions.')">
+                        <span class="bento-grid__interests-emoji">🏃🏿‍♂️</span>
+                        <span>Jogging</span>
+                    </div>
+                    <div class="bento-grid__interests-item" onclick="openInterestModal('Music', 'Music is my constant companion. From discovering new artists to creating playlists, it helps me focus and express my creativity. The rhythm and flow of music often inspire my design thinking.')">
+                        <span class="bento-grid__interests-emoji">🎵</span>
+                        <span>Music</span>
+                    </div>
+                    <div class="bento-grid__interests-item" onclick="openInterestModal('Photography', 'Photography teaches me to see the world through different lenses - literally and metaphorically. This skill translates directly to UX design, where I must understand diverse user perspectives and capture the essence of their needs.')">
+                        <span class="bento-grid__interests-emoji">📸</span>
+                        <span>Photography</span>
+                    </div>
+                    <div class="bento-grid__interests-item" onclick="openInterestModal('Calisthenics', 'Calisthenics pushes me to be ambitious and try new things. This mindset drives my UX approach - I\'m always exploring innovative solutions and pushing boundaries to create better user experiences.')">
+                        <span class="bento-grid__interests-emoji">💪🏿</span>
+                        <span>Calisthenics</span>
+                    </div>
+                </div>
+                <button class="bento-grid__interests-button">
+                    Click on one of my interests to learn more
+                </button>
+            </div>
+                
+                <!-- Who Am I Card -->
+                <div class="bento-grid__card bento-grid__content" style="border: 1px solid #e0e0e0;">
+                    <div class="bento-grid__content-text">
+                        <div class="bento-grid__content-title">👤 Who am I?</div>
+                        <div class="bento-grid__content-description">
+                            My full name is Ayomikun, which means "my joy is full." I believe in building meaningful connections and moments that matter.
                         </div>
                     </div>
                 </div>
                 
-                <div class="about-content__right">
-                    <div class="image-gallery">
-                        <div class="gallery-main">
-                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop" alt="Ayo by the lake" class="gallery-main__image">
-                        </div>
-                        <div class="gallery-side">
-                            <div class="gallery-side__item">
-                                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=200&fit=crop" alt="Forest waterfall" class="gallery-side__image">
-                            </div>
-                            <div class="gallery-side__item">
-                                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=200&fit=crop" alt="Rolling hills with sheep" class="gallery-side__image">
-                            </div>
-                            <div class="gallery-side__item">
-                                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=200&fit=crop" alt="Pier over water" class="gallery-side__image">
-                            </div>
+                <!-- Philosophy Card -->
+                <div class="bento-grid__card bento-grid__content bento-grid__content--philosophy" style="border: 1px solid #e0e0e0;">
+                    <div class="bento-grid__content-text">
+                        <div class="bento-grid__content-title bento-grid__content-title--small"> 💡 My Philosophy</div>
+                        <div class="bento-grid__content-description bento-grid__content-description--tight">
+                            "Connection creates creativity." Building strong relationships and listening with empathy are essential to meaningful design.
                         </div>
                     </div>
+                </div>
+                
+                <!-- Journey Card -->
+                <div class="bento-grid__card bento-grid__content bento-grid__content--journey" style="border: 1px solid #e0e0e0;">
+                    <div class="bento-grid__content-text">
+                        <div class="bento-grid__content-title bento-grid__content-title--small">📚 My Journey </div>
+                        <div class="bento-grid__content-description bento-grid__content-description--tight">
+                            Creativity has always been a part of me. From dreaming of becoming a chef to exploring software development, and eventually finding my path in UX design.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Scotland Photo -->
+                <div class="bento-grid__photo bento-grid__photo--scotland">
+                    <img 
+                        src="visit to Scotland.jpeg"
+                        alt="Scotland adventure" 
+                        class="bento-grid__photo-image"
+                    />
+                </div>
+                
+                <!-- Waterfall Photo -->
+                <div class="bento-grid__photo bento-grid__photo--waterfall">
+                    <img 
+                        src="waterfall.jpeg"
+                        alt="Beautiful waterfall" 
+                        class="bento-grid__photo-image"
+                    />
+                </div>
+                
+                <!-- Sheep Photo -->
+                <div class="bento-grid__photo bento-grid__photo--sheep">
+                    <img 
+                        src="sheep.jpeg"
+                        alt="Adorable sheep" 
+                        class="bento-grid__photo-image"
+                    />
+                </div>
+                
+                <!-- By the Lake Photo -->
+                <div class="bento-grid__photo bento-grid__photo--lake">
+                    <img 
+                        src="By the lake.jpeg"
+                        alt="Peaceful lake moment" 
+                        class="bento-grid__photo-image"
+                    />
                 </div>
             </div>
         </section>
@@ -102,5 +159,38 @@
     </main>
 
     <script src="index.js"></script>
+
+    <!-- Interests Modal -->
+    <div id="interestsModal" class="interests-modal">
+        <div class="interests-modal-content">
+            <div class="interests-modal-header">
+                <h3 class="interests-modal-title" id="modalTitle">Interest</h3>
+                <button class="interests-modal-close" onclick="closeInterestModal()">&times;</button>
+            </div>
+            <div class="interests-modal-body">
+                <p class="interests-modal-description" id="modalDescription">Description will appear here.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openInterestModal(title, description) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalDescription').textContent = description;
+            document.getElementById('interestsModal').style.display = 'block';
+        }
+
+        function closeInterestModal() {
+            document.getElementById('interestsModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('interestsModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
