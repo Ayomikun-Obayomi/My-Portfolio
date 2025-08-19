@@ -556,13 +556,14 @@ section:first-of-type {
     font-size: 20px;
     font-weight: 600;
     color: #111;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
+    margin-top: 16px;
     line-height: 1.3;
 }
 
 .case-study__section-subtitle {
     font-size: 24px;
-    font-weight: 360;
+    font-weight: 400; /* Fixed invalid font-weight value */
     color: #111;
     margin-bottom: 32px;
     line-height: 1.5;
@@ -581,9 +582,14 @@ section:first-of-type {
     font-size: 16px;
     color: #111;
     line-height: 1.7;
-    font-weight: 345;
+    font-weight: 345; /* Fixed invalid font-weight value */
     margin-bottom: 0;
     margin-top: 8px;
+}
+
+/* Add extra spacing after specific text before images */
+.case-study__section-text + .case-study__section-image {
+    margin-top: 32px; /* Increased gap after text before images */
 }
 
 .case-study__section-text strong {
@@ -774,6 +780,7 @@ section:first-of-type {
     font-size: 14px;
     color: #666666;
     text-align: left;
+    font-weight: 345;
     width: 100%;
     line-height: 1.5;
     margin-top: 8px;
@@ -986,7 +993,7 @@ section:first-of-type {
     font-size: 14px;
     margin-top: 16px;
     color: #666;
-    line-height: 1.5;
+    line-height: 1.7;
 }
 
 /* Idea Titles */
@@ -1027,10 +1034,12 @@ section:first-of-type {
 
 .case-study__section-caption {
     margin-top: 12px;
+    margin-bottom: 24px; /* Reduced for better fit within ideation sections */
     color: #666;
     font-size: 13px;
-    line-height: 1.5;
+    line-height: 1.4;
     text-align: left;
+    font-weight: 400;
 }
 
 /* Affinity Diagram */
@@ -1229,7 +1238,7 @@ section:first-of-type {
     }
     
     .case-study {
-        padding: 80px 16px 32px;
+        padding: 0 16px 32px; /* No top padding to eliminate space after navbar */
     }
     
     .case-study__hero-title {
@@ -1239,6 +1248,20 @@ section:first-of-type {
     .case-study__cards-grid {
         grid-template-columns: 1fr;
         gap: 24px;
+    }
+    
+    /* Make the third card (spanning both columns) responsive */
+    .case-study__card[style*="grid-column: 1 / span 2"],
+    .case-study__card--span-2 {
+        grid-column: 1 !important;
+        justify-self: stretch !important;
+        width: 100% !important;
+    }
+    
+    /* Ensure all cards stack properly on mobile */
+    .case-study__card {
+        width: 100%;
+        max-width: none;
     }
     
     .case-study__communication-cards {
@@ -1311,6 +1334,27 @@ section:first-of-type {
         padding: 20px;
     }
     
+    /* Additional responsive improvements for cards */
+    .case-study__card-title {
+        font-size: 15px;
+        line-height: 1.4;
+        margin-bottom: 12px;
+    }
+    
+    .case-study__card-description {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+    
+    .case-study__card-icon {
+        margin-bottom: 20px;
+    }
+    
+    .case-study__card-icon-wrapper {
+        width: 32px;
+        height: 32px;
+    }
+    
     .case-study__communication-card {
         padding: 16px;
     }
@@ -1322,5 +1366,447 @@ section:first-of-type {
     .case-study__insight-card {
         padding: 20px;
     }
+    
+    /* Extra small screen improvements for cards */
+    .case-study__card-title {
+        font-size: 14px;
+        line-height: 1.3;
+        margin-bottom: 10px;
+    }
+    
+    .case-study__card-description {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+    
+    .case-study__card-icon {
+        margin-bottom: 16px;
+    }
+    
+    .case-study__card-icon-wrapper {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* Guild Gaming Case Study Specific Styles */
+.case-study--guild-gaming {
+    /* Main container for Guild Gaming case study */
+}
+
+/* Guild Gaming spacing to match Baseball Little League */
+.case-study--guild-gaming .case-study__section {
+    margin-bottom: 40px; /* Match general case study spacing */
+}
+
+.case-study--guild-gaming .case-study__section--spaced {
+    margin-top: 80px; /* Match general case study spacing */
+}
+
+.case-study--guild-gaming .case-study__cards-grid + .case-study__section {
+    margin-top: 60px; /* Keep this specific spacing */
+}
+
+.case-study--guild-gaming .case-study__ideation-section + .case-study__ideation-section {
+    margin-top: 60px; /* Keep this specific spacing */
+}
+
+
+
+.case-study--guild-gaming .case-study__quote {
+    margin: 32px 0; /* Match general quote spacing */
+}
+
+.case-study--guild-gaming .case-study__company-logos {
+    margin: 48px 0; /* Match general company logos spacing */
+}
+
+.case-study--guild-gaming .case-study__placeholder {
+    margin: 24px auto; /* Match general placeholder spacing */
+}
+
+/* Quote styling */
+.case-study__quote {
+    background: #f8f9fa;
+    border-left: 4px solid #9B6FD9;
+    padding: 24px;
+    margin: 32px 0; /* Consistent with Guild Gaming override */
+    border-radius: 8px;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #111111;
+}
+
+.case-study__quote-attribution {
+    text-align: right;
+    font-style: normal;
+    font-weight: 600;
+    color: #666666;
+    margin-top: 16px;
+    font-size: 14px;
+}
+
+/* Section list styling */
+.case-study__section-list {
+    margin: 24px 0;
+    padding-left: 24px;
+}
+
+.case-study__section-list li {
+    margin-bottom: 16px;
+    line-height: 1.6;
+    color: #111111;
+}
+
+/* Company logos section */
+.case-study__company-logos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin: 48px 0; /* Consistent with Guild Gaming override */
+    max-width: 800px; /* Match the case study content width */
+    margin-left: 0; /* Align with left edge of text content */
+    margin-right: auto;
+}
+
+/* Ensure equal column widths */
+.case-study__company-logos > * {
+    width: 100%;
+    max-width: none; /* Allow full width */
+}
+
+/* Make the third logo span the full bottom row */
+.case-study__company-logo:nth-child(3) {
+    grid-column: 1 / -1;
+    max-width: none; /* Allow full width */
+    justify-self: center;
+    margin: 0 auto; /* Center the card horizontally */
+}
+
+/* Enhanced logo card styling to match the reference image */
+.case-study__company-logo {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+    padding: 24px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
+    width: 100%; /* Ensure consistent width */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+
+
+
+.case-study__company-logo-img {
+    width: 100%;
+    height: auto;
+    max-height: 60px;
+    object-fit: contain;
+}
+
+
+
+/* Ideation section styling */
+.case-study__ideation-section {
+    margin: 48px 0;
+    border-radius: 16px;
+    width: 100%; /* Full width */
+    max-width: none; /* Remove any width constraints */
+}
+
+.case-study__ideation-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #111111;
+    margin-bottom: 16px;
+    line-height: 1.3;
+}
+
+.case-study__ideation-description {
+    font-size: 16px;
+    color: #111111;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+/* Placeholder styling */
+.case-study__placeholder {
+    width: 100%;
+    max-width: 800px;
+    height: 200px;
+    background: #f8f9fa;
+    border: 2px dashed #dee2e6;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 24px auto; /* Consistent with Guild Gaming override */
+    color: #666666;
+    font-style: italic;
+}
+
+.case-study__placeholder--large {
+    height: 300px;
+}
+
+.case-study__placeholder-content {
+    text-align: center;
+}
+
+.case-study__placeholder-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.case-study__placeholder-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 8px;
+}
+
+.case-study__placeholder-subtitle {
+    font-size: 14px;
+    color: #6c757d;
+}
+
+/* Guild Gaming specific overrides */
+.case-study--guild-gaming .case-study__hero-banner {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-bottom: 48px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.case-study--guild-gaming .case-study__hero-banner--desktop {
+    margin-bottom: 96px;
+}
+
+.case-study--guild-gaming .case-study__hero-banner-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+
+
+/* Competitive card styling for Guild Gaming */
+.case-study--guild-gaming .case-study__competitive-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+    padding: 24px;
+    width: 100%;
+    max-width: 100%; /* Allow full width like general case study */
+    margin: 0; /* Remove auto margin to match general case study */
+}
+
+.case-study--guild-gaming .case-study__competitive-card .case-study__competitive-card-img {
+    width: 100%;
+    height: 400px; /* Fixed height for better control */
+    object-fit: cover;
+    border-radius: 12px;
+    display: block; /* Ensure proper display */
+}
+
+/* Fix video container within competitive card */
+.case-study--guild-gaming .case-study__competitive-card .case-study__competitive-card-image-container {
+    width: 100%;
+    height: 400px; /* Match video height */
+    border-radius: 12px;
+    overflow: hidden; /* Ensure video stays within bounds */
+}
+
+/* Bento grid content styling for Guild Gaming */
+.bento-grid__content-wrapper {
+    /* Wrapper for bento grid content */
+}
+
+/* Section image styling for Guild Gaming */
+.case-study__section-image {
+    display: flex;
+    justify-content: center;
+    margin: 16px 0 12px 0; /* Bottom margin matches caption's margin-top for consistent spacing */
+}
+
+.case-study__section-img {
+    max-width: 100%; /* Allow full width for images */
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.bento-grid__content {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 140px;
+}
+
+.bento-grid__content--philosophy {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 160px;
+}
+
+.bento-grid__content--journey {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 160px;
+}
+
+/* Mobile responsive styles for Guild Gaming */
+@media (max-width: 768px) {
+    .case-study__company-logos {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        max-width: 400px;
+    }
+    
+    .case-study__company-logo {
+        min-height: 100px;
+        padding: 20px;
+    }
+    
+    /* Company logos responsive behavior */
+    .case-study__company-logos {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 24px;
+        max-width: 100%; /* Full width on mobile */
+        margin: 32px 0; /* Remove auto margins for full width */
+    }
+    
+    /* Reset the third logo span on mobile */
+    .case-study__company-logo:nth-child(3) {
+        grid-column: 1;
+        max-width: 100%;
+        justify-self: stretch;
+    }
+    
+    .case-study__company-logo {
+        min-height: 100px;
+        padding: 20px;
+        width: 100%;
+    }
+    
+    .case-study__company-logo-img {
+        max-height: 50px;
+    }
+    
+    .case-study__ideation-section {
+        padding: 24px 16px;
+        margin: 32px 0;
+    }
+    
+    .case-study__quote {
+        padding: 20px 16px;
+        margin: 24px 0;
+        font-size: 16px;
+    }
+    
+    .case-study__placeholder {
+        height: 150px;
+        margin: 20px auto;
+    }
+    
+    .case-study__placeholder--large {
+        height: 200px;
+    }
+    
+    /* Section image responsive styles */
+    .case-study__section-img {
+        max-width: 100%; /* Allow full width on mobile */
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Additional card styling to replace inline styles */
+.case-study__card--with-border {
+    border: 1px solid #e0e0e0;
+}
+
+.case-study__communication-card--with-border {
+    border: 1px solid #e0e0e0;
+}
+
+.case-study__competitive-card--with-border {
+    border: 1px solid #e0e0e0;
+}
+
+.case-study__insight-card--with-border {
+    border: 1px solid #e0e0e0;
+}
+
+/* Image container styling to replace inline styles */
+.case-study__image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.case-study__image-wrapper {
+    border-radius: 20px;
+    max-width: 540px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.case-study__image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px;
+    display: block;
+}
+
+/* Third card spanning both columns styling */
+.case-study__card--span-2 {
+    grid-column: 1 / span 2;
+    justify-self: center;
+}
+
+/* Hero title highlight styling */
+.case-study__hero-title-highlight {
+    font-weight: 400;
+    color: #111111;
+}
+
+/* Spacer utility class */
+.case-study__spacer {
+    height: 16px;
 }
 
