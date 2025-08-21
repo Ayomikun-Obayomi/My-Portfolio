@@ -35,4 +35,42 @@ document.addEventListener('DOMContentLoaded', function() {
             closeImageModal();
         }
     });
+    
+    // Navbar transparency on scroll
+    const header = document.querySelector('.header');
+    let lastScrollTop = 0;
+    
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > 100) {
+            header.classList.add('header--transparent');
+        } else {
+            header.classList.remove('header--transparent');
+        }
+        
+        lastScrollTop = scrollTop;
+    });
+    
+    // Back to Top Button
+    const backToTopBtn = document.getElementById('back-to-top');
+    
+    if (backToTopBtn) {
+        // Show button when scrolling down
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+        
+        // Smooth scroll to top when clicked
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 });

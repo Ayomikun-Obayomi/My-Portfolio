@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guild Gaming - Case Study</title>
+    <link rel="icon" type="image/png" href="logo for folio.png" sizes="64x64">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,7 +12,9 @@
     <header class="header">
         <nav class="nav">
             <div class="nav__logo">
-                <a href="index.html" class="nav__title">ao</a>
+                <a href="index.html" class="nav__logo-link">
+                    <img src="logo for folio.png" alt="Ayo Logo" class="nav__logo-image">
+                </a>
             </div>
             <ul class="nav__menu">
                 <li class="nav__item"><a href="index.html" class="nav__link">Work</a></li>
@@ -130,8 +133,8 @@
                 </ul>
                 
                 <!-- AI Walkthrough Placeholder -->
-                <div class="case-study__placeholder">
-                    [AI Dashboard Walkthrough]
+                <div class="case-study__section-image">
+                    <video src="AIWalkthrough.mp4" alt="AI Walkthrough" class="case-study__section-img" controls loop autoplay muted></video>
                 </div>
                 
                 <!-- Spacer for better section separation -->
@@ -147,8 +150,8 @@
                     That's when we asked: <strong><em>What if AI could simplify and elevate this process?</em></strong>
                 </p>
                 <!-- Create A Report Walkthrough Placeholder -->
-                <div class="case-study__placeholder">
-                    [Create A Report Walkthrough]
+                <div class="case-study__section-image">
+                    <video src="CreateaReportWalkthrough.mp4" alt="Create Report" class="case-study__section-img" controls loop autoplay muted></video>
                 </div>
                 <p class="case-study__section-text case-study__section-text--spaced-report">
                     With creating a report, event organizers remain in control of what goes into their reports, graphs and summaries to requesting tailored recommendations for future events. The AI pulls all relevant insights together and generates a polished PDF report.
@@ -156,15 +159,15 @@
                 <!-- Spacer div for gap between sections -->
                 <div class="case-study__spacer"></div>
                 <h4 class="case-study__section-title">
-                    Export reports in formats that match your workflow.
+                    Import reports in formats that match your workflow.
                 </h4>
                     
                 <!-- [image] placeholder for create report section -->
-                <div class="case-study__placeholder">
-                    [Create Report Feature Image]
+                <div class="case-study__section-image">
+                    <img src="Import Reports.png" alt="Import Reports" class="case-study__section-img" />
                 </div>
                 <p class="case-study__section-text">
-                    Additionally, organizers can export their reports in multiple formats, Notion, Microsoft Word, or Excel, giving them flexibility to present, document, or collaborate however they prefer.
+                    Additionally, organizers can import their reports in multiple formats, Notion, Microsoft Word, or Excel, giving them flexibility to present, document, or collaborate however they prefer.
                 </p>
                 <!-- Research Section -->
                 <section class="case-study__section">
@@ -335,7 +338,7 @@
                 <h3 class="case-study__section-title">Landing on A Solution</h3>
                                  <div class="case-study__section-image">
                      <img
-                         src="Map for Guild Gaming.png"
+                         src="Guild Map.png"
                          alt="Prioritization Matrix"
                          class="case-study__section-img"
                          id="prioritization-matrix-image"
@@ -355,12 +358,8 @@
             <section class="case-study__section">
                 <div class="case-study__section-label">FINAL SOLUTION</div>
                 <h3 class="case-study__section-title">A Hybrid Dashboard Experience</h3>
-                <div class="case-study__placeholder case-study__placeholder--large">
-                    <div class="case-study__placeholder-content">
-                        <div class="case-study__placeholder-icon">🎯</div>
-                        <div class="case-study__placeholder-title">Final Solution Placeholder</div>
-                        <div class="case-study__placeholder-subtitle">Content coming soon...</div>
-                    </div>
+                <div class="case-study__section-image">
+                    <video src="TheGuildAI.mp4" alt="Final Solution" class="case-study__section-img" controls loop autoplay muted></video>
                 </div>
             </section>
             <!-- New Section: Final Thoughts -->
@@ -375,8 +374,30 @@
                     <strong>What I'm Proud of: </strong>I am most proud of all the work that we were able to achieve within quite a short period, and I believe that with more time, we could have developed a much more valuable product for our users and assessed its usability and desirability.
                 </p>
             </section>
+
+            <!-- You might also like section -->
+            <section class="case-study__related">
+                <h2 class="case-study__related-title">You might also like...</h2>
+                <div class="case-study__related-content">
+                    <div class="case-study__related-image-container">
+                        <div class="case-study__related-mockup">
+                            <img src="Baseball.png" alt="Baseball Little League Project" class="case-study__related-image">
+                        </div>
+                        <div class="case-study__related-overlay">
+                            <div class="case-study__related-text">
+                                <h3>Baseball Little League</h3>
+                                <p>Designing a communication platform to enhance organizational collaboration amongst Parents, Coaches, & Children.</p>
+                                <a href="BaseballLittleLeague.html" class="case-study__related-link">View Case Study →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </section>
     </main>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top-btn" aria-label="Back to top">⬆️</button>
 
     <!-- Image Modal -->
     <div id="imageModal" class="image-modal">
