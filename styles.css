@@ -177,6 +177,40 @@ section:first-of-type {
     color: #8134df;
 }
 
+/* Hamburger Menu */
+.nav__hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 24px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10001;
+}
+
+.nav__hamburger-line {
+    width: 100%;
+    height: 2.5px;
+    background: #111;
+    border-radius: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.nav__hamburger.active .nav__hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.nav__hamburger.active .nav__hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.nav__hamburger.active .nav__hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
 /* Main Content */
 .main {
     margin-top: 64px;
@@ -298,7 +332,7 @@ section:first-of-type {
     }
     
     .projects {
-        margin-top: 20px;
+        margin-top: 0px;
     }
     
     .projects__grid {
@@ -1092,7 +1126,7 @@ section:first-of-type {
     font-size: 16px;
     color: #111;
     line-height: 1.7;
-    font-weight: 345; /* Fixed invalid font-weight value */
+    font-weight: 400; /* Fixed invalid font-weight value */
     margin-bottom: 0;
     margin-top: 8px;
 }
@@ -1290,7 +1324,7 @@ section:first-of-type {
     font-size: 14px;
     color: #666666;
     text-align: left;
-    font-weight: 345;
+    font-weight: 400;
     width: 100%;
     line-height: 1.5;
     margin-top: 8px;
@@ -1631,6 +1665,7 @@ section:first-of-type {
     color: #111;
     line-height: 1.7;
     margin-bottom: 24px;
+    font-weight: 400;
 }
 
 .case-study__reflection-list {
@@ -1694,10 +1729,61 @@ section:first-of-type {
         display: none;
     }
     
+    .nav__hamburger {
+        display: flex;
+    }
+    
+    .nav__menu--mobile {
+        display: flex !important;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #ffffff;
+        flex-direction: column;
+        padding: 80px 20px 20px 20px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        z-index: 9999;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+    }
+    
+    .nav__menu--mobile .nav__hamburger {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 10000;
+    }
+    
+    .nav__menu--mobile .nav__item {
+        margin: 0;
+        padding: 32px 0;
+        border-bottom: 1px solid #e0e0e0;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .nav__menu--mobile .nav__item:last-child {
+        border-bottom: none;
+    }
+    
+    .nav__menu--mobile .nav__link {
+        font-size: 28px;
+        padding: 16px 0;
+        display: block;
+        width: 100%;
+        font-weight: 600;
+        color: #111;
+        text-decoration: none;
+    }
+    
     
     
     .hero__title {
-        font-size: 32px;
+        font-size: 48px;
     }
     
     .hero__subtitle {
@@ -1862,6 +1948,54 @@ section:first-of-type {
         grid-column: auto;
         justify-self: auto;
         width: 100%;
+    }
+    
+    /* Mobile font sizes for case study descriptions */
+    .case-study__communication-card-description {
+        font-size: 16px;
+        font-weight: 400;
+    }
+    
+    .case-study__competitive-card-description {
+        font-size: 16px;
+        font-weight: 400;
+    }
+    
+    .case-study__card-description {
+        font-size: 16px;
+        font-weight: 400;
+    }
+    
+    /* Mobile font sizes for case study card titles */
+    .case-study__communication-card-title {
+        font-size: 18px;
+    }
+    
+    .case-study__competitive-card-title {
+        font-size: 18px;
+    }
+    
+    .case-study__card-title {
+        font-size: 18px;
+    }
+    
+    /* Mobile font weight consistency for list items */
+    .case-study__section-list li {
+        font-weight: 400;
+    }
+    
+    .case-study__section-list li strong {
+        font-weight: 600;
+    }
+    
+    /* Mobile font weight consistency for ideation descriptions */
+    .case-study__ideation-description {
+        font-weight: 400;
+    }
+    
+    /* Mobile font weight consistency for reflection text */
+    .case-study__reflection-text {
+        font-weight: 400;
     }
 
     .case-study__competitive-card-image-container {
@@ -2034,6 +2168,11 @@ section:first-of-type {
     margin-bottom: 16px;
     line-height: 1.6;
     color: #111111;
+    font-weight: 400;
+}
+
+.case-study__section-list li strong {
+    font-weight: 600;
 }
 
 /* Company logos section */
@@ -2110,6 +2249,7 @@ section:first-of-type {
     color: #111111;
     line-height: 1.6;
     margin-bottom: 24px;
+    font-weight: 400;
 }
 
 /* Placeholder styling */

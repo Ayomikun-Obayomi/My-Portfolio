@@ -23,11 +23,13 @@ function closeImageModal() {
 document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('imageModal');
     
-    modal.addEventListener('click', function(event) {
-        if (event.target === modal) {
-            closeImageModal();
-        }
-    });
+    if (modal) {
+        modal.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                closeImageModal();
+            }
+        });
+    }
     
     // Close modal with Escape key
     document.addEventListener('keydown', function(event) {
@@ -40,17 +42,43 @@ document.addEventListener('DOMContentLoaded', function() {
     const header = document.querySelector('.header');
     let lastScrollTop = 0;
     
-    window.addEventListener('scroll', function() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (header) {
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 100) {
+                header.classList.add('header--transparent');
+            } else {
+                header.classList.remove('header--transparent');
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+    }
+    
+    // Mobile Menu Toggle
+    const hamburger = document.querySelector('.nav__hamburger');
+    const navMenu = document.querySelector('.nav__menu');
+    
+    if (hamburger && navMenu) {
+        console.log('Hamburger and nav menu found');
+        hamburger.addEventListener('click', function() {
+            console.log('Hamburger clicked');
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('nav__menu--mobile');
+            console.log('Nav menu classes:', navMenu.className);
+            console.log('Nav menu display:', window.getComputedStyle(navMenu).display);
+        });
         
-        if (scrollTop > 100) {
-            header.classList.add('header--transparent');
-        } else {
-            header.classList.remove('header--transparent');
-        }
-        
-        lastScrollTop = scrollTop;
-    });
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav__link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('nav__menu--mobile');
+            });
+        });
+    }
     
     // Back to Top Button
     const backToTopBtn = document.getElementById('back-to-top');
