@@ -359,7 +359,7 @@ section:first-of-type {
     align-items: center;
     justify-content: center;
     padding: 24px;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
 }
 
 .project-card__image {
@@ -1787,12 +1787,12 @@ section:first-of-type {
     
     .hero__subtitle {
         font-size: 16px;
+        margin-bottom: 24px;
     }
     
     .hero {
-        padding: 40px 8px 10px;
+        padding: 20px 8px 10px; /* Reduced padding between navbar and product  */
     }
-    
     .projects {
         padding: 20px 8px 20px 8px;
     }
@@ -1800,7 +1800,7 @@ section:first-of-type {
     .projects__grid {
         grid-template-columns: 1fr !important;
         gap: 32px !important;
-        max-width: 350px !important;
+        max-width: 380px !important;
         margin: 0 auto !important;
     }
     
@@ -1808,17 +1808,23 @@ section:first-of-type {
     
     .project-card__image-container {
         height: 200px;
+        margin-bottom: 4px !important;
     }
     
     /* Mobile tag improvements */
     .project-card__tags {
-        gap: 2px;
-        margin-bottom: 16px;
+        margin-bottom: 24px;
+        gap: 12px;
     }
     
     .project-card__tag {
-        padding: 4px 10px;
-        font-size: 12px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        padding-left: 8px;
+        padding-right: 8px;
+        font-size: 11px;
+        margin-right: 0;
+        border: 1px solid #c3c3c3;
         border-radius: 8px;
     }
     
