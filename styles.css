@@ -229,7 +229,7 @@ section:first-of-type {
 
 .hero__content {
     max-width: none;
-    padding: 0 32px;
+    padding: 0;
 }
 
 .hero__subtitle {
@@ -380,8 +380,6 @@ section:first-of-type {
 .project-card__tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 12px;
     margin-bottom: 24px;
 }
 
@@ -1078,7 +1076,7 @@ section:first-of-type {
     font-size: 16px;
     color: #111;
     line-height: 1.8;
-    font-weight: 350;
+    font-weight: 400;
 }
 
 .case-study__project-detail-item {
@@ -1722,7 +1720,7 @@ section:first-of-type {
 
 @media (max-width: 768px) {
     .header {
-        padding: 0 16px;
+        padding: 0 8px;
     }
     
     .nav__menu {
@@ -1731,6 +1729,7 @@ section:first-of-type {
     
     .nav__hamburger {
         display: flex;
+        margin-right: 8px;
     }
     
     .nav__menu--mobile {
@@ -1790,17 +1789,37 @@ section:first-of-type {
         font-size: 16px;
     }
     
+    .hero {
+        padding: 40px 8px 10px;
+    }
+    
     .projects {
-        padding: 60px 16px;
+        padding: 20px 8px 20px 8px;
     }
     
     .projects__grid {
-        grid-template-columns: 1fr;
-        gap: 32px;
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+        max-width: 350px !important;
+        margin: 0 auto !important;
     }
+    
+
     
     .project-card__image-container {
         height: 200px;
+    }
+    
+    /* Mobile tag improvements */
+    .project-card__tags {
+        gap: 2px;
+        margin-bottom: 16px;
+    }
+    
+    .project-card__tag {
+        padding: 4px 10px;
+        font-size: 12px;
+        border-radius: 8px;
     }
     
     .about-hero {
@@ -2009,6 +2028,17 @@ section:first-of-type {
         font-weight: 600;
     }
     
+    /* Mobile font consistency for Guild Gaming general case study cards */
+    .case-study--guild-gaming .case-study__card .case-study__card-title {
+        font-size: 18px;
+        font-weight: 600;
+    }
+    
+    .case-study--guild-gaming .case-study__card .case-study__card-description {
+        font-size: 16px;
+        font-weight: 400;
+    }
+    
     /* Mobile font weight consistency for Baseball insight cards */
     .case-study__insight-card .case-study__card-title {
         font-size: 18px;
@@ -2019,6 +2049,99 @@ section:first-of-type {
         font-size: 16px;
         font-weight: 400;
     }
+    
+    /* Mobile spacing for Baseball case study cards */
+    .case-study__card {
+        margin-bottom: 16px;
+    }
+    
+    .case-study__card-title {
+        margin-bottom: 12px;
+    }
+    
+    .case-study__card-description {
+        margin-bottom: 16px;
+    }
+    
+    /* Mobile font consistency for current experience description */
+    .case-study__current-experience-description {
+        font-size: 16px;
+        font-weight: 400;
+    }
+    
+    /* Mobile font consistency for current experience title */
+    .case-study__current-experience-title {
+        font-size: 18px;
+        font-weight: 600;
+    }
+    
+    /* Mobile styling for Next Up section - similar to "You might also like" */
+    .case-study__related {
+        margin: 40px 16px;
+        padding: 24px;
+        border-radius: 16px;
+    }
+    
+    .case-study__related-content {
+        padding: 0;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .case-study__related-text h3 {
+        font-size: 20px;
+        margin-bottom: 12px;
+        text-align: left;
+        font-weight: 600;
+        line-height: 1.2;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    .case-study__related-text p {
+        font-size: 16px;
+        margin-bottom: 20px;
+        line-height: 1.5;
+        color: #333;
+    }
+    
+    .case-study__related-link {
+        font-size: 15px;
+        display: inline-block;
+        color: #8134df;
+        font-weight: 600;
+        text-decoration: none;
+    }
+    
+    /* Mobile layout: image on top, text below in single column */
+    .case-study__related-content {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        grid-template-rows: auto auto !important;
+        gap: 16px !important;
+        max-width: none !important;
+        padding: 0 !important;
+    }
+    
+    .case-study__related-image-container {
+        grid-row: 1;
+        order: -1;
+    }
+    
+    .case-study__related-image {
+        width: 100%;
+        height: 900px;
+        object-fit: cover;
+        border-radius: 12px;
+    }
+    
+    .case-study__related-text {
+        grid-row: 2;
+        margin-top: 16px;
+    }
+    
+
 
     .case-study__competitive-card-image-container {
         height: auto;
@@ -2069,13 +2192,13 @@ section:first-of-type {
     
     /* Additional responsive improvements for cards */
     .case-study__card-title {
-        font-size: 15px;
+        font-size: 18px;
         line-height: 1.4;
         margin-bottom: 12px;
     }
     
     .case-study__card-description {
-        font-size: 13px;
+        font-size: 16px;
         line-height: 1.6;
     }
     
@@ -2102,13 +2225,13 @@ section:first-of-type {
     
     /* Extra small screen improvements for cards */
     .case-study__card-title {
-        font-size: 14px;
+        font-size: 18px;
         line-height: 1.3;
         margin-bottom: 10px;
     }
     
     .case-study__card-description {
-        font-size: 12px;
+        font-size: 16px;
         line-height: 1.5;
     }
     
