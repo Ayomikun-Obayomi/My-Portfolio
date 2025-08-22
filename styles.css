@@ -220,6 +220,12 @@ section:first-of-type {
     flex-direction: column;
 }
 
+@media (max-width: 768px) {
+    .main {
+        padding: 0px 24px;
+    }
+}
+
 /* Hero Section */
 .hero {
     padding: 120px 32px 40px;
@@ -344,6 +350,7 @@ section:first-of-type {
     .project-card__image-container {
         height: 250px;
         padding: 20px;
+        margin-bottom: 0px !important;
     }
     
     .project-card__description {
@@ -359,7 +366,7 @@ section:first-of-type {
     align-items: center;
     justify-content: center;
     padding: 24px;
-    margin-bottom: 4px;
+    margin-bottom: 0px;
 }
 
 .project-card__image {
@@ -1808,7 +1815,7 @@ section:first-of-type {
     
     .project-card__image-container {
         height: 200px;
-        margin-bottom: 4px !important;
+        margin-bottom: 2px !important;
     }
     
     /* Mobile tag improvements */
