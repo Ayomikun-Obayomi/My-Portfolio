@@ -1997,6 +1997,28 @@ section:first-of-type {
     .case-study__reflection-text {
         font-weight: 400;
     }
+    
+    /* Mobile font weight consistency for Guild Gaming competitive cards */
+    .case-study--guild-gaming .case-study__competitive-card .case-study__competitive-card-description {
+        font-size: 16px;
+        font-weight: 400;
+    }
+    
+    .case-study--guild-gaming .case-study__competitive-card .case-study__competitive-card-title {
+        font-size: 18px;
+        font-weight: 600;
+    }
+    
+    /* Mobile font weight consistency for Baseball insight cards */
+    .case-study__insight-card .case-study__card-title {
+        font-size: 18px;
+        font-weight: 600;
+    }
+    
+    .case-study__insight-card .case-study__card-description {
+        font-size: 16px;
+        font-weight: 400;
+    }
 
     .case-study__competitive-card-image-container {
         height: auto;
