@@ -289,7 +289,7 @@ section:first-of-type {
     }
     
     .hero {
-        padding: 80px 16px 0px;
+        padding: 60px 16px 0px;
         margin-bottom: 20px;
     }
     
@@ -310,6 +310,10 @@ section:first-of-type {
     .project-card__image-container {
         height: 250px;
         padding: 20px;
+    }
+    
+    .project-card__description {
+        font-size: 16px;
     }
 }
 
@@ -1690,9 +1694,7 @@ section:first-of-type {
         display: none;
     }
     
-    .hero {
-        padding: 100px 16px 60px;
-    }
+    
     
     .hero__title {
         font-size: 32px;
@@ -2890,7 +2892,7 @@ section:first-of-type {
     width: 20px;
     height: 20px;
     flex-shrink: 0;
-    fill: #1DB954;
+    fill: #000000;
 }
 
 /* Footer Mobile Responsiveness */
