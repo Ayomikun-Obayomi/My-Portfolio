@@ -338,7 +338,7 @@ section:first-of-type {
     
     .hero__content {
         padding: 0;
-        margin:24px;
+       margin-left: 16px;
     }
     
     .projects {
