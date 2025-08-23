@@ -1836,7 +1836,7 @@ section:first-of-type {
     }
     
     .about-hero {
-        padding: 100px 16px 60px;
+        padding: 80px 16px 40px;
     }
     
     .about-hero__title {
@@ -1844,7 +1844,17 @@ section:first-of-type {
     }
     
     .about-content {
-        padding: 60px 16px;
+        padding: 40px 16px;
+        max-width: 100%;
+        margin: 0 auto;
+        text-align: left;
+    }
+    
+    .about-content__container {
+        display: block;
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 0;
     }
     
     /* Bento Grid Mobile Responsive */
