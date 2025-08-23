@@ -216,14 +216,14 @@ section:first-of-type {
     margin-top: 64px;
     min-height: calc(100vh - 64px);
     flex: 1 1 0%;
-    padding: 0px 32px;
+    padding: 0px;
     flex-direction: column;
 }
 
 @media (max-width: 768px) {
     .about-content {
         padding: 40px 0px;
-        max-width: 100%;
+        width:88vw;
         margin: 0 auto;
         text-align: left;
     }
@@ -1840,7 +1840,7 @@ section:first-of-type {
     }
     
     .about-hero {
-        padding: 80px 16px 40px;
+        padding: 24px;
     }
     
     .about-hero__title {
@@ -1848,7 +1848,7 @@ section:first-of-type {
     }
     
     .about-content {
-        padding: 40px 0px !important;
+        padding: 24px 0px !important;
         max-width: 100% !important;
         margin: 0 auto !important;
         text-align: left !important;
