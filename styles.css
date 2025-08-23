@@ -1868,7 +1868,7 @@ section:first-of-type {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
         gap: 20px;
-        max-width: 100%;
+        max-width: 88%;
         margin: 0 auto; 
     }
 
