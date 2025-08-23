@@ -222,8 +222,8 @@ section:first-of-type {
 
 @media (max-width: 768px) {
     .about-content {
-        padding: 40px 0px;
-        width:88vw;
+        padding: 40px 16px;
+        max-width: 100%;
         margin: 0 auto;
         text-align: left;
     }
@@ -338,6 +338,7 @@ section:first-of-type {
     
     .hero__content {
         padding: 0;
+        margin:24px;
     }
     
     .projects {
@@ -1867,7 +1868,8 @@ section:first-of-type {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
         gap: 20px;
-        max-width: 100%;
+        max-width: 88vw;
+        margin: 0 auto; 
     }
 
     .bento-grid__profile {
