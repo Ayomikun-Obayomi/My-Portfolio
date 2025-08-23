@@ -224,6 +224,11 @@ section:first-of-type {
     .main {
         padding: 0px 24px;
     }
+    
+    .about-content {
+        padding: 40px 0px;
+        margin: 0;
+    }
 }
 
 /* Hero Section */
@@ -1709,6 +1714,7 @@ section:first-of-type {
     .about-content__container {
         grid-template-columns: 1fr;
         gap: 48px;
+        display: block;
     }
     
     .image-gallery {
