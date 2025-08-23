@@ -1870,6 +1870,7 @@ section:first-of-type {
         gap: 20px;
         max-width: 88%;
         margin: 0 auto; 
+        margin-left: auto;
     }
 
     .bento-grid__profile {
