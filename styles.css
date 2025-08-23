@@ -221,13 +221,11 @@ section:first-of-type {
 }
 
 @media (max-width: 768px) {
-    .main {
-        padding: 0px 24px;
-    }
-    
     .about-content {
         padding: 40px 0px;
-        margin: 0;
+        max-width: 100%;
+        margin: 0 auto;
+        text-align: left;
     }
 }
 
@@ -1850,17 +1848,17 @@ section:first-of-type {
     }
     
     .about-content {
-        padding: 40px 16px;
-        max-width: 100%;
-        margin: 0 auto;
-        text-align: left;
+        padding: 40px 0px !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        text-align: left !important;
     }
     
     .about-content__container {
-        display: block;
-        grid-template-columns: 1fr;
+        display: block !important;
+        grid-template-columns: 1fr !important;
         gap: 32px;
-        padding: 0;
+        padding: 0 !important;
     }
     
     /* Bento Grid Mobile Responsive */
