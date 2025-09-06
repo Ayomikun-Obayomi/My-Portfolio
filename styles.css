@@ -298,7 +298,7 @@ section:first-of-type {
     position: relative;
     display: flex;
     flex-direction: column;
-    cursor: pointer;
+    cursor: pointer !important;
 }
 
 .project-card::before {
