@@ -417,7 +417,7 @@ section:first-of-type {
 }
 
 .project-card__description {
-    font-size: 14px;
+    font-size: 16px;
     color: #666;
     line-height: 1.6;
     margin: 0;
@@ -692,7 +692,7 @@ section:first-of-type {
 }
 
 .bento-grid__location-city {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
     color: #111111;
     margin-bottom: 4px;
@@ -700,7 +700,7 @@ section:first-of-type {
 }
 
 .bento-grid__location-subtitle {
-    font-size: 14px;
+    font-size: 16px;
     color: #595858;
     margin: 0;
 }
@@ -719,7 +719,7 @@ section:first-of-type {
 }
 
 .bento-grid__interests-title {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
     color: #111111;
     margin-bottom: 16px;
@@ -742,6 +742,7 @@ section:first-of-type {
     padding: 8px;
     transition: background-color 0.2s ease;
     cursor: pointer;
+    font-size: 16px;
 }
 
 
@@ -941,7 +942,7 @@ section:first-of-type {
 }
 
 .bento-grid__content-title {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
     color: #111111;
     margin-top: 8px;
@@ -952,14 +953,14 @@ section:first-of-type {
 }
 
 .bento-grid__content-description {
-    font-size: 14px;
+    font-size: 16px;
     color: #595858;
-    line-height: 1.5;
+    line-height: 1.7;
     margin-top: 16px;
 }
 
 .bento-grid__content-description--tight {
-    line-height: 1.4;
+    line-height: 1.5 !important;
 }
 
 /* Photo Cards */
@@ -1209,14 +1210,14 @@ section:first-of-type {
 
 .case-study__current-experience-title {
     font-weight: 600;
-    font-size: 16px;
+    font-size: 18px;
     margin-bottom: 8px;
     color: #111;
     line-height: 1.3;
 }
 
 .case-study__current-experience-description {
-    font-size: 14px;
+    font-size: 16px;
     margin-top: 8px;
     color: #666;
     line-height: 1.7;
@@ -1245,7 +1246,7 @@ section:first-of-type {
 }
 
 .case-study__communication-card-title {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
     color: #111;
     margin-bottom: 12px;
@@ -1253,10 +1254,10 @@ section:first-of-type {
 }
 
 .case-study__communication-card-description {
-    font-size: 14px;
+    font-size: 16px;
     color: #666;
     margin-bottom: 24px;
-    line-height: 1.5;
+    line-height: 1.7;
 }
 
 .case-study__communication-card-image {
@@ -1320,7 +1321,7 @@ section:first-of-type {
 
 .case-study__competitive-card-title {
     font-weight: 600;
-    font-size: 16px;
+    font-size: 18px;
     margin-bottom: 12px;
     margin-top: 8px;
     color: #111;
@@ -1330,12 +1331,12 @@ section:first-of-type {
 }
 
 .case-study__competitive-card-description {
-    font-size: 14px;
+    font-size: 16px;
     color: #666666;
     text-align: left;
     font-weight: 400;
     width: 100%;
-    line-height: 1.5;
+    line-height: 1.7;
     margin-top: 8px;
 }
 
@@ -1535,7 +1536,7 @@ section:first-of-type {
 
 .case-study__card-title {
     font-weight: 600;
-    font-size: 16px;
+    font-size: 18px;
     margin-bottom: 16px;
     margin-top: 8px;
     color: #111;
@@ -1543,7 +1544,7 @@ section:first-of-type {
 }
 
 .case-study__card-description {
-    font-size: 14px;
+    font-size: 16px;
     margin-top: 16px;
     color: #666;
     line-height: 1.7;
