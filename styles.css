@@ -301,6 +301,12 @@ section:first-of-type {
     cursor: pointer !important;
 }
 
+.project-card:hover {
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+    cursor: pointer !important;
+}
+
 .project-card::before {
     content: '';
     position: absolute;
