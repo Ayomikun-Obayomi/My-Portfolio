@@ -102,3 +102,66 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// Before/After Slider functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.querySelector('.before-after-container');
+    if (!slider) return;
+
+    const afterImage = slider.querySelector('.slider-after');
+    const sliderHandle = slider.querySelector('.slider-handle');
+    let isDragging = false;
+
+    function updateSlider(x) {
+        const rect = slider.getBoundingClientRect();
+        const percentage = Math.max(0, Math.min(100, ((x - rect.left) / rect.width) * 100));
+        
+        // Use clip-path to reveal the after image
+        afterImage.style.clipPath = `polygon(${percentage}% 0%, 100% 0%, 100% 100%, ${percentage}% 100%)`;
+        sliderHandle.style.left = percentage + '%';
+    }
+
+    // Mouse events
+    slider.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        slider.style.cursor = 'grabbing';
+        updateSlider(e.clientX);
+        e.preventDefault();
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        if (isDragging) {
+            updateSlider(e.clientX);
+        }
+    });
+
+    document.addEventListener('mouseup', () => {
+        isDragging = false;
+        slider.style.cursor = 'grab';
+    });
+
+    // Touch events for mobile
+    slider.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        updateSlider(e.touches[0].clientX);
+        e.preventDefault();
+    });
+
+    document.addEventListener('touchmove', (e) => {
+        if (isDragging) {
+            updateSlider(e.touches[0].clientX);
+            e.preventDefault();
+        }
+    });
+
+    document.addEventListener('touchend', () => {
+        isDragging = false;
+    });
+
+    // Click to move slider
+    slider.addEventListener('click', (e) => {
+        if (!isDragging) {
+            updateSlider(e.clientX);
+        }
+    });
+});
