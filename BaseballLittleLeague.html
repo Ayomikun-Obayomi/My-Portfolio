@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Baseball Little League Case Study</title>
     <link rel="icon" type="image/png" href="logo for folio.png" sizes="128x128">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mercury+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -75,7 +78,7 @@
                     In our kickoff meeting with Tim Porter, we learned that the League aims to reduce the rates of children having to drop out of his Little League program due to a lack of effective communication between him, his coaches, and all of the parents. With our help, they hope to provide parents and coaches with a better organizational experience next season.
                 </p>
             </section>
-
+<br>
             <!-- Understanding the Current Experience Section -->
             <section class="case-study__section">
                 <h3 class="case-study__section-title">Understanding the Current Experience</h3>
@@ -341,31 +344,31 @@
                     When designing the announcement feature, our team had a few different ideas on how coaches should create alerts or updates with ease. Here's a look at what we explored and why:
                 </p>
                 <div class="case-study__idea-title">
-                    Idea 1: Vertical Duration with Push Notifications
+                    Design Exploration: Comparing Approaches
                 </div>
-                <div class="case-study__design-exploration">
-                    <img src="designexploration-1.png" alt="Design exploration 1" class="case-study__design-exploration-image" id="design-exploration-1" onclick="openImageModal(this)">
-                    <p class="case-study__section-caption">
-                        (Click to enlarge)
-                    </p>
+                <div class="case-study__section-text">
+                    We explored different notification designs to find the most effective way to communicate game updates. Drag the slider to compare the approaches.
                 </div>
-                <div class="case-study__idea-title">
-                    Idea 2: Description + Vertical Duration
-                </div>
-                <div class="case-study__design-exploration">
-                    <img src="designexploration-2.png" alt="Design exploration 2" class="case-study__design-exploration-image" id="design-exploration-2" onclick="openImageModal(this)">
-                    <p class="case-study__section-caption">
-                        (Click to enlarge)
-                    </p>
-                </div>
-                <div class="case-study__idea-title">
-                    Idea 3: Headline with Description + Horizontal Duration
-                </div>
-                <div class="case-study__design-exploration">
-                    <img src="designexploration-3.png" alt="Design exploration 3" class="case-study__design-exploration-image" id="design-exploration-3" onclick="openImageModal(this)">
-                    <p class="case-study__section-caption">
-                        (Click to enlarge)
-                    </p>
+                <br>
+                <!-- Before/After Slider -->
+                <div class="before-after-slider">
+                    <div class="before-after-container">
+                        <div class="before-after-labels">
+                            <span class="before-after-label-text before-text">Before</span>
+                            <span class="before-after-label-text after-text">After</span>
+                        </div>
+                        <img src="designexploration-2.png" alt="Before: Idea 2" class="slider-image slider-before" />
+                        <img src="designexploration-3.png" alt="After: Idea 2" class="slider-image slider-after" />
+                        <div class="slider-handle">
+                            <div class="slider-line"></div>
+                            <div class="slider-button">
+                                <svg width="48" height="48" viewBox="0 0 32 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 8L4 12L8 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M24 8L28 12L24 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Final Screens Section -->
@@ -483,7 +486,7 @@
                     </div>
                     <div class="case-study__related-image-container">
                         <div class="case-study__related-mockup">
-                            <img src="Guild.png" alt="Guild Gaming Project" class="case-study__related-image">
+                            <img src="Guild.png" alt="Guild Gaming Project" class="case-study__related-image" onclick="window.location.href='GuildGaming.html'" style="cursor: pointer;">
                         </div>
                     </div>
                 </div>
