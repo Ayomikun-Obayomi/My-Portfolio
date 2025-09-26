@@ -101,6 +101,103 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+    
+    // Table of Contents functionality - HIDDEN
+    /*
+    const tocLinks = document.querySelectorAll('.case-study__toc-link');
+    const sections = document.querySelectorAll('[id]');
+    
+    // Handle TOC link clicks with proper offset
+    tocLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            
+            if (targetSection) {
+                // Calculate offset to show the header properly
+                const headerHeight = 80; // Account for fixed navbar
+                const additionalOffset = 40; // Extra space to show the full header
+                const targetPosition = targetSection.offsetTop - headerHeight - additionalOffset;
+                
+                window.scrollTo({
+                    top: Math.max(0, targetPosition),
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    // Update active TOC link based on scroll position
+    function updateActiveTocLink() {
+        let currentSection = '';
+        const scrollPosition = window.scrollY + 120; // Offset for better detection
+        const discoverySection = document.getElementById('discovery');
+        
+        // If we're at or past Discovery section, ensure proper detection
+        if (discoverySection && scrollPosition >= discoverySection.offsetTop - 200) {
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                
+                if (scrollPosition >= sectionTop - 100 && scrollPosition < sectionTop + sectionHeight) {
+                    currentSection = section.id;
+                }
+            });
+            
+            // If no section detected but we're past Discovery, default to Discovery
+            if (!currentSection && scrollPosition >= discoverySection.offsetTop - 200) {
+                currentSection = 'discovery';
+            }
+        }
+        
+        // Update active states
+        tocLinks.forEach(link => {
+            link.classList.remove('case-study__toc-link--active');
+            if (link.getAttribute('href') === `#${currentSection}`) {
+                link.classList.add('case-study__toc-link--active');
+            }
+        });
+    }
+    
+    // Listen for scroll events to update active link
+    if (tocLinks.length > 0) {
+        window.addEventListener('scroll', updateActiveTocLink);
+        // Set initial active state
+        updateActiveTocLink();
+    }
+    
+    // Smart TOC visibility - hide during banner, show at Discovery
+    const toc = document.querySelector('.case-study__toc');
+    
+    function handleTocVisibility() {
+        if (!toc) return;
+        
+        const discoverySection = document.getElementById('discovery');
+        if (!discoverySection) return;
+        
+        const scrollPosition = window.scrollY;
+        const discoveryTop = discoverySection.offsetTop;
+        const shouldShow = scrollPosition >= discoveryTop - 200;
+        
+        if (shouldShow) {
+            // Show TOC when Discovery is reached
+            toc.style.opacity = '1';
+            toc.style.pointerEvents = 'auto';
+        } else {
+            // Hide TOC when above Discovery section
+            toc.style.opacity = '0';
+            toc.style.pointerEvents = 'none';
+        }
+    }
+    
+    // Listen for scroll events to handle TOC visibility
+    if (toc) {
+        window.addEventListener('scroll', handleTocVisibility);
+        // Set initial visibility state
+        handleTocVisibility();
+    }
+    */
 });
 
 // Before/After Slider functionality
