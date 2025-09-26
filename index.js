@@ -112,11 +112,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const sliderHandle = slider.querySelector('.slider-handle');
     let isDragging = false;
 
+    // Initialize slider to show both images split 50/50
+    // Exploration 2 (before) on left, Exploration 3 (after) on right
+    if (afterImage && sliderHandle) {
+        afterImage.style.clipPath = `polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%)`;
+        sliderHandle.style.left = '50%';
+    }
+
     function updateSlider(x) {
         const rect = slider.getBoundingClientRect();
         const percentage = Math.max(0, Math.min(100, ((x - rect.left) / rect.width) * 100));
         
-        // Use clip-path to reveal the after image
+        // Simple logic: afterImage clip-path follows the slider position
+        // 0% = no after image visible (only before), 100% = full after image visible
         afterImage.style.clipPath = `polygon(${percentage}% 0%, 100% 0%, 100% 100%, ${percentage}% 100%)`;
         sliderHandle.style.left = percentage + '%';
     }
@@ -131,13 +139,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.addEventListener('mousemove', (e) => {
         if (isDragging) {
-            updateSlider(e.clientX);
+            requestAnimationFrame(() => updateSlider(e.clientX));
         }
     });
 
     document.addEventListener('mouseup', () => {
         isDragging = false;
-        slider.style.cursor = 'grab';
+        slider.style.cursor = 'ew-resize';
     });
 
     // Touch events for mobile
@@ -149,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.addEventListener('touchmove', (e) => {
         if (isDragging) {
-            updateSlider(e.touches[0].clientX);
+            requestAnimationFrame(() => updateSlider(e.touches[0].clientX));
             e.preventDefault();
         }
     });
