@@ -166,6 +166,98 @@
     }
 }
 
+/* Table of Contents Styles - HIDDEN */
+/*
+.case-study__toc {
+    position: fixed !important;
+    left: 40px !important;
+    top: 200px !important;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    width: 240px;
+    max-height: 65vh;
+    overflow-y: auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    z-index: 9999 !important;
+    transform: none !important;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+
+.case-study__toc-header {
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.case-study__toc-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #333;
+    letter-spacing: 0.05em;
+    margin: 0;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.case-study__toc-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.case-study__toc-link {
+    color: #555;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    padding: 10px 14px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+    position: relative;
+}
+
+.case-study__toc-link:hover {
+    color: #6B46C1;
+    background-color: rgba(107, 70, 193, 0.05);
+    border-left-color: #6B46C1;
+}
+
+.case-study__toc-link--active {
+    color: #6B46C1;
+    background-color: rgba(107, 70, 193, 0.12);
+    border-left-color: #6B46C1;
+    font-weight: 500;
+}
+*/
+
+/* Smooth scrolling for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Ensure case study sections have relative positioning for TOC */
+.case-study__section {
+    position: relative;
+}
+
+/* Hide TOC on smaller screens - HIDDEN */
+/*
+@media (max-width: 1200px) {
+    .case-study__toc-wrapper {
+        display: none;
+    }
+}
+*/
+
 /* Before/After Slider Styles */
 .before-after-slider {
     margin: 8px 0 32px 0;
