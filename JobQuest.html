@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Quest - Case Study</title>
+    <link rel="icon" type="image/png" href="logo for folio.png" sizes="128x128">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mercury+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav__logo">
+                <a href="index.html" class="nav__logo-link">
+                    <img src="logo for folio.png" alt="Ayo Logo" class="nav__logo-image">
+                </a>
+            </div>
+            <ul class="nav__menu">
+                <li class="nav__item"><a href="index.html" class="nav__link">Work</a></li>
+                <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+                <li class="nav__item"><a href="Ayo0bayomi's__Resume.pdf" target="_blank" rel="noopener noreferrer" class="nav__link">Resume</a></li>
+            </ul>
+            <button class="nav__hamburger" aria-label="Toggle navigation menu">
+                <span class="nav__hamburger-line"></span>
+                <span class="nav__hamburger-line"></span>
+                <span class="nav__hamburger-line"></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <section class="case-study case-study--job-quest">
+            <!-- Hero Banner -->
+            <!--
+            <div class="case-study__hero-banner">
+                <img src="bannerforJobQuest.png" alt="Job Quest Banner" class="case-study__hero-banner-image">
+            </div>
+            -->
+
+            <!-- Hero Section -->
+            <section class="case-study__hero-section">
+                <h1 class="case-study__hero-title">
+                    Job Quest: <span class="case-study__hero-title-highlight">Turning resume writing and interview prep into a guided learning experience for entry-level job seekers</span>
+                </h1>
+                <div class="case-study__hero-subtitle">
+                    <div class="case-study__project-details">
+                        <div class="case-study__project-detail-item">
+                            <span class="case-study__project-detail-label"><strong>Role:</strong> Product Designer</span>
+                        </div>
+                        <div class="case-study__project-detail-item">
+                            <span class="case-study__project-detail-label"><strong>Timeline:</strong> 8 weeks</span>
+                        </div>
+                        <div class="case-study__project-detail-item">
+                            <span class="case-study__project-detail-label"><strong>Project:</strong> Apprenticeship at Co.Lab</span>
+                        </div>
+                        <div class="case-study__project-detail-item">
+                            <span class="case-study__project-detail-label"><strong>Deliverables:</strong> Live Interactive Product, Documentation, Presentation</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Overview Section -->
+            <section class="case-study__section" id="overview">
+                <div class="case-study__section-label">OVERVIEW</div>
+                <h3 class="case-study__section-title">What should we build to help entry-level job seekers succeed?</h3>
+                <p class="case-study__section-text">
+                    Quest began as an exploration into reducing overwhelm in the job search process. Early on, we explored ways to support job seekers by gamifying the process through "Quests" and "Missions." However, through deeper investigation into the root cause of the problem and personal reflection, the focus of the project shifted.
+                </p>
+                <p class="case-study__section-text">
+                    As an entry-level job seeker myself, I experienced a recurring challenge: not knowing how to translate experience into clear, well-structured resume bullets that highlight impact, how to clearly talk about my projects, or how to avoid filler words during interviews.
+                </p>
+                <p class="case-study__section-text">
+                    <strong>The problem wasn't a lack of tools. It was a lack of guidance.</strong>
+                </p>
+            </section>
+
+            <!-- Problem Section -->
+            <section class="case-study__section" id="problem">
+                <div class="case-study__section-label">PROBLEM</div>
+                <h3 class="case-study__section-title">Entry-level job seekers lack guidance, not tools.</h3>
+                <p class="case-study__section-text">
+                    Entry-level job seekers are often expected to present themselves confidently in resumes and interviews <strong>without learning how to do so</strong>. Many struggle to explain their work clearly, choose effective action verbs, or articulate impact, leading to overwhelm during interviews.
+                </p>
+                <div class="case-study__quote">
+                    <span class="quote-mark">"</span>42% of participants reported struggling to secure interviews despite actively job searching for 3 to 12 months.<span class="quote-mark">"</span><br />
+                    <div class="case-study__quote-attribution">— Interview Participant</div>
+                </div>
+                <p class="case-study__section-text">
+                    In our interviews and survey responses, this gap isn't about effort. It's about <strong>understanding and guidance</strong>. Without guidance, job seekers resort to over-reliance on templates, overusing filler words, or relying on tools that generate content without teaching transferable skills.
+                </p>
+            </section>
+
+            <!-- Research Section -->
+            <section class="case-study__section case-study__section--spaced" id="research">
+                <div class="case-study__section-label">RESEARCH</div>
+                <h3 class="case-study__section-title">Researching the job search landscape and current tools</h3>
+                <p class="case-study__section-text">
+                    We went deep into understanding the job search ecosystem, existing tools, and the challenges entry-level job seekers face. We researched existing platforms and analyzed their approaches to resume building and interview preparation.
+                </p>
+                <div class="case-study__section-image">
+                    <img 
+                        src="Job Quest SWOT Analysis.png" 
+                        alt="SWOT Analysis for Job Quest"
+                        class="case-study__section-img"
+                        style="border: 1px solid #e0e0e0; cursor: pointer;"
+                        onclick="openImageModal(this)"
+                    />
+                </div>
+                <p class="case-study__section-caption">
+                    Job Quest SWOT analysis (Click to enlarge)
+                </p>
+            </section>
+
+            <!-- Opportunity Section -->
+            <section class="case-study__section" id="opportunity">
+                <div class="case-study__section-label">OPPORTUNITY</div>
+                <h3 class="case-study__section-title">Guidance as the core of job search learning.</h3>
+                <p class="case-study__section-text">
+                    The biggest barrier for entry-level job seekers isn't access to tools. There is, in fact, a surplus of them. Instead, users are unfamiliar with the structure needed to explain their own experience.
+                </p>
+                <p class="case-study__section-text">
+                    This insight reframed the product direction. Instead of optimizing for output, Quest evolved into a guidance-first learning experience, similar to Duolingo, designed to help entry-level job seekers learn how to:
+                </p>
+                <ul class="case-study__section-list">
+                    <li>Write meaningful resume bullets that highlight impact</li>
+                    <li>Speak confidently about their projects and experience</li>
+                    <li>Practice interview responses without relying on scripted answers</li>
+                </ul>
+                <p class="case-study__section-text">
+                    With a guidance-first approach, Job Quest and its users will benefit from:
+                </p>
+                <div class="case-study__cards-grid">
+                    <div class="case-study__card case-study__card--with-border">
+                        <div class="case-study__card-icon">
+                            <span class="case-study__card-icon-wrapper">
+                                <!-- Teaching/Education icon -->
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="display: block; margin: auto;" xmlns="http://www.w3.org/2000/svg" aria-label="Education icon representing teaching transferable skills" role="img">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#9B6FD9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="case-study__card-title">Teaching Transferable Skills</div>
+                        <div class="case-study__card-description">
+                            Users learn why certain techniques work, not just what to use.
+                        </div>
+                    </div>
+                    <div class="case-study__card case-study__card--with-border">
+                        <div class="case-study__card-icon">
+                            <span class="case-study__card-icon-wrapper">
+                                <!-- Smiley face icon -->
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="display: block; margin: auto;" xmlns="http://www.w3.org/2000/svg" aria-label="Smiley face icon representing building confidence" role="img">
+                                    <!-- Face circle -->
+                                    <circle cx="12" cy="12" r="9" stroke="#9B6FD9" stroke-width="2" fill="none"/>
+                                    <!-- Left eye -->
+                                    <circle cx="9" cy="10" r="1.5" fill="#9B6FD9"/>
+                                    <!-- Right eye -->
+                                    <circle cx="15" cy="10" r="1.5" fill="#9B6FD9"/>
+                                    <!-- Smile -->
+                                    <path d="M8 15.5 Q12 19 16 15.5" stroke="#9B6FD9" stroke-width="2" stroke-linecap="round" fill="none"/>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="case-study__card-title">Building Confidence</div>
+                        <div class="case-study__card-description">
+                            Guided practice helps users articulate their experience more clearly.
+                        </div>
+                    </div>
+                    <div class="case-study__card case-study__card--with-border">
+                        <div class="case-study__card-icon">
+                            <span class="case-study__card-icon-wrapper">
+                                <!-- Growth/Chart icon -->
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="display: block; margin: auto;" xmlns="http://www.w3.org/2000/svg" aria-label="Chart icon representing long-term growth" role="img">
+                                    <path d="M3 3v18h18" stroke="#9B6FD9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M7 16l4-4 4 4 6-6" stroke="#9B6FD9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="case-study__card-title">Long-term Growth</div>
+                        <div class="case-study__card-description">
+                            Focus on skill-building over quick fixes creates lasting impact.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Exploring Solutions Section -->
+            <section class="case-study__section case-study__section--spaced" id="exploring">
+                <div class="case-study__section-label">CONSTRAINTS & PRIORITIZATION</div>
+                <h3 class="case-study__section-title">Exploring product direction and prioritization</h3>
+                <p class="case-study__section-text">
+                    With an 8-week timeline and limited development capacity, we prioritized features that <strong>supported learning and guidance rather than automation</strong>. We used the ICE prioritization framework (Impact, Confidence, Effort).
+                </p>
+                <p class="case-study__section-text"><strong>Strategic directions we explored:</strong></p>
+                <div class="case-study__cards-grid">
+                    <div class="case-study__card case-study__card--with-border">
+                        <div class="case-study__card-icon">
+                            <span class="case-study__card-icon-wrapper">
+                                <!-- Sparkles/Magic icon -->
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="display: block; margin: auto;" xmlns="http://www.w3.org/2000/svg" aria-label="Sparkles icon representing automated tools" role="img">
+                                    <path d="M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5L12 2Z" stroke="#9B6FD9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <circle cx="19" cy="5" r="1.5" fill="#9B6FD9"/>
+                                    <circle cx="5" cy="19" r="1.5" fill="#9B6FD9"/>
+                                    <circle cx="19" cy="19" r="1.5" fill="#9B6FD9"/>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="case-study__card-title">Automated Tools</div>
+                        <div class="case-study__card-description">
+                            Fully automated resume rewriting and content generation.
+                        </div>
+                    </div>
+                    <div class="case-study__card case-study__card--with-border">
+                        <div class="case-study__card-icon">
+                            <span class="case-study__card-icon-wrapper">
+                                <!-- Target/bullseye icon with crosshairs -->
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="display: block; margin: auto;" xmlns="http://www.w3.org/2000/svg" aria-label="Target icon representing matching features" role="img">
+                                    <!-- Outer circle -->
+                                    <circle cx="12" cy="12" r="8" stroke="#9B6FD9" stroke-width="2" fill="none"/>
+                                    <!-- Middle circle -->
+                                    <circle cx="12" cy="12" r="5" stroke="#9B6FD9" stroke-width="2" fill="none"/>
+                                    <!-- Inner circle (bullseye) -->
+                                    <circle cx="12" cy="12" r="2" stroke="#9B6FD9" stroke-width="2" fill="#9B6FD9"/>
+                                    <!-- Horizontal crosshair -->
+                                    <line x1="2" y1="12" x2="22" y2="12" stroke="#9B6FD9" stroke-width="2" stroke-linecap="round"/>
+                                    <!-- Vertical crosshair -->
+                                    <line x1="12" y1="2" x2="12" y2="22" stroke="#9B6FD9" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="case-study__card-title">Matching Features</div>
+                        <div class="case-study__card-description">
+                            Jobs or roles matching features to connect users with opportunities.
+                        </div>
+                    </div>
+                    <div class="case-study__card case-study__card--with-border">
+                        <div class="case-study__card-icon">
+                            <span class="case-study__card-icon-wrapper">
+                                <!-- Learning/Book icon -->
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="display: block; margin: auto;" xmlns="http://www.w3.org/2000/svg" aria-label="Book icon representing learning platforms" role="img">
+                                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="#9B6FD9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke="#9B6FD9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8 7h8M8 11h8" stroke="#9B6FD9" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="case-study__card-title">Learning Platforms</div>
+                        <div class="case-study__card-description">
+                            Learning, practicing, and studying tools modeled after platforms like Quizlet.
+                        </div>
+                    </div>
+                </div>
+                <p class="case-study__section-text">
+                    While these features could improve efficiency and motivation, they risked prioritizing speed over learning and bypassing the guided practice and repetition needed for users to truly understand why certain job search strategies work.
+                </p>
+            </section>
+
+            <!-- Solution & Core Flows Section -->
+            <section class="case-study__section case-study__section--large" id="core-flows">
+                <div class="case-study__section-label">SOLUTION</div>
+                <h3 class="case-study__section-title">
+                    Job Quest: the Guided Learning Experience that teaches job search skills, not replaces them.
+                </h3>
+                <p class="case-study__section-text">
+                    To support learning without creating dependency on tools that automate content, we designed assistive patterns that focus on how to communicate ideas, because telling users what to say does not build long-term confidence.
+                </p>
+                <p class="case-study__section-text" style="margin-top: 24px;">
+                    Let us explore our attempt to solving the problem.
+                </p>
+                
+                <div class="case-study__section-label" style="margin-top: 48px;">DESIGN DECISIONS</div>
+                <h3 class="case-study__section-title">We identified the most intuitive way to bring guidance to life without relying on automation.</h3>
+                
+                <div style="margin-top: 48px;">
+                    <h4 class="case-study__section-title" style="font-size: 24px; margin-bottom: 16px;">Insight 1: Guidance with explanations, not just outputs</h4>
+                    <p class="case-study__section-text">
+                        Suggestions are paired with explanations that help users understand why certain wording works, not just what to use.
+                    </p>
+                    <div class="case-study__section-image">
+                        <img 
+                            src="Guidance with explanations.png" 
+                            alt="Guidance with explanations"
+                            class="case-study__section-img"
+                        />
+                    </div>
+                </div>
+
+                <div style="margin-top: 48px;">
+                    <h4 class="case-study__section-title" style="font-size: 24px; margin-bottom: 16px;">Insight 2: "Help me understand" option</h4>
+                    <p class="case-study__section-text">
+                        A "Help me understand" option allows users to explore the reasoning behind changes, building deeper understanding.
+                    </p>
+                    <div class="case-study__section-image">
+                        <img 
+                            src="JobQuest-decision2.png" 
+                            alt="Help me understand feature"
+                            class="case-study__section-img"
+                        />
+                    </div>
+                </div>
+            </section>
+
+            <!-- Core Flows Section -->
+            <section class="case-study__section case-study__section--spaced" id="core-flows">
+                <div class="case-study__section-label">CORE FLOWS</div>
+                <h3 class="case-study__section-title">Key user flows that guide learning</h3>
+                
+                <!-- Flow 1 -->
+                <div class="case-study__communication-card case-study__communication-card--with-border" style="margin-bottom: 48px;">
+                    <div class="case-study__communication-card-title">Resume rephrasing suggestions</div>
+                    <div class="case-study__communication-card-description">Get suggestions that provide understanding and guidance on how to structure and rephrase points on your resume, with explanations for why certain approaches work.</div>
+                    <div class="case-study__image-container">
+                        <div class="case-study__image-wrapper">
+                            <img src="JobQuest-feature1.png" alt="Resume Rephrasing Suggestions Feature" class="case-study__image" />
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Flow 2 -->
+                <div class="case-study__communication-card case-study__communication-card--with-border" style="margin-bottom: 48px;">
+                    <div class="case-study__communication-card-title">Impact statement translation</div>
+                    <div class="case-study__communication-card-description">Translate project results into clear impact statements with guided support that explains the structure.</div>
+                    <div class="case-study__image-container">
+                        <div class="case-study__image-wrapper">
+                            <img src="JobQuest-feature2.png" alt="Impact Statement Translation Feature" class="case-study__image" />
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Flow 3 -->
+                <div class="case-study__communication-card case-study__communication-card--with-border">
+                    <div class="case-study__communication-card-title">Practice space</div>
+                    <div class="case-study__communication-card-description">A safe space to practice speaking without relying on filler words, with real-time feedback and explanations.</div>
+                    <div class="case-study__image-container">
+                        <div class="case-study__image-wrapper">
+                            <img src="JobQuest-feature3.png" alt="Practice Space Feature" class="case-study__image" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reflection Section -->
+            <section class="case-study__conclusion" id="reflection">
+                <div class="case-study__conclusion-content">
+                    <div class="case-study__conclusion-label">
+                        REFLECTION
+                    </div>
+                    <h2 class="case-study__reflection-title">
+                        What I learned
+                    </h2>
+                    
+                    <div class="case-study__section-text" style="margin-top: 24px;">
+                        <p style="margin-bottom: 16px;"><strong>Guidance matters more than automation.</strong></p>
+                        <p style="margin-bottom: 24px;">Early-career users benefit most from support that helps them understand why things work, not just tools that speed up output.</p>
+                        
+                        <p style="margin-bottom: 16px;"><strong>Confidence comes from practice.</strong></p>
+                        <p style="margin-bottom: 24px;">Repeated, guided practice helps users articulate their experience more clearly and reduces anxiety in resumes and interviews.</p>
+                        
+                        <p style="margin-bottom: 16px;"><strong>Designing for learning changes success metrics.</strong></p>
+                        <p style="margin-bottom: 24px;">When the goal is skill-building, success is measured by understanding and confidence, not just completion.</p>
+                    </div>
+                </div>
+            </section>
+
+        </section>
+    </main>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top-btn" aria-label="Back to top">⬆️</button>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="image-modal">
+        <div class="image-modal-content">
+            <span class="image-modal-close" onclick="closeImageModal()">&times;</span>
+            <img id="modalImage" class="image-modal-img" alt="Modal Image">
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer__content">
+            <p class="footer__contact">
+                Get in touch: <a href="mailto:oba12ayo@gmail.com" class="footer__email">oba12ayo@gmail.com</a>
+            </p>
+            <p class="footer__made-with">
+                Made with a lot of hours on
+                <svg class="footer__spotify-logo" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" fill="#1DB954"/>
+                </svg>
+            </p>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>

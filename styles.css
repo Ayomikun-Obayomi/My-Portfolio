@@ -1454,6 +1454,33 @@ section:first-of-type {
     margin-bottom: 48px;
 }
 
+.case-study--job-quest .case-study__hero-section {
+    padding-top: 80px;
+}
+
+/* Increased spacing between sections for Job Quest */
+.case-study--job-quest .case-study__section {
+    margin-top: 40px;
+}
+
+.case-study--job-quest .case-study__section:first-of-type {
+    margin-top: 20px;
+}
+
+.case-study--job-quest .case-study__section--spaced {
+    margin-top: 50px;
+}
+
+/* Reduce spacing in Opportunity section cards */
+.case-study--job-quest .case-study__card .case-study__card-title {
+    margin-bottom: 8px;
+    margin-top: 0;
+}
+
+.case-study--job-quest .case-study__card .case-study__card-description {
+    margin-top: 8px;
+}
+
 .case-study__hero-title {
     font-size: 40px;
     font-weight: 600;
