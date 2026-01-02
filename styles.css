@@ -1788,13 +1788,13 @@ section:first-of-type {
 }
 
 .image-modal-content {
-
     margin: auto;
     padding: 20px;
     width: 90%;
     max-width: 1200px;
     height: 90%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
