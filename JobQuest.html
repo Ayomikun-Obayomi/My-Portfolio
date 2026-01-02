@@ -50,16 +50,19 @@
                 <div class="case-study__hero-subtitle">
                     <div class="case-study__project-details">
                         <div class="case-study__project-detail-item">
-                            <span class="case-study__project-detail-label"><strong>Role:</strong> Product Designer</span>
+                            <span class="case-study__project-detail-label">Apprenticeship Project at Co.Lab</span>
                         </div>
                         <div class="case-study__project-detail-item">
-                            <span class="case-study__project-detail-label"><strong>Timeline:</strong> 8 weeks</span>
+                            <span class="case-study__project-detail-label">Product Sector:</span> Job Search
                         </div>
                         <div class="case-study__project-detail-item">
-                            <span class="case-study__project-detail-label"><strong>Project:</strong> Apprenticeship at Co.Lab</span>
+                            <span class="case-study__project-detail-label">Team:</span> 1 Product Manager, 1 Designer, 3 Developers
                         </div>
                         <div class="case-study__project-detail-item">
-                            <span class="case-study__project-detail-label"><strong>Deliverables:</strong> Live Interactive Product, Documentation, Presentation</span>
+                            <span class="case-study__project-detail-label">Duration:</span> 8 weeks
+                        </div>
+                        <div class="case-study__project-detail-item">
+                            <span class="case-study__project-detail-label">Deliverables:</span> Live Interactive Product, Documentation, Presentation
                         </div>
                     </div>
                 </div>
@@ -297,7 +300,7 @@
                     </p>
                     <div class="case-study__section-image">
                         <img 
-                            src="JobQuest-decision2.png" 
+                            src="Job Quest.gif" 
                             alt="Help me understand feature"
                             class="case-study__section-img"
                         />
@@ -310,36 +313,44 @@
                 <div class="case-study__section-label">CORE FLOWS</div>
                 <h3 class="case-study__section-title">Key user flows that guide learning</h3>
                 
-                <!-- Flow 1 -->
-                <div class="case-study__communication-card case-study__communication-card--with-border" style="margin-bottom: 48px;">
-                    <div class="case-study__communication-card-title">Resume rephrasing suggestions</div>
-                    <div class="case-study__communication-card-description">Get suggestions that provide understanding and guidance on how to structure and rephrase points on your resume, with explanations for why certain approaches work.</div>
-                    <div class="case-study__image-container">
-                        <div class="case-study__image-wrapper">
-                            <img src="JobQuest-feature1.png" alt="Resume Rephrasing Suggestions Feature" class="case-study__image" />
+                <!-- Two Column Layout for Core Flows -->
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-top: 24px;">
+                    <div>
+                        <div class="case-study__section-image" style="margin-bottom: 24px;">
+                            <img 
+                                src="Resume Rephrase.png" 
+                                alt="Resume Rephrasing Suggestions Feature"
+                                class="case-study__section-img"
+                                style="border: 1px solid #e0e0e0; cursor: pointer;"
+                                onclick="openImageModal(this)"
+                                data-caption="Quest uses progressive disclosure to surface explanations only when users ask for them, balancing clarity with cognitive load."
+                            />
                         </div>
+                        <p class="case-study__section-caption" style="margin-bottom: 16px;">
+                            Click to enlarge
+                        </p>
+                        <h4 class="case-study__section-title" style="font-size: 20px; margin-bottom: 12px; font-weight: 600; color: #333;">Resume rephrasing suggestions</h4>
+                        <p class="case-study__section-text" style="font-size: 15px; color: #666; line-height: 1.6; margin-top: 0;">
+                            Get suggestions that provide understanding and guidance on how to structure and rephrase points on your resume, with explanations for why certain approaches work.
+                        </p>
                     </div>
-                </div>
-                
-                <!-- Flow 2 -->
-                <div class="case-study__communication-card case-study__communication-card--with-border" style="margin-bottom: 48px;">
-                    <div class="case-study__communication-card-title">Impact statement translation</div>
-                    <div class="case-study__communication-card-description">Translate project results into clear impact statements with guided support that explains the structure.</div>
-                    <div class="case-study__image-container">
-                        <div class="case-study__image-wrapper">
-                            <img src="JobQuest-feature2.png" alt="Impact Statement Translation Feature" class="case-study__image" />
+                    <div>
+                        <div class="case-study__section-image" style="margin-bottom: 24px;">
+                            <img 
+                                src="Practice Speaking.png" 
+                                alt="Practice Space Feature"
+                                class="case-study__section-img"
+                                style="border: 1px solid #e0e0e0; cursor: pointer;"
+                                onclick="openImageModal(this)"
+                            />
                         </div>
-                    </div>
-                </div>
-                
-                <!-- Flow 3 -->
-                <div class="case-study__communication-card case-study__communication-card--with-border">
-                    <div class="case-study__communication-card-title">Practice space</div>
-                    <div class="case-study__communication-card-description">A safe space to practice speaking without relying on filler words, with real-time feedback and explanations.</div>
-                    <div class="case-study__image-container">
-                        <div class="case-study__image-wrapper">
-                            <img src="JobQuest-feature3.png" alt="Practice Space Feature" class="case-study__image" />
-                        </div>
+                        <p class="case-study__section-caption" style="margin-bottom: 16px;">
+                            Click to enlarge
+                        </p>
+                        <h4 class="case-study__section-title" style="font-size: 20px; margin-bottom: 12px; font-weight: 600; color: #333;">Practice space</h4>
+                        <p class="case-study__section-text" style="font-size: 15px; color: #666; line-height: 1.6; margin-top: 0;">
+                            A safe space to practice speaking without relying on filler words, with real-time feedback and explanations.
+                        </p>
                     </div>
                 </div>
             </section>
@@ -350,19 +361,50 @@
                     <div class="case-study__conclusion-label">
                         REFLECTION
                     </div>
-                    <h2 class="case-study__reflection-title">
-                        What I learned
-                    </h2>
-                    
-                    <div class="case-study__section-text" style="margin-top: 24px;">
-                        <p style="margin-bottom: 16px;"><strong>Guidance matters more than automation.</strong></p>
-                        <p style="margin-bottom: 24px;">Early-career users benefit most from support that helps them understand why things work, not just tools that speed up output.</p>
+                    <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; margin-top: 24px;">
+                        <div style="display: flex; flex-direction: column; gap: 32px;">
+                            <div>
+                                <h2 class="case-study__reflection-title" style="font-size: 24px; margin-bottom: 16px;">
+                                    What I learned
+                                </h2>
+                                
+                                <div class="case-study__section-text">
+                                    <p style="margin-bottom: 16px;"><strong>Guidance matters more than automation.</strong></p>
+                                    <p style="margin-bottom: 24px;">Early-career users benefit most from support that helps them understand why things work, not just tools that speed up output.</p>
+                                    
+                                    <p style="margin-bottom: 16px;"><strong>Confidence comes from practice.</strong></p>
+                                    <p style="margin-bottom: 24px;">Repeated, guided practice helps users articulate their experience more clearly and reduces anxiety in resumes and interviews.</p>
+                                    
+                                    <p style="margin-bottom: 16px;"><strong>Designing for learning changes success metrics.</strong></p>
+                                    <p style="margin-bottom: 0;">When the goal is skill-building, success is measured by understanding and confidence, not just completion.</p>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h2 class="case-study__reflection-title" style="font-size: 24px; margin-bottom: 16px;">
+                                    What I'm Proud Of
+                                </h2>
+                                
+                                <div class="case-study__section-text">
+                                    <p style="margin-bottom: 16px;"><strong>Strong direction under constraints.</strong></p>
+                                    <p style="margin-bottom: 0;">Within a short timeline, we aligned on a clear, learning-first vision and made intentional tradeoffs to support users' growth.</p>
+                                </div>
+                            </div>
+                        </div>
                         
-                        <p style="margin-bottom: 16px;"><strong>Confidence comes from practice.</strong></p>
-                        <p style="margin-bottom: 24px;">Repeated, guided practice helps users articulate their experience more clearly and reduces anxiety in resumes and interviews.</p>
-                        
-                        <p style="margin-bottom: 16px;"><strong>Designing for learning changes success metrics.</strong></p>
-                        <p style="margin-bottom: 24px;">When the goal is skill-building, success is measured by understanding and confidence, not just completion.</p>
+                        <div>
+                            <h2 class="case-study__reflection-title" style="font-size: 24px; margin-bottom: 16px;">
+                                Next Steps
+                            </h2>
+                            
+                            <div class="case-study__section-text">
+                                <p style="margin-bottom: 16px;"><strong>Validate learning outcomes.</strong></p>
+                                <p style="margin-bottom: 24px;">Test whether guided practice improves users' ability to explain their work over time.</p>
+                                
+                                <p style="margin-bottom: 16px;"><strong>Expand guided lessons.</strong></p>
+                                <p style="margin-bottom: 0;">Extend the learning model to networking and behavioral interview scenarios.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -378,6 +420,7 @@
         <div class="image-modal-content">
             <span class="image-modal-close" onclick="closeImageModal()">&times;</span>
             <img id="modalImage" class="image-modal-img" alt="Modal Image">
+            <p id="modalCaption" class="image-modal-caption"></p>
         </div>
     </div>
 

@@ -2,10 +2,20 @@
 function openImageModal(imageElement) {
     const modal = document.getElementById('imageModal');
     const modalImg = document.getElementById('modalImage');
+    const modalCaption = document.getElementById('modalCaption');
     
     modal.style.display = 'block';
     modalImg.src = imageElement.src;
     modalImg.alt = imageElement.alt;
+    
+    // Show caption if it exists in data-caption attribute
+    const caption = imageElement.getAttribute('data-caption');
+    if (caption && modalCaption) {
+        modalCaption.textContent = caption;
+        modalCaption.style.display = 'block';
+    } else if (modalCaption) {
+        modalCaption.style.display = 'none';
+    }
     
     // Prevent body scroll when modal is open
     document.body.style.overflow = 'hidden';
