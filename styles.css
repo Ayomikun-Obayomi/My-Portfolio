@@ -2216,7 +2216,31 @@ section:first-of-type {
 
 @media (max-width: 768px) {
     .header {
-        padding: 16px 8px 0 8px;
+        padding: 16px 16px 0 16px;
+    }
+    
+    .nav {
+        padding: 0 16px;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .nav__logo {
+        margin-right: 0;
+    }
+    
+    .nav__logo-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+    
+    .nav__logo-image {
+        width: 32px;
+        height: 32px;
+        margin: 0;
     }
     
     .nav__menu {
@@ -2225,54 +2249,103 @@ section:first-of-type {
     
     .nav__hamburger {
         display: flex;
-        margin-right: 8px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-right: 0;
+        padding: 0;
+        gap: 4px;
+        width: 24px;
+        height: 24px;
     }
+    
+    .nav__hamburger-line {
+        width: 20px;
+        height: 2px;
+        background: #333;
+        border-radius: 1px;
+        transition: all 0.3s ease;
+    }
+    
     
     .nav__menu--mobile {
         display: flex !important;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: #ffffff;
-        flex-direction: column;
-        padding: 80px 20px 20px 20px;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        z-index: 9999;
-        justify-content: center;
-        align-items: center;
-        width: 100vw;
-        height: 100vh;
+        position: fixed !important;
+        bottom: -100% !important;
+        top: auto !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        max-height: 60vh !important;
+        height: auto !important;
+        background: #ffffff !important;
+        flex-direction: column !important;
+        padding: 12px 20px 32px 20px !important;
+        box-shadow: 0 -4px 20px rgba(0,0,0,0.15) !important;
+        z-index: 9999 !important;
+        transition: bottom 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        overflow-y: auto !important;
+        border-radius: 24px 24px 0 0 !important;
+        transform: none !important;
     }
     
-    .nav__menu--mobile .nav__hamburger {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        z-index: 10000;
+    .nav__menu--mobile.active {
+        bottom: 0 !important;
+        top: auto !important;
+        transform: none !important;
+    }
+    
+    /* Drag handle */
+    .nav__menu--mobile::before {
+        content: '';
+        display: block;
+        width: 40px;
+        height: 4px;
+        background: #d0d0d0;
+        border-radius: 2px;
+        margin: 0 auto 20px auto;
+    }
+    
+    /* Hamburger transforms to X when drawer is open */
+    .nav__hamburger.active .nav__hamburger-line:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .nav__hamburger.active .nav__hamburger-line:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .nav__hamburger.active .nav__hamburger-line:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
     }
     
     .nav__menu--mobile .nav__item {
-        margin: 0;
-        padding: 32px 0;
-        border-bottom: 1px solid #e0e0e0;
-        text-align: center;
-        width: 100%;
-    }
-    
-    .nav__menu--mobile .nav__item:last-child {
+        margin: 0 0 8px 0;
+        padding: 0;
         border-bottom: none;
+        text-align: left;
+        width: 100%;
     }
     
     .nav__menu--mobile .nav__link {
-        font-size: 28px;
-        padding: 16px 0;
+        font-size: 16px;
+        padding: 12px 16px;
         display: block;
         width: 100%;
-        font-weight: 600;
+        font-weight: 500;
         color: #333;
         text-decoration: none;
+        border-radius: 12px;
+        transition: background-color 0.2s ease;
+    }
+    
+    .nav__menu--mobile .nav__link:hover,
+    .nav__menu--mobile .nav__link:focus {
+        background-color: #f5f5f5;
+    }
+    
+    .nav__menu--mobile .nav__link--active {
+        background-color: #f5f5f5;
     }
     
     
@@ -2325,7 +2398,11 @@ section:first-of-type {
     }
     
     .about-hero {
-        padding: 24px;
+        padding: 140px 24px 24px 24px !important;
+    }
+    
+    .about-hero__subtitle {
+        margin-top: 24px;
     }
     
     .about-hero__title {
@@ -2813,12 +2890,39 @@ section:first-of-type {
     margin-top: 80px; /* Match general case study spacing */
 }
 
+/* Reduce space between "Landing on a Solution" title and image in Guild Gaming */
+.case-study--guild-gaming .case-study__section-title + .case-study__section-image {
+    margin-top: 16px;
+}
+
 .case-study--guild-gaming .case-study__cards-grid + .case-study__section {
     margin-top: 60px; /* Keep this specific spacing */
 }
 
+.case-study--guild-gaming .case-study__ideation-section {
+    margin: 24px 0 !important;
+}
+
 .case-study--guild-gaming .case-study__ideation-section + .case-study__ideation-section {
-    margin-top: 60px; /* Keep this specific spacing */
+    margin-top: 24px !important;
+}
+
+.case-study--guild-gaming .case-study__ideation-title {
+    margin-bottom: 8px !important;
+}
+
+.case-study--guild-gaming .case-study__ideation-description {
+    margin-bottom: 12px !important;
+}
+
+.case-study--guild-gaming .case-study__ideation-section .case-study__section-image {
+    margin-top: 12px !important;
+    margin-bottom: 4px !important;
+}
+
+.case-study--guild-gaming .case-study__ideation-section .case-study__section-caption {
+    margin-top: 4px !important;
+    margin-bottom: 12px !important;
 }
 
 
@@ -3830,7 +3934,7 @@ section:first-of-type {
     
     /* About Page */
     .about-hero {
-        padding: 60px 12px 30px;
+        padding: 160px 12px 30px !important;
     }
     
     .about-hero__title {
