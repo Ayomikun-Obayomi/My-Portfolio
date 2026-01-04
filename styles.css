@@ -610,9 +610,12 @@ section:first-of-type {
 }
 
 .nav__link--active {
-    color: #5530A3; /* accessible brand purple */
-    background-color: rgba(85, 48, 163, 0.10);
-    font-weight: 600;
+    color: #5530A3; /* accessible brand purple - desktop only shows color, no background */
+}
+
+/* Mobile Drawer - Hidden on desktop */
+.nav__menu--mobile {
+    display: none;
 }
 
 /* Hamburger Menu */
