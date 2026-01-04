@@ -95,27 +95,62 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Mobile Menu Toggle
+    // Mobile Menu Toggle (Drawer)
     const hamburger = document.querySelector('.nav__hamburger');
     const navMenu = document.querySelector('.nav__menu');
     
+    function openDrawer() {
+        if (hamburger && navMenu) {
+            hamburger.classList.add('active');
+            navMenu.classList.add('nav__menu--mobile', 'active');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+    
+    function closeDrawer() {
+        if (hamburger && navMenu) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.style.overflow = '';
+            // Remove mobile class after animation
+            setTimeout(() => {
+                navMenu.classList.remove('nav__menu--mobile');
+            }, 300);
+        }
+    }
+    
     if (hamburger && navMenu) {
-        console.log('Hamburger and nav menu found');
         hamburger.addEventListener('click', function() {
-            console.log('Hamburger clicked');
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('nav__menu--mobile');
-            console.log('Nav menu classes:', navMenu.className);
-            console.log('Nav menu display:', window.getComputedStyle(navMenu).display);
+            if (navMenu.classList.contains('active')) {
+                closeDrawer();
+            } else {
+                openDrawer();
+            }
         });
         
         // Close mobile menu when clicking on a link
         const navLinks = document.querySelectorAll('.nav__link');
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('nav__menu--mobile');
+                closeDrawer();
             });
+        });
+        
+        // Close drawer with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && navMenu.classList.contains('active')) {
+                closeDrawer();
+            }
+        });
+        
+        // Close drawer when clicking outside (on the drawer itself or body)
+        document.addEventListener('click', function(event) {
+            if (navMenu.classList.contains('active')) {
+                // If click is outside the drawer menu
+                if (!navMenu.contains(event.target) && !hamburger.contains(event.target)) {
+                    closeDrawer();
+                }
+            }
         });
     }
     
