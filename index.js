@@ -95,64 +95,66 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Mobile Menu Toggle (Drawer)
-    const hamburger = document.querySelector('.nav__hamburger');
-    const navMenu = document.querySelector('.nav__menu');
-    
+    // Mobile drawer (bottom sheet) toggle with fallbacks
+    const drawer = document.getElementById('mobileDrawer') || document.querySelector('.nav__menu--mobile');
+    const toggle = document.getElementById('mobileDrawerToggle') || document.querySelector('.nav__hamburger');
+    const closeBtn = drawer ? drawer.querySelector('.nav__drawer-close') : null;
+    const drawerLinks = drawer ? drawer.querySelectorAll('.nav__menu--mobile .nav__link') : [];
+
     function openDrawer() {
-        if (hamburger && navMenu) {
-            hamburger.classList.add('active');
-            navMenu.classList.add('nav__menu--mobile', 'active');
-            document.body.style.overflow = 'hidden';
-        }
+        if (!drawer) return;
+        drawer.classList.add('is-open');
+        drawer.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        if (toggle) toggle.classList.add('active');
     }
-    
+
     function closeDrawer() {
-        if (hamburger && navMenu) {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-            document.body.style.overflow = '';
-            // Remove mobile class after animation
-            setTimeout(() => {
-                navMenu.classList.remove('nav__menu--mobile');
-            }, 300);
-        }
+        if (!drawer) return;
+        drawer.classList.remove('is-open');
+        drawer.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        if (toggle) toggle.classList.remove('active');
     }
-    
-    if (hamburger && navMenu) {
-        hamburger.addEventListener('click', function() {
-            if (navMenu.classList.contains('active')) {
+
+    if (drawer && toggle) {
+        toggle.addEventListener('click', () => {
+            if (drawer.classList.contains('is-open')) {
                 closeDrawer();
             } else {
                 openDrawer();
             }
         });
-        
-        // Close mobile menu when clicking on a link
-        const navLinks = document.querySelectorAll('.nav__link');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                closeDrawer();
+    }
+
+    if (drawer && closeBtn) {
+        closeBtn.addEventListener('click', closeDrawer);
+    }
+
+    // Set active state for drawer links
+    if (drawer && drawerLinks.length) {
+        drawerLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                drawerLinks.forEach(l => l.classList.remove('nav__link--active'));
+                link.classList.add('nav__link--active');
             });
         });
-        
-        // Close drawer with Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape' && navMenu.classList.contains('active')) {
-                closeDrawer();
-            }
-        });
-        
-        // Close drawer when clicking outside (on the drawer itself or body)
-        document.addEventListener('click', function(event) {
-            if (navMenu.classList.contains('active')) {
-                // If click is outside the drawer menu
-                if (!navMenu.contains(event.target) && !hamburger.contains(event.target)) {
-                    closeDrawer();
-                }
-            }
-        });
     }
+
+    // Close drawer with Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && drawer && drawer.classList.contains('is-open')) {
+            closeDrawer();
+        }
+    });
+
+    // Close drawer when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!drawer || !drawer.classList.contains('is-open')) return;
+        if (!drawer.contains(event.target) && !(toggle && toggle.contains(event.target))) {
+            closeDrawer();
+        }
+    });
     
     // Back to Top Button
     const backToTopBtn = document.getElementById('back-to-top');
