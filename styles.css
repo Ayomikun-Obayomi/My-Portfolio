@@ -2292,7 +2292,12 @@ section:first-of-type {
         transform-origin: center;
         position: absolute;
         left: 50%;
-        transform: translate(-50%, -6px);
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .nav__hamburger-line:nth-child(1) {
+        transform: translate(-50%, calc(-50% - 5px));
     }
     
     .nav__hamburger-line:nth-child(2) {
@@ -2300,7 +2305,7 @@ section:first-of-type {
     }
     
     .nav__hamburger-line:nth-child(3) {
-        transform: translate(-50%, 6px);
+        transform: translate(-50%, calc(-50% + 5px));
     }
     
     .nav__menu--mobile {
