@@ -48,18 +48,47 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Navbar transparency on scroll
+    // Navbar transparency and hide/show on scroll
     const header = document.querySelector('.header');
+    const isCaseStudy = document.querySelector('.case-study') !== null;
+    const isHomepage = document.body.classList.contains('homepage') || window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/');
+    const isAboutPage = window.location.pathname.includes('about.html');
+    const shouldHideOnScroll = isCaseStudy || isHomepage || isAboutPage;
     let lastScrollTop = 0;
+    let isScrollingDown = false;
     
     if (header) {
         window.addEventListener('scroll', function() {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             
+            // Handle transparency
             if (scrollTop > 100) {
                 header.classList.add('header--transparent');
             } else {
                 header.classList.remove('header--transparent');
+            }
+            
+            // On case study pages, homepage, and about page, hide navbar when scrolling down, show when scrolling up
+            if (shouldHideOnScroll) {
+                if (scrollTop > 50) {
+                    if (scrollTop > lastScrollTop) {
+                        // Scrolling down - hide navbar
+                        if (!isScrollingDown) {
+                            header.style.transform = 'translateY(-100%)';
+                            isScrollingDown = true;
+                        }
+                    } else {
+                        // Scrolling up - show navbar
+                        if (isScrollingDown) {
+                            header.style.transform = 'translateY(0)';
+                            isScrollingDown = false;
+                        }
+                    }
+                } else {
+                    // At top of page - always show navbar
+                    header.style.transform = 'translateY(0)';
+                    isScrollingDown = false;
+                }
             }
             
             lastScrollTop = scrollTop;
