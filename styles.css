@@ -3243,6 +3243,15 @@ section:first-of-type {
     border-radius: 8px;
 }
 
+
+.case-study__section-img-lottie-wrapper {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
 .bento-grid__content {
     background: #fff;
     border: 1px solid #e0e0e0;
