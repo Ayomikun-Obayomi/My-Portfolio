@@ -509,23 +509,24 @@ section:first-of-type {
 }
 
 .nav {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
-    justify-content: flex-start;
     height: 56px;
     width: auto;
     margin: 0 auto;
     background: #faf9fc;
     border-radius: 30px;
     border: 1px solid rgba(107, 70, 193, 0.25);
-    padding: 0 16px 0 12px;
+    padding: 0 16px;
     transition: all 0.3s ease;
+    position: relative;
 }
 
 .nav__logo {
     display: flex;
     align-items: center;
-    margin-right: 80px;
+    justify-self: start;
 }
 
 .nav__menu {
@@ -533,6 +534,10 @@ section:first-of-type {
     list-style: none;
     gap: 20px;
     align-items: center;
+    margin: 0;
+    padding: 0;
+    justify-self: center;
+    grid-column: 2;
 }
 
 .header--transparent .nav {
@@ -633,8 +638,10 @@ section:first-of-type {
         z-index: 10001;
         border-radius: 4px;
         outline: none;
-    gap: 4px;
-    position: relative;
+        gap: 4px;
+        position: relative;
+        justify-self: end;
+        grid-column: 3;
     }
 
 .nav__hamburger:focus {
@@ -3244,13 +3251,6 @@ section:first-of-type {
 }
 
 
-.case-study__section-img-lottie-wrapper {
-    max-width: 100%;
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 8px;
-}
 
 .bento-grid__content {
     background: #fff;
