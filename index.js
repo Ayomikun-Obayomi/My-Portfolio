@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const header = document.querySelector('.header');
     const isCaseStudy = document.querySelector('.case-study') !== null;
     const isHomepage = document.body.classList.contains('homepage') || window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/');
-    const isAboutPage = window.location.pathname.includes('about.html');
+    const isAboutPage = document.body.classList.contains('about-page') || window.location.pathname.includes('about') || window.location.pathname.includes('about.html');
     const shouldHideOnScroll = isCaseStudy || isHomepage || isAboutPage;
     let lastScrollTop = 0;
     let isScrollingDown = false;
@@ -73,20 +73,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (scrollTop > 50) {
                     if (scrollTop > lastScrollTop) {
                         // Scrolling down - hide navbar
-                        if (!isScrollingDown) {
-                            header.style.transform = 'translateY(-100%)';
-                            isScrollingDown = true;
-                        }
+                        header.classList.add('header--hidden');
+                        isScrollingDown = true;
                     } else {
                         // Scrolling up - show navbar
-                        if (isScrollingDown) {
-                            header.style.transform = 'translateY(0)';
-                            isScrollingDown = false;
-                        }
+                        header.classList.remove('header--hidden');
+                        isScrollingDown = false;
                     }
                 } else {
                     // At top of page - always show navbar
-                    header.style.transform = 'translateY(0)';
+                    header.classList.remove('header--hidden');
                     isScrollingDown = false;
                 }
             }
