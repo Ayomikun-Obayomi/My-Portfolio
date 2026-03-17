@@ -48,46 +48,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Navbar transparency and hide/show on scroll
+    // Navbar pill on scroll - all pages
     const header = document.querySelector('.header');
-    const isCaseStudy = document.querySelector('.case-study') !== null;
-    const isHomepage = document.body.classList.contains('homepage') || window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/');
-    const isAboutPage = document.body.classList.contains('about-page') || window.location.pathname.includes('about') || window.location.pathname.includes('about.html');
-    const shouldHideOnScroll = isCaseStudy || isHomepage || isAboutPage;
-    let lastScrollTop = 0;
-    let isScrollingDown = false;
     
     if (header) {
         window.addEventListener('scroll', function() {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            
-            // Handle transparency
             if (scrollTop > 100) {
                 header.classList.add('header--transparent');
             } else {
                 header.classList.remove('header--transparent');
             }
-            
-            // On case study pages, homepage, and about page, hide navbar when scrolling down, show when scrolling up
-            if (shouldHideOnScroll) {
-                if (scrollTop > 50) {
-                    if (scrollTop > lastScrollTop) {
-                        // Scrolling down - hide navbar
-                        header.classList.add('header--hidden');
-                        isScrollingDown = true;
-                    } else {
-                        // Scrolling up - show navbar
-                        header.classList.remove('header--hidden');
-                        isScrollingDown = false;
-                    }
-                } else {
-                    // At top of page - always show navbar
-                    header.classList.remove('header--hidden');
-                    isScrollingDown = false;
-                }
-            }
-            
-            lastScrollTop = scrollTop;
         });
     }
     
