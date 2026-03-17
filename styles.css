@@ -396,6 +396,7 @@ body {
     overflow-x: hidden;
 }
 
+
 /* Automatic Section Spacing */
 section + section {
     margin-top: 24px;
@@ -495,42 +496,98 @@ section:first-of-type {
     top: 0;
     left: 0;
     width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
     background: transparent;
     z-index: 1000;
     padding: 24px 32px 16px 32px;
-    transition: all 0.3s ease;
+    transition: padding 0.3s ease;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    justify-content: flex-start;
     transform: translateY(0);
 }
 
-.header--transparent {
-    background: transparent;
+.header__inner {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 4px 10px 4px 8px;
+    border-radius: 50px;
+    position: relative;
+    flex-shrink: 0;
 }
+
+/* Pill background - transparent/frosted */
+.header__inner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50px;
+    background: rgba(220, 220, 220, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease-out;
+    z-index: -1;
+}
+
+.header--transparent .header__inner::before {
+    opacity: 1;
+}
+
+.header__inner > * {
+    position: relative;
+    z-index: 1;
+}
+
+.header__logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 4px;
+    outline: none;
+}
+
+.header__logo:focus {
+    outline: 2px solid #6B46C1;
+    outline-offset: 2px;
+}
+
+.header__logo:focus:not(:focus-visible) {
+    outline: none;
+}
+
+.header__logo:focus-visible {
+    outline: 2px solid #6B46C1;
+    outline-offset: 2px;
+}
+
+.header__logo-image {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+/* Scrolled state: pill background only - identical size, no changes */
 
 .header--hidden {
     transform: translateY(-100%);
 }
 
 .nav {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-    height: 56px;
-    width: auto;
-    margin: 0 auto;
-    background: #faf9fc;
-    border-radius: 30px;
-    border: 1px solid rgba(107, 70, 193, 0.25);
-    padding: 0 16px;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.nav__logo {
     display: flex;
     align-items: center;
-    justify-self: start;
+    height: 44px;
+    margin: 0;
+    background: transparent;
+    border-radius: 0;
+    border: none;
+    padding: 0 12px 0 0;
+    position: relative;
 }
 
 .nav__menu {
@@ -540,47 +597,8 @@ section:first-of-type {
     align-items: center;
     margin: 0;
     padding: 0;
-    justify-self: center;
-    grid-column: 2;
 }
 
-.header--transparent .nav {
-    background: rgba(250, 249, 252, 0.8);
-    backdrop-filter: blur(10px);
-}
-
-.nav__logo-link {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #000;
-    font-weight: 600;
-    font-size: 18px;
-    font-family: Helvetica, sans-serif;
-    border-radius: 4px;
-    padding: 4px;
-    outline: none;
-}
-
-.nav__logo-link:focus {
-    outline: 2px solid #6B46C1;
-    outline-offset: 2px;
-}
-
-.nav__logo-link:focus:not(:focus-visible) {
-    outline: none;
-}
-
-.nav__logo-link:focus-visible {
-    outline: 2px solid #6B46C1;
-    outline-offset: 2px;
-}
-
-.nav__logo-image {
-    width: 48px;
-    height: 48px;
-    object-fit: contain;
-}
 
 .nav__item {
     list-style: none;
@@ -589,12 +607,12 @@ section:first-of-type {
 .nav__link {
     text-decoration: none;
     color: #333;
-    font-size: 1rem;
-    letter-spacing: 0.08em;
+    font-size: 0.9375rem;
+    letter-spacing: 0.04em;
     transition: color 0.2s;
     font-family: Helvetica, sans-serif;
     border-radius: 4px;
-    padding: 4px 8px;
+    padding: 4px 6px;
     outline: none;
 }
 
@@ -819,21 +837,23 @@ section:first-of-type {
         transform: none;
     }
     
-    .hero {
-        padding: 60px 16px 0px;
-        margin-bottom: 20px;
+    /* Homepage: reference padding - 20px horizontal, generous vertical */
+    body.home-page .hero {
+        padding: 48px 20px 32px;
+        margin-bottom: 0;
     }
     
-    .hero__content {
+    body.home-page .hero__content {
         padding: 0;
-        max-width: 560px;
+        max-width: 100%;
         margin: 0 auto;
     }
     
-    .projects {
-        margin-top: 0px;
+    body.home-page .projects {
+        margin-top: 0;
         overflow-x: hidden;
         width: 100%;
+        padding: 32px 20px 48px;
     }
     
     .projects__grid {
@@ -2290,7 +2310,16 @@ section:first-of-type {
 
 @media (max-width: 768px) {
     .header {
-        padding: 16px 16px 0 16px;
+        padding: 16px 20px 16px 20px;
+        background: transparent;
+        justify-content: center;
+    }
+    
+    /* Mobile: same as desktop - pill on scroll, transparent at top */
+    .header__inner {
+        width: 100%;
+        justify-content: space-between;
+        padding: 6px 20px 6px 10px;
     }
     
     /* Reduce top gap on About page only */
@@ -2299,28 +2328,18 @@ section:first-of-type {
         min-height: calc(100vh - 8px);
     }
     
+    .header__logo-image {
+        width: 44px;
+        height: 44px;
+    }
+    
     .nav {
-        padding: 0 16px;
-        justify-content: flex-start;
-        width: 100%;
-        max-width: 100%;
-    }
-    
-    .nav__logo {
-        margin-right: 0;
-    }
-    
-    .nav__logo-link {
-        display: flex;
-        align-items: center;
-        justify-content: center;
         padding: 0;
-    }
-    
-    .nav__logo-image {
-        width: 32px;
-        height: 32px;
-        margin: 0;
+        justify-content: flex-end;
+        width: auto;
+        min-width: 0;
+        background: transparent;
+        border: none;
     }
     
     .nav__menu {
@@ -2467,20 +2486,24 @@ section:first-of-type {
     
     
     
-    .hero__title {
+    /* Homepage: reference - consistent 20px horizontal, ample vertical spacing */
+    body.home-page .hero__title {
         font-size: 42px;
+        line-height: 1.25;
     }
     
-    .hero__subtitle {
+    body.home-page .hero__subtitle {
         font-size: 16px;
         margin-bottom: 24px;
+        color: #666;
     }
     
-    .hero {
-        padding: 20px 8px 10px; /* Reduced padding between navbar and product  */
+    body.home-page .hero {
+        padding: 48px 20px 32px;
     }
-    .projects {
-        padding: 20px 8px 20px 8px;
+    
+    body.home-page .projects {
+        padding: 32px 20px 48px;
     }
     
     .projects__grid {
@@ -2539,8 +2562,9 @@ section:first-of-type {
         border-radius: 8px;
     }
     
+    /* About page: match index.html padding (20px horizontal) */
     .about-hero {
-        padding: 140px 24px 24px 24px !important;
+        padding: 48px 20px 32px !important;
     }
     
     .about-hero__content {
@@ -2557,7 +2581,7 @@ section:first-of-type {
     }
     
     .about-content {
-        padding: 24px 16px !important;
+        padding: 32px 20px 48px !important;
         max-width: 100% !important;
         margin: 0 auto !important;
         text-align: left !important;
@@ -4033,32 +4057,37 @@ section:first-of-type {
 
 /* Small Mobile Devices (iPhone SE, small Android) */
 @media (max-width: 480px) {
-    /* Header & Navigation */
     .header {
+        padding: 12px 20px 12px 20px;
+        background: transparent;
     }
     
-    .nav__logo-image {
-        width: 56px;
-        height: 56px;
+    .header__inner {
+        padding: 4px 18px 4px 8px;
     }
     
-    /* Hero Section */
-    .hero {
-        padding: 20px 12px 20px;
+    .header__logo-image {
+        width: 44px;
+        height: 44px;
     }
     
-    .hero__title {
+    /* Homepage: reference - 20px horizontal padding */
+    body.home-page .hero {
+        padding: 40px 20px 28px;
+    }
+    
+    body.home-page .hero__title {
         font-size: 36px;
+        line-height: 1.25;
     }
     
-    .hero__subtitle {
+    body.home-page .hero__subtitle {
         font-size: 14px;
         margin-bottom: 20px;
     }
     
-    /* Projects Section */
-    .projects {
-        padding: 40px 16px;
+    body.home-page .projects {
+        padding: 28px 20px 40px;
     }
     
     .projects__grid {
@@ -4111,9 +4140,9 @@ section:first-of-type {
         font-size: 10px;
     }
     
-    /* About Page */
+    /* About page: match index.html padding (20px horizontal) */
     .about-hero {
-        padding: 160px 16px 30px !important;
+        padding: 40px 20px 28px !important;
     }
     
     .about-hero__content {
@@ -4134,7 +4163,7 @@ section:first-of-type {
     }
     
     .about-content {
-        padding: 30px 16px;
+        padding: 28px 20px 40px;
     }
     
     .bento-grid {
