@@ -1,0 +1,188 @@
+/* Backyard page styles */
+
+body.backyard-page {
+    background: #0a0a0c;
+    min-height: 100vh;
+    color: #fff;
+}
+
+.backyard-page .main {
+    min-height: calc(100vh - 80px);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.backyard-hero {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.backyard-hero__title {
+    font-family: 'Mercury Display', serif;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
+}
+
+.backyard-hero__subtitle {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 0.08em;
+}
+
+.head-container {
+    position: relative;
+    width: 100%;
+    max-width: 560px;
+    aspect-ratio: 7 / 8;
+    flex-shrink: 0;
+}
+
+.head-svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 80px rgba(80, 140, 255, 0.15));
+    transform: scaleX(-1);
+}
+
+/* Wireframe head - glowing blue lines */
+.wireframe-outline {
+    fill: none;
+    stroke: rgba(100, 180, 255, 0.9);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter: url(#line-glow);
+}
+
+.wireframe-contour {
+    fill: none;
+    stroke: rgba(80, 160, 255, 0.4);
+    stroke-width: 0.5;
+    stroke-linecap: round;
+}
+
+.wireframe-inner {
+    fill: none;
+    stroke: rgba(100, 180, 255, 0.5);
+    stroke-width: 0.8;
+    stroke-linecap: round;
+}
+
+.wireframe-spine {
+    stroke: rgba(100, 180, 255, 0.5);
+    stroke-width: 0.6;
+}
+
+.neural-line {
+    stroke: rgba(100, 180, 255, 0.35);
+    stroke-width: 0.45;
+    fill: none;
+    stroke-linecap: round;
+}
+
+.neural-line--accent {
+    stroke: rgba(140, 200, 255, 0.5);
+}
+
+.neuron {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 220, 150, 0.9) 0%, rgba(255, 180, 80, 0.6) 70%);
+    box-shadow: 0 0 12px rgba(255, 200, 100, 0.6),
+                0 0 24px rgba(255, 180, 80, 0.4),
+                0 0 40px rgba(255, 150, 50, 0.2);
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    z-index: 2;
+}
+
+.neuron:hover {
+    transform: translate(-50%, -50%) scale(1.4);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.9),
+                0 0 40px rgba(255, 220, 100, 0.6),
+                0 0 60px rgba(255, 180, 80, 0.4);
+}
+
+.neuron--active .neuron__card {
+    opacity: 1;
+    visibility: visible;
+}
+
+.neuron__card {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-12px);
+    width: 180px;
+    background: rgba(20, 20, 24, 0.95);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+    pointer-events: none;
+    z-index: 10;
+    margin-bottom: 8px;
+}
+
+.neuron:hover .neuron__card {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-12px);
+}
+
+.neuron__card-image {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    display: block;
+}
+
+.neuron__card-content {
+    padding: 12px;
+}
+
+.neuron__card-title {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.neuron__card-desc {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.4;
+}
+
+.backyard-instruction {
+    margin-top: 24px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.06em;
+}
+
+/* Header visibility on dark background */
+.backyard-page .nav__link {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.backyard-page .nav__link:hover {
+    color: #fff;
+}
+
+.backyard-page .nav__link--active {
+    color: #a78bfa;
+}
+
+.backyard-page .nav__hamburger-line {
+    background: rgba(255, 255, 255, 0.9);
+}
