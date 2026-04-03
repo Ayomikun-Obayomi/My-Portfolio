@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backyard - Ayo Portfolio</title>
+    <link rel="icon" type="image/png" href="logo for folio.png" sizes="128x128">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mercury+Display:ital,wght@0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=3">
+    <link rel="stylesheet" href="backyard.css">
+</head>
+<body class="backyard-page">
+    <header class="header">
+        <div class="header__inner">
+            <a href="index.html" class="header__logo">
+                <img src="logo for folio.png" alt="Ayo Logo" class="header__logo-image">
+            </a>
+            <nav class="nav">
+                <ul class="nav__menu">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Work</a></li>
+                    <!-- Backyard — commented out for new ship
+                    <li class="nav__item"><a href="backyard.html" class="nav__link nav__link--active">Backyard</a></li>
+                    -->
+                    <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="Obayomi--Ayo's Resume.pdf" target="_blank" rel="noopener noreferrer" class="nav__link">Resume</a></li>
+                </ul>
+                <button class="nav__hamburger" aria-label="Toggle navigation menu" id="mobileDrawerToggle">
+                    <span class="nav__hamburger-line"></span>
+                    <span class="nav__hamburger-line"></span>
+                    <span class="nav__hamburger-line"></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    <div id="mobileDrawer" class="nav__menu nav__menu--mobile" aria-hidden="true">
+        <ul class="nav__menu-list">
+            <li class="nav__item"><a href="index.html" class="nav__link">Work</a></li>
+            <!-- Backyard — commented out for new ship
+            <li class="nav__item"><a href="backyard.html" class="nav__link nav__link--active">Backyard</a></li>
+            -->
+            <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+            <li class="nav__item"><a href="Obayomi--Ayo's Resume.pdf" target="_blank" rel="noopener noreferrer" class="nav__link">Resume</a></li>
+        </ul>
+    </div>
+
+    <main class="main">
+        <section class="backyard-hero">
+            <h1 class="backyard-hero__title">Backyard</h1>
+            <p class="backyard-hero__subtitle">Thoughts & works in progress</p>
+        </section>
+
+        <div class="head-container">
+            <svg class="head-svg" viewBox="0 0 200 250" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <clipPath id="cranial-clip">
+                        <ellipse cx="100" cy="78" rx="38" ry="42"/>
+                    </clipPath>
+                    <clipPath id="head-clip">
+                        <ellipse cx="100" cy="118" rx="55" ry="78"/>
+                    </clipPath>
+                    <filter id="line-glow" x="-20%" y="-20%" width="140%" height="140%">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="0.8" result="blur"/>
+                        <feMerge>
+                            <feMergeNode in="blur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                </defs>
+
+                <!-- WIREFRAME HEAD - oval head + nose + neck. Face right. -->
+                <g class="head-wireframe">
+                    <ellipse class="wireframe-outline" cx="100" cy="120" rx="52" ry="72" fill="none"/>
+                    <path class="wireframe-outline" d="M 55,90 Q 35,108 52,128" fill="none"/>
+                    <path class="wireframe-outline" d="M 92,195 L 88,228 M 108,195 L 112,228" fill="none"/>
+
+                    <path class="wireframe-contour" d="M 72,65 Q 92,92 85,132"/>
+                    <path class="wireframe-contour" d="M 95,52 Q 105,95 98,142"/>
+                    <path class="wireframe-contour" d="M 118,58 Q 112,100 115,155"/>
+                    <path class="wireframe-contour" d="M 65,95 L 95,108 L 125,98"/>
+                    <path class="wireframe-contour" d="M 78,125 L 100,132 L 122,122"/>
+
+                    <path class="wireframe-inner" d="M 72,158 Q 98,168 122,162"/>
+
+                    <line class="wireframe-spine" x1="98" y1="198" x2="95" y2="228"/>
+                    <line class="wireframe-spine" x1="105" y1="195" x2="108" y2="225"/>
+                </g>
+
+                <!-- Neural network - dense mesh inside cranial area -->
+                <g clip-path="url(#cranial-clip)">
+                    <path class="neural-line" d="M72,55 L98,62 L125,58"/>
+                    <path class="neural-line" d="M98,62 L108,78 L122,72"/>
+                    <path class="neural-line" d="M108,78 L102,95 L118,98"/>
+                    <path class="neural-line" d="M98,62 L82,72 L72,65"/>
+                    <path class="neural-line" d="M82,72 L88,88 L98,85"/>
+                    <path class="neural-line" d="M88,88 L68,95 L62,85"/>
+                    <path class="neural-line" d="M108,78 L122,88 L138,82"/>
+                    <path class="neural-line" d="M122,88 L128,105 L135,98"/>
+                    <path class="neural-line" d="M122,72 L135,65 L145,72"/>
+                    <path class="neural-line" d="M135,65 L142,52 L152,62"/>
+                    <path class="neural-line" d="M125,58 L132,48 L142,55"/>
+                    <path class="neural-line" d="M82,72 L92,58 L105,62"/>
+                    <path class="neural-line" d="M102,95 L115,108 L128,102"/>
+                    <path class="neural-line" d="M118,98 L125,112 L132,105"/>
+                    <path class="neural-line" d="M128,88 L118,102 L102,98"/>
+                    <path class="neural-line" d="M88,88 L98,102 L112,98"/>
+                    <path class="neural-line" d="M72,65 L68,82 L82,88"/>
+                    <path class="neural-line" d="M98,85 L108,98 L118,92"/>
+                    <path class="neural-line" d="M132,48 L122,65 L125,78"/>
+                    <path class="neural-line" d="M138,82 L128,95 L118,92"/>
+                    <path class="neural-line neural-line--accent" d="M92,58 L102,72"/>
+                    <path class="neural-line neural-line--accent" d="M122,88 L112,98"/>
+                    <path class="neural-line neural-line--accent" d="M138,82 L128,92"/>
+                </g>
+            </svg>
+
+            <!-- Neuron nodes - at line intersections inside the head -->
+            <div class="neuron" style="left: 38%; top: 32%;" data-project="0">
+                <div class="neuron__card">
+                    <img class="neuron__card-image" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=360&q=80" alt="Recipe AI">
+                    <div class="neuron__card-content">
+                        <div class="neuron__card-title">Recipe AI</div>
+                        <div class="neuron__card-desc">Work in progress · AI-powered recipe discovery</div>
+                    </div>
+                </div>
+            </div>
+            <div class="neuron" style="left: 52%; top: 36%;" data-project="1">
+                <div class="neuron__card">
+                    <img class="neuron__card-image" src="https://images.unsplash.com/photo-1557683316-973673baf926?w=360&q=80" alt="Exploration">
+                    <div class="neuron__card-content">
+                        <div class="neuron__card-title">Design exploration</div>
+                        <div class="neuron__card-desc">Ideas in motion</div>
+                    </div>
+                </div>
+            </div>
+            <div class="neuron" style="left: 68%; top: 30%;" data-project="2">
+                <div class="neuron__card">
+                    <img class="neuron__card-image" src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=360&q=80" alt="Concept">
+                    <div class="neuron__card-content">
+                        <div class="neuron__card-title">Concept</div>
+                        <div class="neuron__card-desc">Rough experiments</div>
+                    </div>
+                </div>
+            </div>
+            <div class="neuron" style="left: 52%; top: 52%;" data-project="3">
+                <div class="neuron__card">
+                    <img class="neuron__card-image" src="https://images.unsplash.com/photo-1557682250-702bd89490d2?w=360&q=80" alt="Pattern">
+                    <div class="neuron__card-content">
+                        <div class="neuron__card-title">Pattern library</div>
+                        <div class="neuron__card-desc">Building blocks</div>
+                    </div>
+                </div>
+            </div>
+            <div class="neuron" style="left: 65%; top: 58%;" data-project="4">
+                <div class="neuron__card">
+                    <img class="neuron__card-image" src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=360&q=80" alt="Side project">
+                    <div class="neuron__card-content">
+                        <div class="neuron__card-title">Side project</div>
+                        <div class="neuron__card-desc">Tinkering</div>
+                    </div>
+                </div>
+            </div>
+            <div class="neuron" style="left: 42%; top: 48%;" data-project="5">
+                <div class="neuron__card">
+                    <img class="neuron__card-image" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=360&q=80" alt="Thought">
+                    <div class="neuron__card-content">
+                        <div class="neuron__card-title">Thought</div>
+                        <div class="neuron__card-desc">A note to self</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p class="backyard-instruction">Hover over the neurons to peek at what's cooking</p>
+    </main>
+
+    <script src="index.js"></script>
+</body>
+</html>
