@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recent Works - Ayo Portfolio</title>
+    <link rel="icon" type="image/png" href="logo for folio.png" sizes="128x128">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mercury+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=53">
+</head>
+<body class="work-page">
+    <header class="header">
+        <div class="header__inner">
+        <a href="index.html" class="header__logo">
+            <img src="logo for folio.png" alt="Ayo Logo" class="header__logo-image">
+        </a>
+        <nav class="nav">
+            <ul class="nav__menu">
+                <li class="nav__item"><a href="work.html" class="nav__link nav__link--active">Work</a></li>
+                <!-- Backyard — commented out for new ship
+                <li class="nav__item"><a href="backyard.html" class="nav__link">Backyard</a></li>
+                -->
+                <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+                <li class="nav__item"><a href="Obayomi--Ayo's Resume.pdf" target="_blank" rel="noopener noreferrer" class="nav__link">Resume</a></li>
+            </ul>
+            <button class="nav__hamburger" aria-label="Toggle navigation menu" id="mobileDrawerToggle">
+                <span class="nav__hamburger-line"></span>
+                <span class="nav__hamburger-line"></span>
+                <span class="nav__hamburger-line"></span>
+            </button>
+        </nav>
+        </div>
+    </header>
+    <div id="mobileDrawer" class="nav__menu nav__menu--mobile" aria-hidden="true">
+        <ul class="nav__menu-list">
+            <li class="nav__item"><a href="work.html" class="nav__link nav__link--active">Work</a></li>
+            <!-- Backyard — commented out for new ship
+            <li class="nav__item"><a href="backyard.html" class="nav__link">Backyard</a></li>
+            -->
+            <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+            <li class="nav__item"><a href="Obayomi--Ayo's Resume.pdf" target="_blank" rel="noopener noreferrer" class="nav__link">Resume</a></li>
+        </ul>
+    </div>
+
+    <main class="main">
+        <section class="work-hero">
+            <h1 class="work-hero__title">Recent Works</h1>
+        </section>
+
+        <section id="work" class="projects work-page__projects">
+            <div class="projects__content">
+                <div class="projects__grid">
+                    <div class="project-card">
+                        <div class="project-card__image-container">
+                            <img src="JobQuestCover-image.png" alt="Job Quest Project" class="project-card__image">
+                        </div>
+                        <div class="project-card__content">
+                            <div class="project-card__tags">
+                                <span class="project-card__tag">Apprenticeship</span>
+                                <span class="project-card__tag">Job Search</span>
+                                <span class="project-card__tag">Learning Experience</span>
+                                <span class="project-card__tag">Product Design</span>
+                            </div>
+                            <h3 class="project-card__title">Job Quest</h3>
+                            <p class="project-card__description">
+                                Turning resume writing and interview prep into a guided learning experience for entry-level job seekers.
+                            </p>
+                        </div>
+                        <a href="JobQuest.html" class="project-card__link" aria-label="View Job Quest case study"></a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-card__image-container">
+                            <img src="Guild.png" alt="Guild Gaming Project" class="project-card__image">
+                        </div>
+                        <div class="project-card__content">
+                            <div class="project-card__tags">
+                                <span class="project-card__tag">Internship</span>
+                                <span class="project-card__tag">AI</span>
+                                <span class="project-card__tag">Productivity</span>
+                                <span class="project-card__tag">Event Management</span>
+                                <span class="project-card__tag">Data Analytics</span>
+                            </div>
+                            <h3 class="project-card__title">Guild Gaming</h3>
+                            <p class="project-card__description">
+                                Seamlessly elevating the experience of planning and hosting events for event organizers.
+                            </p>
+                        </div>
+                        <a href="GuildGaming.html" class="project-card__link" aria-label="View Guild Gaming project details"></a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-card__image-container">
+                            <img src="Baseball.png" alt="Baseball Little League Calendar App" class="project-card__image">
+                        </div>
+                        <div class="project-card__content">
+                            <div class="project-card__tags">
+                                <span class="project-card__tag">University-Sponsored Project</span>
+                                <span class="project-card__tag">Sports Productivity</span>
+                                <span class="project-card__tag">B2C</span>
+                                <span class="project-card__tag">Product Design</span>
+                            </div>
+                            <h3 class="project-card__title">Baseball Little League</h3>
+                            <p class="project-card__description">
+                                Designing a communication platform to enhance organizational collaboration amongst Parents, Coaches, & Children.
+                            </p>
+                        </div>
+                        <a href="BaseballLittleLeague.html" class="project-card__link" aria-label="View Baseball Little League case study"></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__content">
+            <p class="footer__contact">
+                Get in touch: <a href="mailto:oba12ayo@gmail.com" class="footer__email">oba12ayo@gmail.com</a>
+            </p>
+            <p class="footer__made-with">
+                Made with a lot of hours on
+                <svg class="footer__spotify-logo" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" fill="#1DB954"/>
+                </svg>
+            </p>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>

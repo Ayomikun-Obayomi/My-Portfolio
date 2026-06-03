@@ -16,10 +16,40 @@
     letter-spacing: 0.02em;
 }
 
-/* Homepage — random line pattern (full page) */
+/* Homepage — random line pattern (full page), single viewport (no scroll) */
+html:has(body.home-page) {
+    height: 100%;
+    overflow: hidden;
+}
+
 body.home-page {
     position: relative;
     background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    max-height: 100dvh;
+    overflow: hidden;
+    overscroll-behavior: none;
+}
+
+body.home-page > .header {
+    flex-shrink: 0;
+}
+
+body.home-page > .main {
+    flex: 1 1 auto;
+    min-height: 0;
+    margin-top: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+body.home-page > .footer {
+    flex-shrink: 0;
+    margin-top: 0;
+    padding: 20px 0 24px;
 }
 
 .home-lines {
@@ -38,7 +68,6 @@ body.home-page {
 }
 
 body.home-page > .header,
-body.home-page > #mobileDrawer,
 body.home-page > .main,
 body.home-page > .footer {
     position: relative;
@@ -1154,16 +1183,248 @@ body.home-page .hero__title-lead {
 }
 
 body.home-page .hero {
+    position: relative;
+    isolation: isolate;
     overflow: visible;
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 12px 32px;
+    box-sizing: border-box;
+}
+
+/* Hero — floating 3D lifestyle props */
+body.home-page .hero__scene {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+    perspective: 1100px;
+}
+
+body.home-page .hero__scene-stage {
+    position: absolute;
+    left: 50%;
+    top: 42%;
+    width: min(920px, 110%);
+    height: min(440px, 70vh);
+    transform: translate(-50%, -50%);
+    transform-style: preserve-3d;
+    transition: transform 0.35s ease-out;
+}
+
+body.home-page .hero__prop {
+    position: absolute;
+    transform-style: preserve-3d;
+    pointer-events: none;
+}
+
+body.home-page .hero__prop--airpods {
+    left: 5%;
+    top: 14%;
+    animation: hero-prop-float-airpods 15s ease-in-out infinite;
+}
+
+body.home-page .hero__prop--phone {
+    right: 6%;
+    top: 10%;
+    animation: hero-prop-float-phone 13s ease-in-out infinite;
+}
+
+body.home-page .hero__prop--tote {
+    left: 8%;
+    bottom: 8%;
+    animation: hero-prop-float-tote 17s ease-in-out infinite;
+}
+
+body.home-page .hero__prop--matcha {
+    right: 9%;
+    bottom: 10%;
+    animation: hero-prop-float-matcha 14s ease-in-out infinite;
+}
+
+/* AirPods — 3D render asset */
+body.home-page .hero__airpods-img {
+    display: block;
+    width: min(200px, 22vw);
+    height: auto;
+    transform: rotateY(18deg) rotateX(-8deg) translateZ(28px);
+    transform-style: preserve-3d;
+    filter: drop-shadow(0 20px 28px rgba(60, 60, 70, 0.22));
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Phone */
+body.home-page .hero__phone {
+    position: relative;
+    width: 56px;
+    height: 112px;
+    border-radius: 14px;
+    background: linear-gradient(145deg, #3a3a40 0%, #1e1e22 100%);
+    transform: rotateY(-32deg) rotateX(8deg) translateZ(32px);
+    box-shadow:
+        -7px 12px 0 #c8c8ce,
+        0 22px 44px rgba(30, 30, 36, 0.22),
+        inset 0 0 0 2px #4a4a52;
+}
+
+body.home-page .hero__phone-screen {
+    position: absolute;
+    inset: 7px 5px 10px;
+    border-radius: 10px;
+    background: linear-gradient(155deg, #6B46C1 0%, #9f7aea 38%, #e9e4f7 72%, #f8f7fa 100%);
+    box-shadow: inset 0 0 12px rgba(107, 70, 193, 0.25);
+}
+
+body.home-page .hero__phone-notch {
+    position: absolute;
+    top: 9px;
+    left: 50%;
+    width: 22px;
+    height: 5px;
+    margin-left: -11px;
+    border-radius: 0 0 6px 6px;
+    background: #1e1e22;
+}
+
+/* Tote bag */
+body.home-page .hero__tote {
+    position: relative;
+    width: 88px;
+    height: 96px;
+    transform: rotateY(16deg) rotateX(-6deg) translateZ(20px);
+}
+
+body.home-page .hero__tote-handle {
+    position: absolute;
+    top: 0;
+    width: 30px;
+    height: 22px;
+    border: 3px solid #b8b4ac;
+    border-bottom: none;
+    border-radius: 16px 16px 0 0;
+    box-sizing: border-box;
+}
+
+body.home-page .hero__tote-handle--left {
+    left: 10px;
+}
+
+body.home-page .hero__tote-handle--right {
+    right: 10px;
+}
+
+body.home-page .hero__tote-body {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 80px;
+    height: 72px;
+    margin-left: -40px;
+    background: linear-gradient(180deg, #f8f5ef 0%, #ebe6dc 45%, #ddd6ca 100%);
+    clip-path: polygon(6% 0, 94% 0, 100% 100%, 0 100%);
+    border: 1px solid rgba(120, 110, 95, 0.12);
+    box-shadow:
+        inset 4px 0 8px rgba(255, 255, 255, 0.5),
+        inset -6px 0 10px rgba(0, 0, 0, 0.04),
+        -4px 8px 0 #d5cfc4,
+        0 16px 32px rgba(80, 70, 55, 0.14);
+}
+
+body.home-page .hero__tote-body::before {
+    content: '';
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    top: 14px;
+    height: 1px;
+    background: rgba(107, 70, 193, 0.2);
+}
+
+/* Matcha */
+body.home-page .hero__matcha {
+    position: relative;
+    width: 72px;
+    height: 80px;
+    transform: rotateY(-18deg) rotateX(4deg) translateZ(28px);
+}
+
+body.home-page .hero__matcha-cup {
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 64px;
+    height: 52px;
+    margin-left: -32px;
+    border-radius: 6px 6px 18px 18px;
+    background: linear-gradient(90deg, #f5f2eb 0%, #faf8f4 40%, #ece8e0 100%);
+    border: 1px solid rgba(100, 90, 75, 0.1);
+    box-shadow:
+        inset -4px 0 8px rgba(0, 0, 0, 0.04),
+        inset 4px 0 8px rgba(255, 255, 255, 0.6),
+        -4px 8px 0 #e0dbd2,
+        0 16px 30px rgba(70, 90, 60, 0.12);
+}
+
+body.home-page .hero__matcha-cup::after {
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: 18px;
+    width: 14px;
+    height: 8px;
+    border: 3px solid #e8e4dc;
+    border-left: none;
+    border-radius: 0 8px 8px 0;
+}
+
+body.home-page .hero__matcha-foam {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 58px;
+    height: 22px;
+    margin-left: -29px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse 80% 70% at 50% 40%, #a8d4a0, #6b9f62 55%, #4d7a48 100%);
+    box-shadow:
+        inset 0 3px 6px rgba(255, 255, 255, 0.35),
+        0 4px 12px rgba(75, 120, 65, 0.2);
+}
+
+body.home-page .hero__matcha-foam::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 6px;
+    width: 12px;
+    height: 6px;
+    margin-left: -6px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
 }
 
 body.home-page .hero__content {
+    position: relative;
+    z-index: 1;
     width: 100%;
-    --hero-stack-gap: 16px;
-    --hero-cta-gap: 32px;
+    min-height: 0;
+    --hero-stack-gap: clamp(8px, 1.5vh, 16px);
+    --hero-cta-gap: clamp(12px, 2.5vh, 28px);
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: var(--hero-stack-gap);
 }
 
@@ -1176,7 +1437,7 @@ body.home-page .hero__title {
 
 body.home-page .hero__title-intro {
     display: block;
-    font-size: 28px;
+    font-size: clamp(18px, 2.4vh, 28px);
     font-weight: 500;
     line-height: 1.35;
     color: #333;
@@ -1185,15 +1446,118 @@ body.home-page .hero__title-intro {
 
 body.home-page .hero__title-lead {
     display: block;
-    font-size: 68px;
+    font-size: clamp(26px, 5.2vh, 68px);
     font-weight: 650;
-    line-height: 1.15;
+    line-height: 1.12;
     color: #333;
     margin: 0;
 }
 
 body.home-page .hero__title-lead::first-letter {
     text-transform: uppercase;
+}
+
+@keyframes hero-prop-float-airpods {
+    0%, 100% { transform: translateY(0) translateZ(0); }
+    50% { transform: translateY(-14px) translateZ(12px); }
+}
+
+@keyframes hero-prop-float-phone {
+    0%, 100% { transform: translateY(0) translateZ(0); }
+    50% { transform: translateY(-16px) translateZ(14px); }
+}
+
+@keyframes hero-prop-float-tote {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-12px) rotate(-2deg); }
+}
+
+@keyframes hero-prop-float-matcha {
+    0%, 100% { transform: translateY(0) translateZ(0); }
+    50% { transform: translateY(-14px) translateZ(10px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.home-page .hero__scene-stage {
+        transition: none;
+    }
+
+    body.home-page .hero__prop--airpods,
+    body.home-page .hero__prop--phone,
+    body.home-page .hero__prop--tote,
+    body.home-page .hero__prop--matcha {
+        animation: none;
+    }
+}
+
+@media (max-width: 768px) {
+    body.home-page .hero__scene-stage {
+        top: 36%;
+        height: 300px;
+        width: 100%;
+    }
+
+    body.home-page .hero__prop--airpods {
+        left: 2%;
+        top: 8%;
+    }
+
+    body.home-page .hero__prop--phone {
+        right: 2%;
+        top: 6%;
+    }
+
+    body.home-page .hero__prop--tote {
+        left: 4%;
+        bottom: 14%;
+    }
+
+    body.home-page .hero__prop--matcha {
+        right: 4%;
+        bottom: 16%;
+    }
+
+    body.home-page .hero__airpods-img {
+        width: min(140px, 36vw);
+    }
+
+    body.home-page .hero__phone {
+        width: 44px;
+        height: 88px;
+    }
+
+    body.home-page .hero__tote {
+        width: 68px;
+        height: 76px;
+    }
+
+    body.home-page .hero__tote-body {
+        width: 62px;
+        height: 56px;
+        margin-left: -31px;
+    }
+
+    body.home-page .hero__tote-handle {
+        width: 24px;
+        height: 18px;
+    }
+
+    body.home-page .hero__matcha {
+        width: 58px;
+        height: 64px;
+    }
+
+    body.home-page .hero__matcha-cup {
+        width: 50px;
+        height: 42px;
+        margin-left: -25px;
+    }
+
+    body.home-page .hero__matcha-foam {
+        width: 46px;
+        height: 16px;
+        margin-left: -23px;
+    }
 }
 
 body.home-page .hero__actions {
@@ -1325,16 +1689,22 @@ body.home-page .hero__cta:focus-visible {
         transform: none;
     }
     
-    /* Homepage: reference padding - 20px horizontal, generous vertical */
     body.home-page .hero {
-        padding: 48px 20px 32px;
-        margin-bottom: 0;
+        padding: 8px 20px;
     }
     
     body.home-page .hero__content {
         padding: 0;
         max-width: 100%;
         margin: 0 auto;
+    }
+
+    body.home-page > .footer {
+        padding: 16px 0 20px;
+    }
+
+    body.home-page .footer__contact {
+        margin-bottom: 10px;
     }
     
     body.home-page .projects {
@@ -4019,6 +4389,44 @@ body.home-page .hero__cta:focus-visible {
 }
 
 /* Work Page Styles */
+body.work-page .main {
+    margin-top: 64px;
+}
+
+body.work-page .work-hero {
+    padding-top: 48px;
+}
+
+body.work-page .work-page__projects {
+    padding-top: 0;
+    margin-top: 0;
+}
+
+body.work-page .work-page__projects .projects__grid {
+    margin-top: 0;
+}
+
+@media (max-width: 768px) {
+    body.work-page .work-hero {
+        padding: 48px 20px 32px;
+        text-align: center;
+    }
+
+    body.work-page .work-hero__title {
+        font-size: 36px;
+        text-align: center;
+    }
+
+    body.work-page .work-hero__intro {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    body.work-page .work-page__projects {
+        padding: 32px 20px 48px;
+    }
+}
+
 .work-hero {
     background: white;
     padding: 120px 32px 80px;
@@ -4027,11 +4435,15 @@ body.home-page .hero__cta:focus-visible {
     text-align: center;
 }
 
-.work-hero__tags {
-    margin-bottom: 24px;
-    font-size: 16px;
+.work-hero__intro {
+    margin: 16px 0 0;
+    font-size: 18px;
     color: #666;
-    font-weight: 500;
+    font-weight: 400;
+    line-height: 1.5;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .work-hero__title {
@@ -4567,23 +4979,31 @@ body.home-page .hero__cta:focus-visible {
         height: 52px;
     }
     
-    /* Homepage: reference - 20px horizontal padding */
     body.home-page .hero {
-        padding: 40px 20px 28px;
+        padding: 6px 20px;
     }
     
     body.home-page .hero__content {
-        --hero-stack-gap: 10px;
-        --hero-cta-gap: 20px;
+        --hero-stack-gap: 8px;
+        --hero-cta-gap: 14px;
     }
 
     body.home-page .hero__title-intro {
-        font-size: 18px;
+        font-size: clamp(16px, 2.2vh, 22px);
     }
 
     body.home-page .hero__title-lead {
-        font-size: 32px;
-        line-height: 1.2;
+        font-size: clamp(22px, 4.5vh, 36px);
+        line-height: 1.15;
+    }
+
+    body.home-page > .footer {
+        padding: 12px 0 16px;
+    }
+
+    body.home-page .footer__contact,
+    body.home-page .footer__made-with {
+        font-size: 13px;
     }
 
     body.home-page .hero__actions {
