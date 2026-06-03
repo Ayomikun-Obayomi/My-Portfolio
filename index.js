@@ -94,6 +94,26 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Hero 3D scene — subtle mouse parallax (desktop only)
+    const heroSection = document.getElementById('hero');
+    const heroSceneStage = document.getElementById('heroSceneStage');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    if (heroSection && heroSceneStage && !prefersReducedMotion && finePointer) {
+        heroSection.addEventListener('mousemove', (event) => {
+            const rect = heroSection.getBoundingClientRect();
+            const x = (event.clientX - rect.left) / rect.width - 0.5;
+            const y = (event.clientY - rect.top) / rect.height - 0.5;
+            heroSceneStage.style.transform =
+                `translate(-50%, -50%) rotateY(${x * 14}deg) rotateX(${y * -10}deg)`;
+        });
+
+        heroSection.addEventListener('mouseleave', () => {
+            heroSceneStage.style.transform = 'translate(-50%, -50%) rotateY(0deg) rotateX(0deg)';
+        });
+    }
+
     // Navbar pill on scroll - all pages
     const header = document.querySelector('.header');
 
