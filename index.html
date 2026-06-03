@@ -8,9 +8,56 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mercury+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=3">
+    <link rel="stylesheet" href="styles.css?v=48">
 </head>
 <body class="home-page">
+    <div class="home-lines" aria-hidden="true">
+        <svg class="home-lines__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 3200" preserveAspectRatio="xMidYMin slice">
+            <g fill="none" stroke="#f5f5f5" stroke-width="1" stroke-linecap="round">
+                <line x1="-40" y1="220" x2="520" y2="80"/>
+                <line x1="180" y1="-30" x2="640" y2="380"/>
+                <line x1="920" y1="40" x2="1480" y2="310"/>
+                <line x1="1100" y1="520" x2="1520" y2="140"/>
+                <line x1="60" y1="680" x2="780" y2="420"/>
+                <line x1="400" y1="900" x2="1100" y2="620"/>
+                <line x1="-20" y1="1180" x2="620" y2="980"/>
+                <line x1="820" y1="860" x2="1440" y2="1120"/>
+                <line x1="200" y1="1420" x2="980" y2="1280"/>
+                <line x1="1080" y1="1380" x2="1500" y2="1680"/>
+                <line x1="40" y1="1880" x2="720" y2="1720"/>
+                <line x1="560" y1="2100" x2="1320" y2="1980"/>
+                <line x1="120" y1="2480" x2="860" y2="2320"/>
+                <line x1="940" y1="2280" x2="1480" y2="2580"/>
+                <line x1="280" y1="2920" x2="1180" y2="2780"/>
+                <line x1="680" y1="120" x2="1180" y2="540"/>
+                <line x1="20" y1="520" x2="380" y2="1120"/>
+                <line x1="1020" y1="780" x2="1380" y2="1480"/>
+                <path d="M-30,340 Q420,180 890,420 T1540,280"/>
+                <path d="M120,1040 Q580,760 1040,980 T1420,860"/>
+                <path d="M-50,1680 Q360,1420 820,1580 T1380,1760"/>
+                <path d="M240,2180 Q720,1940 1160,2240"/>
+                <path d="M80,260 Q520,520 180,920"/>
+                <path d="M1240,640 Q980,980 1320,1340"/>
+                <path d="M340,1560 Q780,1340 620,1880 T980,2480"/>
+                <line x1="1320" y1="1920" x2="980" y2="2480"/>
+                <line x1="480" y1="260" x2="220" y2="720"/>
+                <line x1="760" y1="1640" x2="420" y2="2180"/>
+                <line x1="1180" y1="100" x2="820" y2="640"/>
+                <line x1="1400" y1="920" x2="1040" y2="420"/>
+                <line x1="160" y1="2040" x2="520" y2="2640"/>
+                <line x1="1000" y1="2840" x2="1360" y2="2240"/>
+                <line x1="300" y1="40" x2="540" y2="640"/>
+                <line x1="880" y1="1780" x2="1240" y2="1180"/>
+                <path d="M600,-40 Q940,320 720,720"/>
+                <path d="M40,1280 Q280,1080 480,1480 T720,1920"/>
+                <path d="M1080,2080 Q1320,2280 1160,2720"/>
+                <line x1="200" y1="780" x2="600" y2="1180"/>
+                <line x1="1000" y1="320" x2="600" y2="720"/>
+                <line x1="1280" y1="2480" x2="880" y2="2880"/>
+                <line x1="0" y1="1520" x2="440" y2="1920"/>
+            </g>
+        </svg>
+    </div>
     <header class="header">
         <div class="header__inner">
         <a href="index.html" class="header__logo">
@@ -47,10 +94,65 @@
     <main class="main">
         <section id="hero" class="hero">
             <div class="hero__content">
-                <p class="hero__subtitle">Product Designer. Opportunist. Outdoorsy Person. Songbird</p>
-                 <h1 class="hero__title">
-                     I see everyday <span class="hero__emphasis">challenges</span> <span class="emoji-flex">💪🏿</span> as <span class="hero__emphasis">opportunities</span> <span class="emoji-twinkle">✨</span> to create experiences that make life <span class="hero__emphasis">simpler</span> for people<span id="beating-heart">❤️</span> and more <span class="hero__emphasis">effective</span> <span class="emoji-rocket">🚀</span> for businesses.
-                 </h1>
+                <h1 class="hero__title">
+                    <span class="hero__title-intro">Hi, I'm <span class="hero__emphasis hero__ayo" tabindex="0" aria-describedby="hero-ayo-tooltip">
+                        Ayo
+                        <span class="hero-ayo-pop" id="hero-ayo-tooltip" role="tooltip">
+                            <span class="hero-ayo-pop__card">
+                                <span class="hero-ayo-pop__head">
+                                    <span class="hero-ayo-pop__word">Ayo</span>
+                                    <span class="hero-ayo-pop__flag" role="img" aria-label="Nigeria">
+                                        <svg class="hero-ayo-pop__flag-svg" width="22" height="15" viewBox="0 0 24 16" aria-hidden="true">
+                                            <rect width="8" height="16" fill="#008751"/>
+                                            <rect x="8" width="8" height="16" fill="#ffffff"/>
+                                            <rect x="16" width="8" height="16" fill="#008751"/>
+                                        </svg>
+                                    </span>
+                                </span>
+                                <span class="hero-ayo-pop__pronounce">
+                                    <span class="hero-ayo-pop__ipa" lang="yo">/à.jɔ̀/</span>
+                                    <button type="button" class="hero-ayo-pop__audio" aria-label="Listen to Yoruba pronunciation of Àyọ̀">
+                                        <svg class="hero-ayo-pop__audio-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                            <path d="M11 5L6 9H3v6h3l5 4V5z" fill="currentColor"/>
+                                            <path d="M15.54 8.46a5 5 0 010 7.07M19.07 4.93a10 10 0 010 14.14" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+                                        </svg>
+                                    </button>
+                                </span>
+                                <span class="hero-ayo-pop__meta">noun · Yoruba <span class="hero-ayo-pop__orth">Àyọ̀</span></span>
+                                <p class="hero-ayo-pop__def"><strong>Joy.</strong> Short for Ayomikun — “my joy is full.”</p>
+                                <audio class="hero-ayo-pop__clip" preload="metadata">
+                                    <source src="ayo-pronunciation.m4a?v=yor" type="audio/mp4">
+                                    <source src="ayo-pronunciation-yoruba.wav?v=yor" type="audio/wav">
+                                </audio>
+                            </span>
+                        </span>
+                    </span></span><span class="hero__title-lead">A Product Designer building <span class="hero__emphasis">consumer products</span> from <span class="hero__emphasis">0 → 1</span>, guided by <span class="hero__emphasis hero__craft" tabindex="0">
+                        craft
+                        <span class="hero-craft-pop" role="tooltip">
+                            <span class="hero-craft-pop__stack">
+                                <span class="hero-craft-pop__card hero-craft-pop__card--tilt-left">
+                                    <span class="hero-craft-pop__media">
+                                        <img class="hero-craft-pop__img" src="By the lake.jpeg" alt="By the lake" width="144" height="144" loading="eager" decoding="async">
+                                    </span>
+                                </span>
+                                <span class="hero-craft-pop__card hero-craft-pop__card--center">
+                                    <span class="hero-craft-pop__media">
+                                        <img class="hero-craft-pop__img" src="waterfall.jpeg" alt="Waterfall" width="144" height="144" loading="eager" decoding="async">
+                                    </span>
+                                </span>
+                                <span class="hero-craft-pop__card hero-craft-pop__card--tilt-right">
+                                    <span class="hero-craft-pop__media">
+                                        <img class="hero-craft-pop__img" src="natural-fashion.png" alt="Fashion craft" width="144" height="144" loading="eager" decoding="async">
+                                    </span>
+                                </span>
+                            </span>
+                        </span>
+                    </span>, built for <span class="hero__emphasis">delight</span>.</span>
+                </h1>
+                <div class="hero__actions">
+                    <a href="#work" class="hero__cta hero__cta--primary">View my work</a>
+                    <a href="about.html" class="hero__cta hero__cta--secondary">Learn about me</a>
+                </div>
             </div>
         </section>
 
@@ -78,7 +180,7 @@
                     
                     <div class="project-card">
                         <div class="project-card__image-container">
-                            <img src="coverimagetheguild.png" alt="Guild Gaming Project" class="project-card__image">
+                            <img src="Guild.png" alt="Guild Gaming Project" class="project-card__image">
                         </div>
                         <div class="project-card__content">
                             <div class="project-card__tags">

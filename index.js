@@ -48,9 +48,55 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
+    // Ayo name popover — dictionary-style pronunciation audio
+    const ayoAudioBtn = document.querySelector('.hero-ayo-pop__audio');
+    const ayoAudioClip = document.querySelector('.hero-ayo-pop__clip');
+    const ayoWrap = document.querySelector('.hero__ayo');
+
+    function playAyoPronunciation() {
+        if (!ayoAudioClip) return;
+        ayoAudioClip.currentTime = 0;
+        const playPromise = ayoAudioClip.play();
+        if (playPromise && typeof playPromise.catch === 'function') {
+            playPromise.catch(() => {});
+        }
+    }
+
+    if (ayoWrap && ayoAudioClip) {
+        ayoWrap.addEventListener('keydown', (event) => {
+            if (event.target !== ayoWrap) return;
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                playAyoPronunciation();
+            }
+        });
+    }
+
+    if (ayoAudioBtn && ayoAudioClip) {
+        ayoAudioBtn.addEventListener('click', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            playAyoPronunciation();
+        });
+
+        ayoAudioClip.addEventListener('play', () => {
+            ayoAudioBtn.classList.add('is-playing');
+        });
+
+        ayoAudioClip.addEventListener('ended', () => {
+            ayoAudioBtn.classList.remove('is-playing');
+        });
+
+        ayoAudioClip.addEventListener('pause', () => {
+            if (ayoAudioClip.currentTime === 0 || ayoAudioClip.ended) {
+                ayoAudioBtn.classList.remove('is-playing');
+            }
+        });
+    }
+
     // Navbar pill on scroll - all pages
     const header = document.querySelector('.header');
-    
+
     if (header) {
         window.addEventListener('scroll', function() {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
