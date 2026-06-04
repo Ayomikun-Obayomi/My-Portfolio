@@ -8,56 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mercury+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=56">
+    <link rel="stylesheet" href="styles.css?v=106">
 </head>
 <body class="home-page">
-    <div class="home-lines" aria-hidden="true">
-        <svg class="home-lines__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 3200" preserveAspectRatio="xMidYMin slice">
-            <g fill="none" stroke="#f5f5f5" stroke-width="1" stroke-linecap="round">
-                <line x1="-40" y1="220" x2="520" y2="80"/>
-                <line x1="180" y1="-30" x2="640" y2="380"/>
-                <line x1="920" y1="40" x2="1480" y2="310"/>
-                <line x1="1100" y1="520" x2="1520" y2="140"/>
-                <line x1="60" y1="680" x2="780" y2="420"/>
-                <line x1="400" y1="900" x2="1100" y2="620"/>
-                <line x1="-20" y1="1180" x2="620" y2="980"/>
-                <line x1="820" y1="860" x2="1440" y2="1120"/>
-                <line x1="200" y1="1420" x2="980" y2="1280"/>
-                <line x1="1080" y1="1380" x2="1500" y2="1680"/>
-                <line x1="40" y1="1880" x2="720" y2="1720"/>
-                <line x1="560" y1="2100" x2="1320" y2="1980"/>
-                <line x1="120" y1="2480" x2="860" y2="2320"/>
-                <line x1="940" y1="2280" x2="1480" y2="2580"/>
-                <line x1="280" y1="2920" x2="1180" y2="2780"/>
-                <line x1="680" y1="120" x2="1180" y2="540"/>
-                <line x1="20" y1="520" x2="380" y2="1120"/>
-                <line x1="1020" y1="780" x2="1380" y2="1480"/>
-                <path d="M-30,340 Q420,180 890,420 T1540,280"/>
-                <path d="M120,1040 Q580,760 1040,980 T1420,860"/>
-                <path d="M-50,1680 Q360,1420 820,1580 T1380,1760"/>
-                <path d="M240,2180 Q720,1940 1160,2240"/>
-                <path d="M80,260 Q520,520 180,920"/>
-                <path d="M1240,640 Q980,980 1320,1340"/>
-                <path d="M340,1560 Q780,1340 620,1880 T980,2480"/>
-                <line x1="1320" y1="1920" x2="980" y2="2480"/>
-                <line x1="480" y1="260" x2="220" y2="720"/>
-                <line x1="760" y1="1640" x2="420" y2="2180"/>
-                <line x1="1180" y1="100" x2="820" y2="640"/>
-                <line x1="1400" y1="920" x2="1040" y2="420"/>
-                <line x1="160" y1="2040" x2="520" y2="2640"/>
-                <line x1="1000" y1="2840" x2="1360" y2="2240"/>
-                <line x1="300" y1="40" x2="540" y2="640"/>
-                <line x1="880" y1="1780" x2="1240" y2="1180"/>
-                <path d="M600,-40 Q940,320 720,720"/>
-                <path d="M40,1280 Q280,1080 480,1480 T720,1920"/>
-                <path d="M1080,2080 Q1320,2280 1160,2720"/>
-                <line x1="200" y1="780" x2="600" y2="1180"/>
-                <line x1="1000" y1="320" x2="600" y2="720"/>
-                <line x1="1280" y1="2480" x2="880" y2="2880"/>
-                <line x1="0" y1="1520" x2="440" y2="1920"/>
-            </g>
-        </svg>
-    </div>
     <header class="header">
         <div class="header__inner">
         <a href="index.html" class="header__logo">
@@ -66,9 +19,7 @@
         <nav class="nav">
             <ul class="nav__menu">
                 <li class="nav__item"><a href="work.html" class="nav__link">Work</a></li>
-                <!-- Backyard — commented out for new ship
-                <li class="nav__item"><a href="backyard.html" class="nav__link">Backyard</a></li>
-                -->
+                <li class="nav__item"><a href="backyard.html" class="nav__link">Playground</a></li>
                 <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
                 <li class="nav__item"><a href="Obayomi--Ayo's Resume.pdf" target="_blank" rel="noopener noreferrer" class="nav__link">Resume</a></li>
             </ul>
@@ -83,9 +34,7 @@
     <div id="mobileDrawer" class="nav__menu nav__menu--mobile" aria-hidden="true">
         <ul class="nav__menu-list">
             <li class="nav__item"><a href="work.html" class="nav__link">Work</a></li>
-            <!-- Backyard — commented out for new ship
-            <li class="nav__item"><a href="backyard.html" class="nav__link">Backyard</a></li>
-            -->
+            <li class="nav__item"><a href="backyard.html" class="nav__link">Playground</a></li>
             <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
             <li class="nav__item"><a href="Obayomi--Ayo's Resume.pdf" target="_blank" rel="noopener noreferrer" class="nav__link">Resume</a></li>
         </ul>
@@ -93,6 +42,7 @@
 
     <main class="main">
         <section id="hero" class="hero">
+            <div class="hero__content">
             <div class="hero__scene" aria-hidden="true">
                 <div class="hero__scene-stage" id="heroSceneStage">
                     <div class="hero__prop hero__prop--airpods">
@@ -120,14 +70,18 @@
                         </div>
                     </div>
                     <div class="hero__prop hero__prop--matcha">
-                        <div class="hero__matcha">
-                            <span class="hero__matcha-foam"></span>
-                            <span class="hero__matcha-cup"></span>
-                        </div>
+                        <img
+                            class="hero__matcha-img"
+                            src="a_regular_cup_of_matcha_in_a_recyclable_cup_with_ice_static.png"
+                            alt=""
+                            width="200"
+                            height="200"
+                            loading="eager"
+                            decoding="async"
+                        >
                     </div>
                 </div>
             </div>
-            <div class="hero__content">
                 <h1 class="hero__title">
                     <span class="hero__title-intro">Hi, I'm <span class="hero__emphasis hero__ayo" tabindex="0" aria-describedby="hero-ayo-tooltip">
                         Ayo
@@ -160,28 +114,7 @@
                                 </audio>
                             </span>
                         </span>
-                    </span></span><span class="hero__title-lead">A Product Designer building <span class="hero__emphasis">consumer products</span> from <span class="hero__emphasis">0 → 1</span>, guided by <span class="hero__emphasis hero__craft" tabindex="0">
-                        craft
-                        <span class="hero-craft-pop" role="tooltip">
-                            <span class="hero-craft-pop__stack">
-                                <span class="hero-craft-pop__card hero-craft-pop__card--tilt-left">
-                                    <span class="hero-craft-pop__media">
-                                        <img class="hero-craft-pop__img" src="By the lake.jpeg" alt="By the lake" width="144" height="144" loading="eager" decoding="async">
-                                    </span>
-                                </span>
-                                <span class="hero-craft-pop__card hero-craft-pop__card--center">
-                                    <span class="hero-craft-pop__media">
-                                        <img class="hero-craft-pop__img" src="waterfall.jpeg" alt="Waterfall" width="144" height="144" loading="eager" decoding="async">
-                                    </span>
-                                </span>
-                                <span class="hero-craft-pop__card hero-craft-pop__card--tilt-right">
-                                    <span class="hero-craft-pop__media">
-                                        <img class="hero-craft-pop__img" src="natural-fashion.png" alt="Fashion craft" width="144" height="144" loading="eager" decoding="async">
-                                    </span>
-                                </span>
-                            </span>
-                        </span>
-                    </span>, and built for <span class="hero__emphasis">delight</span>.</span>
+                    </span></span><span class="hero__title-lead">A Product Designer building <span class="hero__emphasis">consumer products</span> from <span class="hero__emphasis hero__nowrap">0 → 1</span>, guided by <span class="hero__pill"><span class="hero__emphasis">craft</span> <span class="hero__craft-emoji" role="img" aria-label="artist palette">🎨</span></span>, and built for <span class="hero__pill"><span class="hero__emphasis">delight</span> <span class="hero__craft-emoji" role="img" aria-label="star-struck">🤩</span></span></span>
                 </h1>
                 <div class="hero__actions">
                     <a href="work.html" class="hero__cta hero__cta--primary">View my work</a>
@@ -205,6 +138,6 @@
         </div>
     </footer>
 
-    <script src="index.js"></script>
+    <script src="index.js?v=2">
 </body>
 </html>

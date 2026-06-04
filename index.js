@@ -106,26 +106,25 @@ document.addEventListener('DOMContentLoaded', function() {
             const x = (event.clientX - rect.left) / rect.width - 0.5;
             const y = (event.clientY - rect.top) / rect.height - 0.5;
             heroSceneStage.style.transform =
-                `translate(-50%, -50%) rotateY(${x * 14}deg) rotateX(${y * -10}deg)`;
+                `rotateY(${x * 14}deg) rotateX(${y * -10}deg)`;
         });
 
         heroSection.addEventListener('mouseleave', () => {
-            heroSceneStage.style.transform = 'translate(-50%, -50%) rotateY(0deg) rotateX(0deg)';
+            heroSceneStage.style.transform = 'rotateY(0deg) rotateX(0deg)';
         });
     }
 
-    // Navbar pill on scroll - all pages
+    // Navbar pill on scroll
     const header = document.querySelector('.header');
 
     if (header) {
-        window.addEventListener('scroll', function() {
+        function updateHeaderOnScroll() {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            if (scrollTop > 100) {
-                header.classList.add('header--transparent');
-            } else {
-                header.classList.remove('header--transparent');
-            }
-        });
+            header.classList.toggle('header--transparent', scrollTop > 100);
+        }
+
+        window.addEventListener('scroll', updateHeaderOnScroll, { passive: true });
+        updateHeaderOnScroll();
     }
     
     // Mobile drawer (bottom sheet) toggle with fallbacks
