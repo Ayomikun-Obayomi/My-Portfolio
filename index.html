@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mercury+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=106">
+    <link rel="stylesheet" href="styles.css?v=141">
 </head>
 <body class="home-page">
     <header class="header">
@@ -19,6 +19,7 @@
         <nav class="nav">
             <ul class="nav__menu">
                 <li class="nav__item"><a href="work.html" class="nav__link">Work</a></li>
+                <li class="nav__item"><a href="backyard.html" class="nav__link">Playground</a></li>
                 <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
                 <li class="nav__item"><a href="Obayomi--Ayo's Resume.pdf" target="_blank" rel="noopener noreferrer" class="nav__link">Resume</a></li>
             </ul>
@@ -33,6 +34,7 @@
     <div id="mobileDrawer" class="nav__menu nav__menu--mobile" aria-hidden="true">
         <ul class="nav__menu-list">
             <li class="nav__item"><a href="work.html" class="nav__link">Work</a></li>
+            <li class="nav__item"><a href="backyard.html" class="nav__link">Playground</a></li>
             <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
             <li class="nav__item"><a href="Obayomi--Ayo's Resume.pdf" target="_blank" rel="noopener noreferrer" class="nav__link">Resume</a></li>
         </ul>
@@ -43,23 +45,7 @@
             <div class="hero__content">
             <div class="hero__scene" aria-hidden="true">
                 <div class="hero__scene-stage" id="heroSceneStage">
-                    <div class="hero__prop hero__prop--airpods">
-                        <img
-                            class="hero__airpods-img"
-                            src="hero-airpods.png"
-                            alt=""
-                            width="200"
-                            height="200"
-                            loading="eager"
-                            decoding="async"
-                        >
-                    </div>
-                    <div class="hero__prop hero__prop--phone">
-                        <div class="hero__phone">
-                            <span class="hero__phone-screen"></span>
-                            <span class="hero__phone-notch"></span>
-                        </div>
-                    </div>
+                    <!-- Tote bag — markup kept for reuse; styles in styles.css (.hero__tote*)
                     <div class="hero__prop hero__prop--tote">
                         <div class="hero__tote">
                             <span class="hero__tote-handle hero__tote-handle--left"></span>
@@ -67,10 +53,11 @@
                             <span class="hero__tote-body"></span>
                         </div>
                     </div>
+                    -->
                     <div class="hero__prop hero__prop--matcha">
                         <img
                             class="hero__matcha-img"
-                            src="a_regular_cup_of_matcha_in_a_recyclable_cup_with_ice_static.png"
+                            src="matcha image.png"
                             alt=""
                             width="200"
                             height="200"
@@ -81,9 +68,20 @@
                 </div>
             </div>
                 <h1 class="hero__title">
-                    <span class="hero__title-intro">Hi, I'm <span class="hero__emphasis hero__ayo" tabindex="0" aria-describedby="hero-ayo-tooltip">
-                        Ayo
-                        <span class="hero-ayo-pop" id="hero-ayo-tooltip" role="tooltip">
+                    <span class="hero__title-intro">Hi, I'm <span class="hero__emphasis hero__ayo">
+                        <span class="hero__ayo-inline">
+                            <span class="hero__ayo-name">Ayo</span>
+                            <span class="hero__ayo-tools">
+                                <button type="button" class="hero__ayo-btn hero__ayo-btn--listen" aria-label="Listen to Yoruba pronunciation of Àyọ̀">
+                                    <svg class="hero__ayo-btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                        <path d="M11 5L6 9H3v6h3l5 4V5z" fill="currentColor"/>
+                                        <path d="M15.54 8.46a5 5 0 010 7.07M19.07 4.93a10 10 0 010 14.14" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="hero__ayo-btn hero__ayo-btn--meaning" id="hero-ayo-meaning-btn" aria-expanded="false" aria-controls="hero-ayo-meaning">Check meaning</button>
+                            </span>
+                        </span>
+                        <span class="hero-ayo-pop" id="hero-ayo-meaning" role="dialog" aria-labelledby="hero-ayo-meaning-btn" hidden>
                             <span class="hero-ayo-pop__card">
                                 <span class="hero-ayo-pop__head">
                                     <span class="hero-ayo-pop__word">Ayo</span>
@@ -97,22 +95,46 @@
                                 </span>
                                 <span class="hero-ayo-pop__pronounce">
                                     <span class="hero-ayo-pop__ipa" lang="yo">/à.jɔ̀/</span>
-                                    <button type="button" class="hero-ayo-pop__audio" aria-label="Listen to Yoruba pronunciation of Àyọ̀">
-                                        <svg class="hero-ayo-pop__audio-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                            <path d="M11 5L6 9H3v6h3l5 4V5z" fill="currentColor"/>
-                                            <path d="M15.54 8.46a5 5 0 010 7.07M19.07 4.93a10 10 0 010 14.14" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
-                                        </svg>
-                                    </button>
                                 </span>
                                 <span class="hero-ayo-pop__meta">noun · Yoruba <span class="hero-ayo-pop__orth">Àyọ̀</span></span>
                                 <p class="hero-ayo-pop__def"><strong>Joy.</strong> Short for Ayomikun — “my joy is full.”</p>
-                                <audio class="hero-ayo-pop__clip" preload="metadata">
-                                    <source src="ayo-pronunciation.m4a?v=yor" type="audio/mp4">
-                                    <source src="ayo-pronunciation-yoruba.wav?v=yor" type="audio/wav">
-                                </audio>
                             </span>
                         </span>
-                    </span></span><span class="hero__title-lead">A Product Designer building <span class="hero__emphasis">consumer products</span> from <span class="hero__emphasis hero__nowrap">0 → 1</span>, guided by <span class="hero__pill"><span class="hero__emphasis">craft</span> <span class="hero__craft-emoji" role="img" aria-label="artist palette">🎨</span></span>, and built for <span class="hero__pill"><span class="hero__emphasis">delight</span> <span class="hero__craft-emoji" role="img" aria-label="star-struck">🤩</span></span></span>
+                        <audio class="hero-ayo-pop__clip" preload="metadata">
+                            <source src="ayo-pronunciation.m4a?v=yor" type="audio/mp4">
+                            <source src="ayo-pronunciation-yoruba.wav?v=yor" type="audio/wav">
+                        </audio>
+                    </span></span><span class="hero__title-lead">A Product Designer building <span class="hero__emphasis">consumer products</span> from <span class="hero__emphasis hero__nowrap">0 → 1</span>, guided by <span class="hero__emphasis hero__craft">
+                        <span class="hero__craft-word">craft</span><span class="hero-craft-pop" aria-label="Design tools: Cursor, Figma, Claude">
+                            <span class="hero-craft-pop__stack">
+                                <span class="hero-craft-pop__card hero-craft-pop__card--tilt-left">
+                                    <span class="hero-craft-pop__media hero-craft-pop__media--tool">
+                                        <span class="hero-craft-pop__tool" aria-hidden="true">
+                                            <img class="hero-craft-pop__logo" src="craft-icon-cursor.png" alt="" width="48" height="48" decoding="async">
+                                        </span>
+                                        <span class="hero-craft-pop__caption">Cursor</span>
+                                    </span>
+                                </span>
+                                <span class="hero-craft-pop__card hero-craft-pop__card--center">
+                                    <span class="hero-craft-pop__media hero-craft-pop__media--tool">
+                                        <span class="hero-craft-pop__tool" aria-hidden="true">
+                                            <img class="hero-craft-pop__logo" src="craft-icon-figma-only.png" alt="" width="48" height="48" decoding="async">
+                                        </span>
+                                        <span class="hero-craft-pop__caption">Auto-layout</span>
+                                        <span class="hero-craft-pop__keys"><kbd>Shift</kbd><span class="hero-craft-pop__plus">+</span><kbd>A</kbd></span>
+                                    </span>
+                                </span>
+                                <span class="hero-craft-pop__card hero-craft-pop__card--tilt-right">
+                                    <span class="hero-craft-pop__media hero-craft-pop__media--tool">
+                                        <span class="hero-craft-pop__tool" aria-hidden="true">
+                                            <img class="hero-craft-pop__logo" src="craft-icon-claude.png" alt="" width="48" height="48" decoding="async">
+                                        </span>
+                                        <span class="hero-craft-pop__caption">Claude</span>
+                                    </span>
+                                </span>
+                            </span>
+                        </span>
+                    </span>, and built for <span class="hero__emphasis">delight</span> <span class="hero__craft-emoji" role="img" aria-label="star-struck">🤩</span></span>
                 </h1>
                 <div class="hero__actions">
                     <a href="work.html" class="hero__cta hero__cta--primary">View my work</a>
@@ -136,6 +158,6 @@
         </div>
     </footer>
 
-    <script src="index.js?v=2">
+    <script src="index.js?v=3">
 </body>
 </html>
