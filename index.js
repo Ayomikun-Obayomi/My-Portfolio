@@ -48,10 +48,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Ayo name popover — dictionary-style pronunciation audio
-    const ayoAudioBtn = document.querySelector('.hero-ayo-pop__audio');
-    const ayoAudioClip = document.querySelector('.hero-ayo-pop__clip');
+    // Ayo — inline pronunciation + meaning panel
+    const ayoListenBtn = document.querySelector('.hero__ayo-btn--listen');
+    const ayoMeaningBtn = document.getElementById('hero-ayo-meaning-btn');
+    const ayoMeaningPanel = document.getElementById('hero-ayo-meaning');
     const ayoWrap = document.querySelector('.hero__ayo');
+    const ayoAudioClip = document.querySelector('.hero-ayo-pop__clip');
 
     function playAyoPronunciation() {
         if (!ayoAudioClip) return;
@@ -62,37 +64,55 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    if (ayoWrap && ayoAudioClip) {
-        ayoWrap.addEventListener('keydown', (event) => {
-            if (event.target !== ayoWrap) return;
-            if (event.key === 'Enter') {
-                event.preventDefault();
-                playAyoPronunciation();
-            }
-        });
+    function setAyoMeaningOpen(open) {
+        if (!ayoMeaningPanel || !ayoMeaningBtn) return;
+        ayoMeaningPanel.hidden = !open;
+        ayoMeaningBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
     }
 
-    if (ayoAudioBtn && ayoAudioClip) {
-        ayoAudioBtn.addEventListener('click', (event) => {
+    if (ayoListenBtn && ayoAudioClip) {
+        ayoListenBtn.addEventListener('click', (event) => {
             event.preventDefault();
             event.stopPropagation();
             playAyoPronunciation();
         });
 
         ayoAudioClip.addEventListener('play', () => {
-            ayoAudioBtn.classList.add('is-playing');
+            ayoListenBtn.classList.add('is-playing');
         });
 
         ayoAudioClip.addEventListener('ended', () => {
-            ayoAudioBtn.classList.remove('is-playing');
+            ayoListenBtn.classList.remove('is-playing');
         });
 
         ayoAudioClip.addEventListener('pause', () => {
             if (ayoAudioClip.currentTime === 0 || ayoAudioClip.ended) {
-                ayoAudioBtn.classList.remove('is-playing');
+                ayoListenBtn.classList.remove('is-playing');
             }
         });
     }
+
+    if (ayoMeaningBtn && ayoMeaningPanel) {
+        ayoMeaningBtn.addEventListener('click', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            setAyoMeaningOpen(ayoMeaningPanel.hidden);
+        });
+    }
+
+    document.addEventListener('click', (event) => {
+        if (!ayoMeaningPanel || ayoMeaningPanel.hidden || !ayoWrap) return;
+        if (!ayoWrap.contains(event.target)) {
+            setAyoMeaningOpen(false);
+        }
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && ayoMeaningPanel && !ayoMeaningPanel.hidden) {
+            setAyoMeaningOpen(false);
+            ayoMeaningBtn?.focus();
+        }
+    });
 
     // Hero 3D scene — subtle mouse parallax (desktop only)
     const heroSection = document.getElementById('hero');
