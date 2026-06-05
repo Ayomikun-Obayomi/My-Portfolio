@@ -609,22 +609,22 @@ body.home-page > .footer {
     body.home-page .footer__content,
     .footer__content {
         flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        text-align: left;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
         gap: 12px;
     }
 
     .footer__contact {
         white-space: normal;
-        text-align: left;
+        text-align: center;
         width: 100%;
     }
 
     .footer__made-with {
-        justify-content: flex-start;
+        justify-content: center;
         white-space: normal;
-        text-align: left;
+        text-align: center;
         width: 100%;
     }
 }
@@ -5055,7 +5055,7 @@ body.backyard-page #back-to-top {
 }
 
 @media (max-width: 768px) {
-    #back-to-top {
+    body:not(.home-page):not(.backyard-page) #back-to-top {
         display: flex !important;
         position: fixed !important;
         bottom: max(24px, env(safe-area-inset-bottom, 0px));
@@ -5064,11 +5064,6 @@ body.backyard-page #back-to-top {
         height: 36px;
         font-size: 16px;
         z-index: 10002;
-    }
-
-    /* Homepage scrolls on mobile — show back to top */
-    body.home-page #back-to-top {
-        display: flex !important;
     }
 }
 
@@ -5233,9 +5228,9 @@ body.backyard-page #back-to-top {
 
     .footer__content {
         flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        text-align: left;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
         gap: 12px;
         width: 100%;
         max-width: var(--site-max-width);
@@ -5244,15 +5239,15 @@ body.backyard-page #back-to-top {
     .footer__contact {
         font-size: 14px;
         white-space: normal;
-        text-align: left;
+        text-align: center;
         width: 100%;
     }
     
     .footer__made-with {
         font-size: 14px;
-        justify-content: flex-start;
+        justify-content: center;
         white-space: normal;
-        text-align: left;
+        text-align: center;
         width: 100%;
     }
     
@@ -5442,9 +5437,9 @@ body.backyard-page #back-to-top {
     
     .footer__content {
         flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        text-align: left;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
         gap: 10px;
     }
 
@@ -5452,16 +5447,16 @@ body.backyard-page #back-to-top {
         font-size: 12px;
         min-width: 0;
         white-space: normal;
-        text-align: left;
+        text-align: center;
         width: 100%;
     }
 
     .footer__made-with {
         font-size: 11px;
         min-width: 0;
-        justify-content: flex-start;
+        justify-content: center;
         white-space: normal;
-        text-align: left;
+        text-align: center;
         width: 100%;
     }
 
