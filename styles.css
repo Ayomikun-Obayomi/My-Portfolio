@@ -67,9 +67,14 @@ body:not(.backyard-page)::before {
 }
 
 /* Case study pages — plain white, no dot-grid wallpaper */
-body:not(.backyard-page):has(.case-study)::before {
-    background-image: none;
+body.case-study-page,
+html:has(body.case-study-page) {
     background-color: #ffffff;
+}
+
+body.case-study-page::before {
+    content: none;
+    display: none;
 }
 
 body:not(.backyard-page) > .header {
@@ -603,9 +608,9 @@ body.home-page > .footer {
 
     body.home-page .footer__content,
     .footer__content {
-        flex-direction: column;
+        justify-content: space-between;
         align-items: center;
-        gap: 10px;
+        gap: 10px 16px;
     }
 }
 
@@ -4997,11 +5002,11 @@ body.work-page .work-page__projects .projects__grid {
     }
 }
 
-/* Back to Top Button */
-.back-to-top-btn {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
+/* Scroll to Top Button */
+.scroll-top-btn {
+    position: fixed !important;
+    bottom: 30px !important;
+    right: 30px !important;
     width: 60px;
     height: 40px;
     background: #fff;
@@ -5009,45 +5014,28 @@ body.work-page .work-page__projects .projects__grid {
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: center;
     font-size: 18px;
     line-height: 1;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transform: translateY(6px);
-    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease, background 0.2s ease, box-shadow 0.2s ease;
-    z-index: 10002;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateY(0);
+    transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    z-index: 2147483647 !important;
 }
 
-.back-to-top-btn:hover {
+.scroll-top-btn:hover {
     background: #f8f9fa;
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
-.back-to-top-btn.show {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    transform: translateY(0);
-}
-
-body.home-page .back-to-top-btn,
-body.backyard-page .back-to-top-btn {
-    display: none;
-}
-
-.back-to-top-sentinel {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 1px;
-    height: 1px;
-    pointer-events: none;
-    visibility: hidden;
+body.home-page .scroll-top-btn,
+body.backyard-page .scroll-top-btn {
+    display: none !important;
 }
 
 /* Related Case Study Section */
@@ -5151,13 +5139,13 @@ body.backyard-page .back-to-top-btn {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 12px 24px;
     width: 100%;
     max-width: var(--site-max-width);
     margin: 0 auto;
     padding: 0 var(--site-gutter);
-    text-align: center;
+    text-align: left;
 }
 
 .footer__contact {
@@ -5186,10 +5174,11 @@ body.backyard-page .back-to-top-btn {
     margin: 0;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     gap: 8px;
     flex-shrink: 0;
     white-space: nowrap;
+    text-align: right;
 }
 
 .footer__spotify-logo {
@@ -5399,9 +5388,9 @@ body.backyard-page .back-to-top-btn {
     }
     
     .footer__content {
-        flex-direction: column;
+        justify-content: space-between;
         align-items: center;
-        gap: 10px;
+        gap: 10px 16px;
     }
 
     .footer__contact {
