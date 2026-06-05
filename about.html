@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>About - Ayo Portfolio</title>
     <link rel="icon" type="image/png" href="logo for folio.png" sizes="128x128">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mercury+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=163">
+    <link rel="stylesheet" href="styles.css?v=173">
 </head>
-<body class="about-page">
+<body id="page" class="about-page">
     <header class="header">
         <div class="header__inner">
         <a href="index.html" class="header__logo">
@@ -203,7 +203,7 @@
         </div>
     </footer>
 
-    <button id="scroll-top-btn" class="scroll-top-btn" type="button" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">⬆️</button>
+    <a href="#page" class="sqs-button-element--secondary" id="back-to-top">⬆️</a>
 
     <script>
         function openInterestModal(title, description) {
@@ -224,6 +224,5 @@
             }
         }
     </script>
-    <script src="scroll-top.js?v=1"></script>
 </body>
 </html>
