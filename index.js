@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Close modal with Escape key
     document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape' && modal.style.display === 'block') {
+        if (event.key === 'Escape' && modal && modal.style.display === 'block') {
             closeImageModal();
         }
     });
@@ -134,13 +134,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Navbar pill on scroll
+    // Navbar pill on scroll — default: no frosted pill; after scroll: frosted pill
     const header = document.querySelector('.header');
 
     if (header) {
+        function getScrollTop() {
+            return window.scrollY
+                || window.pageYOffset
+                || document.documentElement.scrollTop
+                || document.body.scrollTop
+                || 0;
+        }
+
         function updateHeaderOnScroll() {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            header.classList.toggle('header--transparent', scrollTop > 100);
+            header.classList.toggle('header--transparent', getScrollTop() > 100);
         }
 
         window.addEventListener('scroll', updateHeaderOnScroll, { passive: true });
@@ -207,28 +214,6 @@ document.addEventListener('DOMContentLoaded', function() {
             closeDrawer();
         }
     });
-    
-    // Back to Top Button
-    const backToTopBtn = document.getElementById('back-to-top');
-    
-    if (backToTopBtn) {
-        // Show button when scrolling down
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 300) {
-                backToTopBtn.classList.add('show');
-            } else {
-                backToTopBtn.classList.remove('show');
-            }
-        });
-        
-        // Smooth scroll to top when clicked
-        backToTopBtn.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    }
     
     // Table of Contents functionality - HIDDEN
     /*
@@ -398,3 +383,71 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+function initBackToTop() {
+    if (document.body.classList.contains('home-page') || document.body.classList.contains('backyard-page')) {
+        return;
+    }
+
+    let backToTopBtn = document.getElementById('back-to-top');
+
+    if (!backToTopBtn) {
+        backToTopBtn = document.createElement('button');
+        backToTopBtn.id = 'back-to-top';
+        backToTopBtn.className = 'back-to-top-btn';
+        backToTopBtn.type = 'button';
+        backToTopBtn.setAttribute('aria-label', 'Back to top');
+    }
+
+    backToTopBtn.textContent = '⬆️';
+    document.body.appendChild(backToTopBtn);
+
+    let sentinel = document.querySelector('.back-to-top-sentinel');
+    if (!sentinel) {
+        sentinel = document.createElement('div');
+        sentinel.className = 'back-to-top-sentinel';
+        sentinel.setAttribute('aria-hidden', 'true');
+        document.body.prepend(sentinel);
+    }
+
+    function setBackToTopVisible(visible) {
+        backToTopBtn.classList.toggle('show', visible);
+    }
+
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(([entry]) => {
+            setBackToTopVisible(!entry.isIntersecting);
+        }, { threshold: 0 });
+        observer.observe(sentinel);
+    } else {
+        function getScrollTop() {
+            return Math.max(
+                window.scrollY || 0,
+                window.pageYOffset || 0,
+                document.documentElement.scrollTop || 0,
+                document.body.scrollTop || 0
+            );
+        }
+
+        function updateBackToTopVisibility() {
+            setBackToTopVisible(getScrollTop() > 16);
+        }
+
+        document.addEventListener('scroll', updateBackToTopVisibility, { passive: true, capture: true });
+        window.addEventListener('scroll', updateBackToTopVisibility, { passive: true });
+        updateBackToTopVisibility();
+    }
+
+    backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initBackToTop);
+} else {
+    initBackToTop();
+}
