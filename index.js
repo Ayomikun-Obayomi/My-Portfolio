@@ -47,6 +47,79 @@ document.addEventListener('DOMContentLoaded', function() {
             closeImageModal();
         }
     });
+
+    // Home: smooth-scroll from hero to #work (instant if reduced motion)
+    const homeWorkSection = document.getElementById('work');
+
+    function prefersReducedMotion() {
+        return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    }
+
+    let headerIgnoreScrollHide = false;
+    let headerIgnoreScrollHideTimer = 0;
+
+    function markHeaderProgrammaticScroll() {
+        headerIgnoreScrollHide = true;
+        window.clearTimeout(headerIgnoreScrollHideTimer);
+        const release = () => {
+            headerIgnoreScrollHide = false;
+            window.removeEventListener('scrollend', release);
+            window.clearTimeout(headerIgnoreScrollHideTimer);
+        };
+        window.addEventListener('scrollend', release, { once: true });
+        headerIgnoreScrollHideTimer = window.setTimeout(
+            release,
+            prefersReducedMotion() ? 50 : 900
+        );
+    }
+
+    function scrollToWork() {
+        if (!homeWorkSection) return;
+        const behavior = prefersReducedMotion() ? 'auto' : 'smooth';
+        const margin = parseFloat(getComputedStyle(homeWorkSection).scrollMarginTop) || 0;
+        const top = homeWorkSection.getBoundingClientRect().top + window.pageYOffset - margin;
+        markHeaderProgrammaticScroll();
+        window.scrollTo({ top: Math.max(0, top), behavior });
+    }
+
+    function linkTargetsHomeWork(anchor) {
+        const href = anchor.getAttribute('href') || '';
+        if (href === '#work') return true;
+        try {
+            const url = new URL(href, window.location.href);
+            return url.hash === '#work' && url.origin === window.location.origin;
+        } catch (err) {
+            return /#work$/.test(href);
+        }
+    }
+
+    if (homeWorkSection) {
+        document.addEventListener('click', (event) => {
+            if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+            const anchor = event.target.closest && event.target.closest('a[href]');
+            if (!anchor || !linkTargetsHomeWork(anchor)) return;
+            event.preventDefault();
+            if (window.location.hash !== '#work') {
+                history.pushState(null, '', '#work');
+            }
+            scrollToWork();
+        });
+
+        window.addEventListener('hashchange', () => {
+            if (window.location.hash === '#work') scrollToWork();
+        });
+
+        if (window.__homeScrollToWork || window.location.hash === '#work') {
+            window.__homeScrollToWork = false;
+            if (window.location.hash !== '#work') {
+                history.replaceState(null, '', '#work');
+            }
+            window.scrollTo(0, 0);
+            requestAnimationFrame(function () {
+                requestAnimationFrame(scrollToWork);
+            });
+        }
+    }
     
     // Ayo — inline pronunciation + meaning panel
     const ayoListenBtn = document.querySelector('.hero__ayo-btn--listen');
@@ -117,10 +190,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Hero 3D scene — subtle mouse parallax (desktop only)
     const heroSection = document.getElementById('hero');
     const heroSceneStage = document.getElementById('heroSceneStage');
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-    if (heroSection && heroSceneStage && !prefersReducedMotion && finePointer) {
+    if (heroSection && heroSceneStage && !prefersReducedMotion() && finePointer) {
         heroSection.addEventListener('mousemove', (event) => {
             const rect = heroSection.getBoundingClientRect();
             const x = (event.clientX - rect.left) / rect.width - 0.5;
@@ -146,11 +218,51 @@ document.addEventListener('DOMContentLoaded', function() {
                 || 0;
         }
 
+        const HIDE_DELTA = 10;
+        let lastScrollY = getScrollTop();
+        let headerTicking = false;
+
         function updateHeaderOnScroll() {
-            header.classList.toggle('header--transparent', getScrollTop() > 100);
+            const y = getScrollTop();
+            header.classList.toggle('header--transparent', y > 100);
+
+            if (headerIgnoreScrollHide) {
+                lastScrollY = y;
+                return;
+            }
+
+            if (y <= 16) {
+                header.classList.remove('header--hidden');
+                lastScrollY = y;
+                return;
+            }
+
+            const delta = y - lastScrollY;
+            if (Math.abs(delta) < HIDE_DELTA) {
+                return;
+            }
+
+            const mobileDrawer = document.getElementById('mobileDrawer');
+            const drawerOpen = mobileDrawer && mobileDrawer.classList.contains('is-open');
+            if (delta > 0 && !drawerOpen) {
+                header.classList.add('header--hidden');
+            } else if (delta < 0) {
+                header.classList.remove('header--hidden');
+            }
+
+            lastScrollY = y;
         }
 
-        window.addEventListener('scroll', updateHeaderOnScroll, { passive: true });
+        function onHeaderScroll() {
+            if (headerTicking) return;
+            headerTicking = true;
+            requestAnimationFrame(function () {
+                updateHeaderOnScroll();
+                headerTicking = false;
+            });
+        }
+
+        window.addEventListener('scroll', onHeaderScroll, { passive: true });
         updateHeaderOnScroll();
     }
     
@@ -190,12 +302,13 @@ document.addEventListener('DOMContentLoaded', function() {
         closeBtn.addEventListener('click', closeDrawer);
     }
 
-    // Set active state for drawer links
+    // Set active state for drawer links and close (needed for same-page #work)
     if (drawer && drawerLinks.length) {
         drawerLinks.forEach(link => {
             link.addEventListener('click', () => {
                 drawerLinks.forEach(l => l.classList.remove('nav__link--active'));
                 link.classList.add('nav__link--active');
+                closeDrawer();
             });
         });
     }
@@ -214,103 +327,6 @@ document.addEventListener('DOMContentLoaded', function() {
             closeDrawer();
         }
     });
-    
-    // Table of Contents functionality - HIDDEN
-    /*
-    const tocLinks = document.querySelectorAll('.case-study__toc-link');
-    const sections = document.querySelectorAll('[id]');
-    
-    // Handle TOC link clicks with proper offset
-    tocLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetId = link.getAttribute('href').substring(1);
-            const targetSection = document.getElementById(targetId);
-            
-            if (targetSection) {
-                // Calculate offset to show the header properly
-                const headerHeight = 80; // Account for fixed navbar
-                const additionalOffset = 40; // Extra space to show the full header
-                const targetPosition = targetSection.offsetTop - headerHeight - additionalOffset;
-                
-                window.scrollTo({
-                    top: Math.max(0, targetPosition),
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-    
-    // Update active TOC link based on scroll position
-    function updateActiveTocLink() {
-        let currentSection = '';
-        const scrollPosition = window.scrollY + 120; // Offset for better detection
-        const discoverySection = document.getElementById('discovery');
-        
-        // If we're at or past Discovery section, ensure proper detection
-        if (discoverySection && scrollPosition >= discoverySection.offsetTop - 200) {
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.offsetHeight;
-                
-                if (scrollPosition >= sectionTop - 100 && scrollPosition < sectionTop + sectionHeight) {
-                    currentSection = section.id;
-                }
-            });
-            
-            // If no section detected but we're past Discovery, default to Discovery
-            if (!currentSection && scrollPosition >= discoverySection.offsetTop - 200) {
-                currentSection = 'discovery';
-            }
-        }
-        
-        // Update active states
-        tocLinks.forEach(link => {
-            link.classList.remove('case-study__toc-link--active');
-            if (link.getAttribute('href') === `#${currentSection}`) {
-                link.classList.add('case-study__toc-link--active');
-            }
-        });
-    }
-    
-    // Listen for scroll events to update active link
-    if (tocLinks.length > 0) {
-        window.addEventListener('scroll', updateActiveTocLink);
-        // Set initial active state
-        updateActiveTocLink();
-    }
-    
-    // Smart TOC visibility - hide during banner, show at Discovery
-    const toc = document.querySelector('.case-study__toc');
-    
-    function handleTocVisibility() {
-        if (!toc) return;
-        
-        const discoverySection = document.getElementById('discovery');
-        if (!discoverySection) return;
-        
-        const scrollPosition = window.scrollY;
-        const discoveryTop = discoverySection.offsetTop;
-        const shouldShow = scrollPosition >= discoveryTop - 200;
-        
-        if (shouldShow) {
-            // Show TOC when Discovery is reached
-            toc.style.opacity = '1';
-            toc.style.pointerEvents = 'auto';
-        } else {
-            // Hide TOC when above Discovery section
-            toc.style.opacity = '0';
-            toc.style.pointerEvents = 'none';
-        }
-    }
-    
-    // Listen for scroll events to handle TOC visibility
-    if (toc) {
-        window.addEventListener('scroll', handleTocVisibility);
-        // Set initial visibility state
-        handleTocVisibility();
-    }
-    */
 });
 
 // Before/After Slider functionality
@@ -383,3 +399,99 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// In-page case study TOC — scroll-spy + smooth scroll
+(function initCaseStudyOutline() {
+    function hashId(href) {
+        if (!href) return '';
+        const idx = href.lastIndexOf('#');
+        return idx === -1 ? '' : href.slice(idx + 1);
+    }
+
+    function start() {
+        if (window.__csOutlineInit) return;
+        if (!document.querySelector('.cs-toc, .cs-outline')) return;
+        window.__csOutlineInit = true;
+
+        const outlineLinks = Array.from(document.querySelectorAll('.cs-toc__link, .cs-outline__link'));
+        const seenIds = new Set();
+        const outlineTargets = [];
+
+        outlineLinks.forEach((link) => {
+            const id = hashId(link.getAttribute('href'));
+            if (!id || seenIds.has(id)) return;
+            const el = document.getElementById(id);
+            if (!el) return;
+            seenIds.add(id);
+            outlineTargets.push({ id, el });
+        });
+
+        if (!outlineTargets.length) return;
+
+        const marker = 112;
+        const tiePx = 56;
+        let outlineTicking = false;
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        function setOutlineActive(id) {
+            outlineLinks.forEach((link) => {
+                const on = hashId(link.getAttribute('href')) === id;
+                link.classList.toggle('is-active', on);
+                if (on) {
+                    link.setAttribute('aria-current', 'location');
+                } else {
+                    link.removeAttribute('aria-current');
+                }
+            });
+        }
+
+        function updateOutlineActive() {
+            let current = outlineTargets[0];
+            let currentDocTop = -Infinity;
+            outlineTargets.forEach((item) => {
+                const rect = item.el.getBoundingClientRect();
+                const docTop = rect.top + window.pageYOffset;
+                if (rect.top <= marker && docTop > currentDocTop + tiePx) {
+                    current = item;
+                    currentDocTop = docTop;
+                }
+            });
+            setOutlineActive(current.id);
+        }
+
+        function onOutlineScroll() {
+            if (outlineTicking) return;
+            outlineTicking = true;
+            requestAnimationFrame(function () {
+                updateOutlineActive();
+                outlineTicking = false;
+            });
+        }
+
+        window.addEventListener('scroll', onOutlineScroll, { passive: true });
+        window.addEventListener('resize', onOutlineScroll);
+        updateOutlineActive();
+
+        outlineLinks.forEach((link) => {
+            link.addEventListener('click', function (event) {
+                const id = hashId(link.getAttribute('href'));
+                const target = id ? document.getElementById(id) : null;
+                if (!target) return;
+                event.preventDefault();
+                target.scrollIntoView({
+                    behavior: reduceMotion ? 'auto' : 'smooth',
+                    block: 'start'
+                });
+                try {
+                    history.replaceState(null, '', window.location.href.split('#')[0] + '#' + id);
+                } catch (err) { /* ignore */ }
+            });
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', start);
+    } else {
+        start();
+    }
+})();

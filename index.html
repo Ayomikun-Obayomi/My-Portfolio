@@ -8,7 +8,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mercury+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=181">
+    <link rel="stylesheet" href="styles.css?v=203">
+    <script>
+        (function () {
+            if (location.hash !== '#work') return;
+            if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+            window.__homeScrollToWork = true;
+            history.replaceState(null, '', location.pathname + location.search);
+        })();
+    </script>
 </head>
 <body id="page" class="home-page">
     <header class="header">
@@ -18,7 +26,7 @@
         </a>
         <nav class="nav">
             <ul class="nav__menu">
-                <li class="nav__item"><a href="work.html" class="nav__link">Work</a></li>
+                <li class="nav__item"><a href="#work" class="nav__link nav__link--active">Work</a></li>
                 <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
                 <li class="nav__item"><a href="Ayomikun-Ayo+Obayomi's Resume.pdf" target="_blank" rel="noopener noreferrer" class="nav__link">Resume</a></li>
             </ul>
@@ -32,7 +40,7 @@
     </header>
     <div id="mobileDrawer" class="nav__menu nav__menu--mobile" aria-hidden="true">
         <ul class="nav__menu-list">
-            <li class="nav__item"><a href="work.html" class="nav__link">Work</a></li>
+            <li class="nav__item"><a href="#work" class="nav__link nav__link--active">Work</a></li>
             <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
             <li class="nav__item"><a href="Ayomikun-Ayo+Obayomi's Resume.pdf" target="_blank" rel="noopener noreferrer" class="nav__link">Resume</a></li>
         </ul>
@@ -134,8 +142,88 @@
                     </span>, and built for <span class="hero__emphasis">delight</span> <span class="hero__craft-emoji" role="img" aria-label="star-struck">🤩</span></span>
                 </h1>
                 <div class="hero__actions">
-                    <a href="work.html" class="hero__cta hero__cta--primary">View my work</a>
+                    <a href="#work" class="hero__cta hero__cta--primary">View my work</a>
                     <a href="about.html" class="hero__cta hero__cta--secondary">Learn about me</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="work" class="projects" aria-label="Work">
+            <div class="projects__content">
+                <div class="projects__grid">
+                    <div class="project-card project-card--wip" aria-disabled="true">
+                        <div class="project-card__content">
+                            <div class="project-card__tags">
+                                <span class="project-card__tag project-card__tag--wip">WIP</span>
+                                <span class="project-card__tag">Internship</span>
+                                <span class="project-card__tag">NIL</span>
+                                <span class="project-card__tag">Brand Identity</span>
+                                <span class="project-card__tag">Web Design</span>
+                            </div>
+                            <h3 class="project-card__title">Second Wind Pro</h3>
+                            <p class="project-card__description">
+                                Revamping the existing website of an NIL agency — and building SWP Sandbox to fix the design workflow along the way.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-card__image-container">
+                            <img src="JobQuestCover-image.png" alt="Job Quest Project" class="project-card__image">
+                        </div>
+                        <div class="project-card__content">
+                            <div class="project-card__tags">
+                                <span class="project-card__tag">Apprenticeship</span>
+                                <span class="project-card__tag">Job Search</span>
+                                <span class="project-card__tag">Learning Experience</span>
+                                <span class="project-card__tag">Product Design</span>
+                            </div>
+                            <h3 class="project-card__title">Job Quest</h3>
+                            <p class="project-card__description">
+                                Turning resume writing and interview prep into a guided learning experience for entry-level job seekers.
+                            </p>
+                        </div>
+                        <a href="JobQuest.html" class="project-card__link" aria-label="View Job Quest case study"></a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-card__image-container">
+                            <img src="coverimagetheguild.png" alt="Guild Gaming Project" class="project-card__image">
+                        </div>
+                        <div class="project-card__content">
+                            <div class="project-card__tags">
+                                <span class="project-card__tag">Internship</span>
+                                <span class="project-card__tag">AI</span>
+                                <span class="project-card__tag">Productivity</span>
+                                <span class="project-card__tag">Event Management</span>
+                                <span class="project-card__tag">Data Analytics</span>
+                            </div>
+                            <h3 class="project-card__title">Guild Gaming</h3>
+                            <p class="project-card__description">
+                                Seamlessly elevating the experience of planning and hosting events for event organizers.
+                            </p>
+                        </div>
+                        <a href="GuildGaming.html" class="project-card__link" aria-label="View Guild Gaming project details"></a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-card__image-container">
+                            <img src="Baseball.png" alt="Baseball Little League Calendar App" class="project-card__image">
+                        </div>
+                        <div class="project-card__content">
+                            <div class="project-card__tags">
+                                <span class="project-card__tag">University-Sponsored Project</span>
+                                <span class="project-card__tag">Sports Productivity</span>
+                                <span class="project-card__tag">B2C</span>
+                                <span class="project-card__tag">Product Design</span>
+                            </div>
+                            <h3 class="project-card__title">Baseball Little League</h3>
+                            <p class="project-card__description">
+                                Designing a communication platform to enhance organizational collaboration amongst Parents, Coaches, & Children.
+                            </p>
+                        </div>
+                        <a href="BaseballLittleLeague.html" class="project-card__link" aria-label="View Baseball Little League case study"></a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -155,6 +243,8 @@
         </div>
     </footer>
 
-    <script src="index.js?v=21"></script>
+    <a href="#page" class="sqs-button-element--secondary" id="back-to-top" aria-label="Back to top">⬆️</a>
+
+    <script src="index.js?v=28"></script>
 </body>
 </html>
