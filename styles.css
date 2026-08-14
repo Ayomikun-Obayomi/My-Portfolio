@@ -32,19 +32,19 @@ html:has(body.home-page) {
     overflow-y: auto;
 }
 
-/* Dot-grid wallpaper — all pages except dark playground */
+/* Dot-grid wallpaper */
 html {
     background-color: #ffffff;
 }
 
-body:not(.backyard-page) {
+body {
     position: relative;
     background-color: transparent;
     min-height: 100vh;
     min-height: 100dvh;
 }
 
-body:not(.backyard-page)::before {
+body::before {
     content: '';
     position: absolute;
     top: 0;
@@ -78,21 +78,21 @@ body.case-study-page::before {
     display: none;
 }
 
-body:not(.backyard-page) > .header {
+body > .header {
     z-index: 1000;
     isolation: isolate;
     pointer-events: auto;
     background: transparent;
 }
 
-body:not(.backyard-page) > .main,
-body:not(.backyard-page) > .footer {
+body > .main,
+body > .footer {
     position: relative;
     z-index: 1;
     background: transparent;
 }
 
-body:not(.backyard-page) .footer {
+body .footer {
     background: transparent;
 }
 
@@ -1109,11 +1109,12 @@ section:first-of-type {
     top: 0;
     left: 0;
     width: 100%;
-    max-width: 1440px;
+    max-width: var(--site-max-width);
     margin: 0 auto;
     background: transparent;
     z-index: 1000;
-    padding: 8px 32px;
+    /* 24px top/bottom matches Titan chrome; horizontal matches content gutter */
+    padding: 24px var(--site-gutter);
     transition: padding 0.3s ease;
     display: flex;
     align-items: center;
@@ -1126,7 +1127,8 @@ section:first-of-type {
     justify-content: space-between;
     gap: 20px;
     width: 100%;
-    padding: 2px 8px 2px 6px;
+    /* 5px vertical keeps the 42px pill; 16px inset keeps logo/Resume inside the rounded caps */
+    padding: 5px 16px;
     border-radius: 50px;
     position: relative;
 }
@@ -1158,10 +1160,14 @@ section:first-of-type {
 .header__logo {
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-shrink: 0;
+    width: 22px;
+    height: 22px;
     text-decoration: none;
     border-radius: 4px;
-    padding: 2px;
+    padding: 0;
+    overflow: hidden;
     outline: none;
     opacity: 1;
     visibility: visible;
@@ -1184,9 +1190,11 @@ section:first-of-type {
 }
 
 .header__logo-image {
-    width: 64px;
-    height: 64px;
+    width: 22px;
+    height: 22px;
     object-fit: contain;
+    /* PNG is 1024² with the A in the center; inset zooms to the mark without cropping it */
+    object-view-box: inset(27.2% 30.8% 28.8% 24.5%);
     opacity: 1;
     visibility: visible;
     filter: none;
@@ -1222,12 +1230,12 @@ section:first-of-type {
 .nav {
     display: flex;
     align-items: center;
-    height: 36px;
+    height: 32px;
     margin: 0 0 0 auto;
     background: transparent;
     border-radius: 0;
     border: none;
-    padding: 0 8px 0 0;
+    padding: 0;
     position: relative;
     opacity: 1;
     visibility: visible;
@@ -1429,8 +1437,8 @@ body.home-page .hero {
     isolation: isolate;
     overflow: visible;
     flex: 0 0 auto;
-    min-height: calc(100dvh - 80px);
-    min-height: calc(100svh - 80px);
+    min-height: calc(100dvh - 88px);
+    min-height: calc(100svh - 88px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -3488,7 +3496,7 @@ body:has(.case-study > .case-study__hero-banner) .main {
     }
 
     .header {
-        padding: 10px 20px;
+        padding: 16px var(--site-gutter);
         background: transparent;
         justify-content: center;
     }
@@ -3497,7 +3505,7 @@ body:has(.case-study > .case-study__hero-banner) .main {
     .header__inner {
         width: 100%;
         justify-content: space-between;
-        padding: 2px 14px 2px 6px;
+        padding: 5px 14px;
     }
     
     /* Reduce top gap on About page only */
@@ -3506,9 +3514,14 @@ body:has(.case-study > .case-study__hero-banner) .main {
         min-height: calc(100vh - 8px);
     }
     
+    .header__logo {
+        width: 20px;
+        height: 20px;
+    }
+
     .header__logo-image {
-        width: 56px;
-        height: 56px;
+        width: 20px;
+        height: 20px;
     }
     
     .nav {
@@ -5140,12 +5153,8 @@ body.work-page .work-page__projects .projects__grid {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
-body.backyard-page #back-to-top {
-    display: none;
-}
-
 @media (max-width: 768px) {
-    body:not(.backyard-page) #back-to-top {
+    #back-to-top {
         display: flex !important;
         position: fixed !important;
         bottom: max(24px, env(safe-area-inset-bottom, 0px));
@@ -5480,17 +5489,22 @@ body.backyard-page #back-to-top {
 /* Small Mobile Devices (iPhone SE, small Android) */
 @media (max-width: 480px) {
     .header {
-        padding: 8px 16px;
+        padding: 16px var(--site-gutter);
         background: transparent;
     }
     
     .header__inner {
-        padding: 2px 12px 2px 4px;
+        padding: 5px 14px;
+    }
+
+    .header__logo {
+        width: 20px;
+        height: 20px;
     }
     
     .header__logo-image {
-        width: 48px;
-        height: 48px;
+        width: 20px;
+        height: 20px;
     }
     
     body.home-page .hero {
