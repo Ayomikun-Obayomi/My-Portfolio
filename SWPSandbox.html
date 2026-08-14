@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>SWP Sandbox: Case Study</title>
+    <link rel="icon" type="image/png" href="logo for folio.png?v=3" sizes="128x128">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700&family=Mercury+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=212">
+</head>
+<body id="page" class="case-study-page">
+    <header class="header">
+        <div class="header__inner">
+        <a href="index.html" class="header__logo">
+            <img src="logo for folio.png?v=3" alt="Ayo Logo" class="header__logo-image" width="32" height="32">
+        </a>
+        <nav class="nav">
+            <ul class="nav__menu">
+                <li class="nav__item"><a href="index.html#work" class="nav__link">Work</a></li>
+                <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+                <li class="nav__item"><a href="Ayomikun-Ayo+Obayomi's Resume.pdf" target="_blank" rel="noopener noreferrer" class="nav__link">Resume</a></li>
+            </ul>
+            <button class="nav__hamburger" aria-label="Toggle navigation menu" id="mobileDrawerToggle">
+                <span class="nav__hamburger-line"></span>
+                <span class="nav__hamburger-line"></span>
+                <span class="nav__hamburger-line"></span>
+            </button>
+        </nav>
+        </div>
+    </header>
+    <div id="mobileDrawer" class="nav__menu nav__menu--mobile" aria-hidden="true">
+        <ul class="nav__menu-list">
+            <li class="nav__item"><a href="index.html#work" class="nav__link">Work</a></li>
+            <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+            <li class="nav__item"><a href="Ayomikun-Ayo+Obayomi's Resume.pdf" target="_blank" rel="noopener noreferrer" class="nav__link">Resume</a></li>
+        </ul>
+    </div>
+
+    <main class="main">
+        <section class="case-study case-study--job-quest case-study--swp">
+            <div class="cs-toc-body">
+            <nav class="cs-toc" aria-label="Contents">
+                <details class="cs-toc__details" open>
+                    <summary class="cs-toc__summary">Contents</summary>
+                    <ul class="cs-toc__list">
+                        <li class="cs-toc__item">
+                            <a href="#overview" class="cs-toc__link">
+                                <svg class="cs-toc__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+                                <span class="cs-toc__label">Overview</span>
+                            </a>
+                        </li>
+                        <li class="cs-toc__item">
+                            <a href="#challenge" class="cs-toc__link">
+                                <svg class="cs-toc__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
+                                <span class="cs-toc__label">Challenge</span>
+                            </a>
+                        </li>
+                        <li class="cs-toc__item">
+                            <a href="#insight" class="cs-toc__link">
+                                <svg class="cs-toc__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12c.5.5 1 1.5 1 2h6c0-.5.5-1.5 1-2a7 7 0 0 0-4-12z"/></svg>
+                                <span class="cs-toc__label">Insight</span>
+                            </a>
+                        </li>
+                        <li class="cs-toc__item">
+                            <a href="#tool" class="cs-toc__link">
+                                <svg class="cs-toc__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4L15 7l-2.3 2.3"/></svg>
+                                <span class="cs-toc__label">The Tool</span>
+                            </a>
+                        </li>
+                        <li class="cs-toc__item">
+                            <a href="#canvas" class="cs-toc__link">
+                                <svg class="cs-toc__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                                <span class="cs-toc__label">The Canvas</span>
+                            </a>
+                        </li>
+                        <li class="cs-toc__item">
+                            <a href="#walkthrough" class="cs-toc__link">
+                                <svg class="cs-toc__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10 8l6 4-6 4V8z"/></svg>
+                                <span class="cs-toc__label">Walkthrough</span>
+                            </a>
+                        </li>
+                        <li class="cs-toc__item">
+                            <a href="#result" class="cs-toc__link">
+                                <svg class="cs-toc__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22V15"/></svg>
+                                <span class="cs-toc__label">Result</span>
+                            </a>
+                        </li>
+                    </ul>
+                </details>
+            </nav>
+            <div class="cs-toc-article">
+            <section class="case-study__hero-section">
+                <h1 class="case-study__hero-title">
+                    SWP Sandbox: <span class="case-study__hero-title-highlight">A local Figma-like sandbox between Cursor and the deployed site</span>
+                </h1>
+                <div class="case-study__hero-subtitle">
+                    <div class="case-study__project-details">
+                        <div class="case-study__project-detail-item">
+                            <span class="case-study__project-detail-label">Product Sector:</span> Internal tooling / design workflow
+                        </div>
+                        <div class="case-study__project-detail-item">
+                            <span class="case-study__project-detail-label">Team:</span> Me
+                        </div>
+                        <div class="case-study__project-detail-item">
+                            <span class="case-study__project-detail-label">Duration:</span> Built alongside the Second Wind Pro redesign
+                        </div>
+                        <div class="case-study__project-detail-item">
+                            <span class="case-study__project-detail-label">Tools:</span> Cursor
+                        </div>
+                        <div class="case-study__project-detail-item">
+                            <span class="case-study__project-detail-label">Status:</span> Local, in active use for SWP work
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="case-study__section" id="overview">
+                <div class="case-study__section-label">OVERVIEW</div>
+                <p class="case-study__section-text">
+                    SWP Sandbox is an internal tool I built to sit between Cursor and the live Second Wind Pro site. It started as a workflow fix during the website redesign, then became its own project: a local library for drafts, frozen versions, and a canvas that lets me preview and mark up the site across breakpoints without redeploying.
+                </p>
+            </section>
+
+            <section class="case-study__section" id="challenge">
+                <div class="case-study__section-label">CHALLENGE</div>
+                <h3 class="case-study__section-title">Every design check meant a round trip through GitHub and Netlify.</h3>
+                <p class="case-study__section-text">
+                    Redesigning the Second Wind Pro website surfaced a second problem I didn't expect to be solving: my own workflow. Every time I wanted to check whether a particular design element held up (athlete cards on mobile, services carousel on iPad), I had to commit to GitHub, deploy to Netlify, and go look. That loop was fine for one check. It was not fine for the number of times I needed to make it.
+                </p>
+            </section>
+
+            <section class="case-study__section" id="insight">
+                <div class="case-study__section-label">INSIGHT</div>
+                <h3 class="case-study__section-title">I didn't need a better deployment pipeline. I needed a middleman.</h3>
+                <p class="case-study__section-text">
+                    I'd talked to <a href="https://www.linkedin.com/in/intrater" target="_blank" rel="noopener noreferrer" class="case-study__related-link person-pop">John Intrater<span class="person-pop__card" aria-hidden="true"><span class="person-pop__media"><img class="person-pop__img" src="john-intrater.jpg" alt="John Intrater" width="116" height="116" decoding="async"></span><span class="person-pop__caption">John Intrater</span></span></a>, a Product Designer at Faire, about a similar problem. He'd built an internal playground tool for himself and his coworkers. That conversation stuck with me. Something local, fast, and mine that sat between Cursor and the live site would close the gap better than speeding up deploys.
+                </p>
+            </section>
+
+            <section class="case-study__section case-study__section--spaced" id="tool">
+                <div class="case-study__section-label">THE TOOL</div>
+                <h3 class="case-study__section-title">A Figma / Google Docs–style library for site versions</h3>
+                <p class="case-study__section-text"><strong>SWP Sandbox</strong> lets me:</p>
+                <ul class="case-study__section-list">
+                    <li>Create, rename, and duplicate draft files pulled straight from the Cursor project, without touching GitHub or Netlify</li>
+                    <li>Preview any draft across breakpoints (mobile, iPad, desktop) in one place</li>
+                    <li>Keep a working history of drafts, so I can show progress as a sequence rather than a single “current version”</li>
+                    <li>Freeze a working copy into a version, and set a frozen version as live on Netlify when it's ready</li>
+                </ul>
+                <p class="case-study__section-text">
+                    The homepage is a file library: Playground (the working copy), drafts, and frozen versions, each with a status (working, live, or frozen) and a homepage preview. Hovering a card opens Canvas or Open, depending on whether I need to mark something up or just look at it in the browser.
+                </p>
+                <div class="case-study__section-image">
+                    <img
+                        src="SWP Studio.png"
+                        alt="SWP Sandbox homepage with file cards for Playground, live, and frozen versions"
+                        class="case-study__section-img"
+                        style="border: 1px solid #e0e0e0; cursor: pointer;"
+                        onclick="openImageModal(this)"
+                    />
+                </div>
+                <p class="case-study__section-caption">Homepage of SWP Sandbox (Click to enlarge)</p>
+            </section>
+
+            <section class="case-study__section case-study__section--spaced" id="canvas">
+                <div class="case-study__section-label">THE CANVAS</div>
+                <h3 class="case-study__section-title">Preview, annotate, and mark design changes at real viewport sizes</h3>
+                <p class="case-study__section-text">
+                    Canvas is where the sandbox actually replaces the deploy loop. I open a file, pick a viewport, and work on the live preview instead of waiting for Netlify.
+                </p>
+                <p class="case-study__section-text">
+                    Three modes:
+                </p>
+                <ul class="case-study__section-list">
+                    <li><strong>Browse</strong>: interact with the live site as a visitor would</li>
+                    <li><strong>Annotate</strong>: yellow pins, boxes, and sketches for feedback</li>
+                    <li><strong>Design</strong>: cyan marks for intended design changes</li>
+                </ul>
+                <p class="case-study__section-text">
+                    The left rail holds the viewports I actually design against: Desktop XL 1440×900, Desktop 1280×832, Breakpoint 980×800, Tablet 768×1024, Mobile 390×844, and Mobile SM. Marks save per viewport, so a mobile note stays on mobile. The preview iframe uses the real pixel width, so CSS media queries kick in correctly instead of scaling a desktop layout down.
+                </p>
+                <p class="case-study__section-text">
+                    From the canvas I can copy notes into Cursor, or open the folder in Cursor and keep going. The point is to stay in the loop between looking and making, without a deploy in the middle.
+                </p>
+                <div class="case-study__section-image">
+                    <img
+                        src="Studio Canvas SWP.png"
+                        alt="SWP Sandbox canvas showing the Second Wind Pro site at desktop size, with Browse, Annotate, and Design modes"
+                        class="case-study__section-img"
+                        style="border: 1px solid #e0e0e0; cursor: pointer;"
+                        onclick="openImageModal(this)"
+                    />
+                </div>
+                <p class="case-study__section-caption">Canvas of SWP Sandbox (Click to enlarge)</p>
+            </section>
+
+            <section class="case-study__section case-study__section--spaced" id="walkthrough">
+                <div class="case-study__section-label">WALKTHROUGH</div>
+                <h3 class="case-study__section-title">Opening a draft, picking a viewport, leaving a mark</h3>
+                <p class="case-study__section-text">
+                    Stills get you the layout. A recording gets you the loop: open a file, switch breakpoints, annotate, then copy notes into Cursor. I'll drop that here once I capture it.
+                </p>
+                <div class="swp-browser swp-browser--player" aria-label="Sandbox walkthrough placeholder">
+                    <div class="swp-browser__chrome">
+                        <div class="swp-browser__traffic" aria-hidden="true">
+                            <span class="swp-browser__dot swp-browser__dot--close"></span>
+                            <span class="swp-browser__dot swp-browser__dot--minimize"></span>
+                            <span class="swp-browser__dot swp-browser__dot--zoom"></span>
+                        </div>
+                        <div class="swp-browser__url">sandbox walkthrough</div>
+                    </div>
+                    <div class="swp-browser__viewport">
+                        <div class="case-study__placeholder case-study__placeholder--large">
+                            <div class="case-study__placeholder-content">
+                                <div class="case-study__placeholder-title">Walkthrough coming soon</div>
+                                <div class="case-study__placeholder-subtitle">Screen recording of Browse, Annotate, and Design on the canvas</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="case-study__section-caption">Opening a draft on the canvas and marking a change at desktop and mobile</p>
+            </section>
+
+            <section class="case-study__section case-study__section--spaced" id="result">
+                <div class="case-study__section-label">RESULT</div>
+                <p class="case-study__section-text">
+                    SWP Sandbox is local and in active use for Second Wind Pro work. It came out of the same instinct as the rest of that redesign: when something about the process is genuinely broken, build the thing that fixes it rather than working around it.
+                </p>
+                <p class="case-study__section-text">
+                    The website case study that led here:
+                    <a href="SecondWindPro.html" class="case-study__related-link">Second Wind Pro →</a>
+                </p>
+            </section>
+            </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="imageModal" class="image-modal">
+        <div class="image-modal-content">
+            <span class="image-modal-close" onclick="closeImageModal()">&times;</span>
+            <img id="modalImage" class="image-modal-img" alt="Modal Image">
+            <p id="modalCaption" class="image-modal-caption"></p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer__content">
+            <p class="footer__contact">
+                Get in touch: <a href="mailto:oba12ayo@gmail.com" class="footer__email">oba12ayo@gmail.com</a>
+            </p>
+            <p class="footer__made-with">
+                Made with a lot of hours on
+                <svg class="footer__spotify-logo" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" fill="#1DB954"/>
+                </svg>
+            </p>
+        </div>
+    </footer>
+
+    <a href="#page" class="sqs-button-element--secondary" id="back-to-top" aria-label="Back to top">⬆️</a>
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="index.js?v=28"></script>
+    <script>
+    (function () {
+        if (window.__csOutlineInit) return;
+        if (!document.querySelector('.cs-toc')) return;
+        window.__csOutlineInit = true;
+
+        function hashId(href) {
+            if (!href) return '';
+            var idx = href.lastIndexOf('#');
+            return idx === -1 ? '' : href.slice(idx + 1);
+        }
+
+        var outlineLinks = Array.prototype.slice.call(document.querySelectorAll('.cs-toc__link'));
+        var seenIds = {};
+        var outlineTargets = [];
+
+        outlineLinks.forEach(function (link) {
+            var id = hashId(link.getAttribute('href'));
+            if (!id || seenIds[id]) return;
+            var el = document.getElementById(id);
+            if (!el) return;
+            seenIds[id] = true;
+            outlineTargets.push({ id: id, el: el });
+        });
+
+        if (!outlineTargets.length) return;
+
+        var marker = 112;
+        var tiePx = 56;
+        var ticking = false;
+        var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        function setActive(id) {
+            outlineLinks.forEach(function (link) {
+                var on = hashId(link.getAttribute('href')) === id;
+                link.classList.toggle('is-active', on);
+                if (on) link.setAttribute('aria-current', 'location');
+                else link.removeAttribute('aria-current');
+            });
+        }
+
+        function updateActive() {
+            var current = outlineTargets[0];
+            var currentDocTop = -Infinity;
+            outlineTargets.forEach(function (item) {
+                var rect = item.el.getBoundingClientRect();
+                var docTop = rect.top + window.pageYOffset;
+                if (rect.top <= marker && docTop > currentDocTop + tiePx) {
+                    current = item;
+                    currentDocTop = docTop;
+                }
+            });
+            setActive(current.id);
+        }
+
+        window.addEventListener('scroll', function () {
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(function () {
+                updateActive();
+                ticking = false;
+            });
+        }, { passive: true });
+        window.addEventListener('resize', updateActive);
+        updateActive();
+
+        outlineLinks.forEach(function (link) {
+            link.addEventListener('click', function (event) {
+                var id = hashId(link.getAttribute('href'));
+                var target = id ? document.getElementById(id) : null;
+                if (!target) return;
+                event.preventDefault();
+                target.scrollIntoView({
+                    behavior: reduceMotion ? 'auto' : 'smooth',
+                    block: 'start'
+                });
+                try { history.replaceState(null, '', window.location.href.split('#')[0] + '#' + id); } catch (err) {}
+            });
+        });
+    })();
+    </script>
+</body>
+</html>

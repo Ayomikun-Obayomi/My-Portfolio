@@ -1,0 +1,18 @@
+[[redirects]]
+  from = "/work.html"
+  to = "/index.html#work"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/SWPStudio.html"
+  to = "/SWPSandbox.html"
+  status = 301
+
+[[edge_functions]]
+path = "/embed/swp-v1/services"
+function = "swp-services-embed"
+
+[[edge_functions]]
+path = "/embed/swp-v2/services"
+function = "swp-services-embed"
