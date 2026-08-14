@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Second Wind Pro: Case Study</title>
+    <link rel="icon" type="image/png" href="logo for folio.png?v=3" sizes="128x128">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700&family=Mercury+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=212">
+</head>
+<body id="page" class="case-study-page">
+    <header class="header">
+        <div class="header__inner">
+        <a href="index.html" class="header__logo">
+            <img src="logo for folio.png?v=3" alt="Ayo Logo" class="header__logo-image" width="32" height="32">
+        </a>
+        <nav class="nav">
+            <ul class="nav__menu">
+                <li class="nav__item"><a href="index.html#work" class="nav__link">Work</a></li>
+                <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+                <li class="nav__item"><a href="Ayomikun-Ayo+Obayomi's Resume.pdf" target="_blank" rel="noopener noreferrer" class="nav__link">Resume</a></li>
+            </ul>
+            <button class="nav__hamburger" aria-label="Toggle navigation menu" id="mobileDrawerToggle">
+                <span class="nav__hamburger-line"></span>
+                <span class="nav__hamburger-line"></span>
+                <span class="nav__hamburger-line"></span>
+            </button>
+        </nav>
+        </div>
+    </header>
+    <div id="mobileDrawer" class="nav__menu nav__menu--mobile" aria-hidden="true">
+        <ul class="nav__menu-list">
+            <li class="nav__item"><a href="index.html#work" class="nav__link">Work</a></li>
+            <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+            <li class="nav__item"><a href="Ayomikun-Ayo+Obayomi's Resume.pdf" target="_blank" rel="noopener noreferrer" class="nav__link">Resume</a></li>
+        </ul>
+    </div>
+
+    <main class="main">
+        <section class="case-study case-study--job-quest case-study--swp">
+            <div class="cs-toc-body">
+            <nav class="cs-toc" aria-label="Contents">
+                <details class="cs-toc__details" open>
+                    <summary class="cs-toc__summary">Contents</summary>
+                    <ul class="cs-toc__list">
+                        <li class="cs-toc__item">
+                            <a href="#preface" class="cs-toc__link">
+                                <svg class="cs-toc__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                                <span class="cs-toc__label">Preface</span>
+                            </a>
+                        </li>
+                        <li class="cs-toc__item">
+                            <a href="#about" class="cs-toc__link">
+                                <svg class="cs-toc__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M6 21V5l6-2 6 2v16M10 21v-5h4v5"/></svg>
+                                <span class="cs-toc__label">About</span>
+                            </a>
+                        </li>
+                        <li class="cs-toc__item">
+                            <a href="#overview" class="cs-toc__link">
+                                <svg class="cs-toc__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+                                <span class="cs-toc__label">Overview</span>
+                            </a>
+                        </li>
+                        <li class="cs-toc__item">
+                            <a href="#challenge" class="cs-toc__link">
+                                <svg class="cs-toc__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
+                                <span class="cs-toc__label">Challenge</span>
+                            </a>
+                        </li>
+                        <li class="cs-toc__item">
+                            <a href="#outcome" class="cs-toc__link">
+                                <svg class="cs-toc__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5 10.5 15 16 9.5"/></svg>
+                                <span class="cs-toc__label">Outcome</span>
+                            </a>
+                        </li>
+                        <li class="cs-toc__item">
+                            <a href="#process" class="cs-toc__link">
+                                <svg class="cs-toc__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M12 19h4a2 2 0 0 0 2-2v-4M12 5H8a2 2 0 0 0-2 2v4"/></svg>
+                                <span class="cs-toc__label">Process</span>
+                            </a>
+                        </li>
+                        <li class="cs-toc__item">
+                            <a href="#result" class="cs-toc__link">
+                                <svg class="cs-toc__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22V15"/></svg>
+                                <span class="cs-toc__label">Result</span>
+                            </a>
+                        </li>
+                        <li class="cs-toc__item">
+                            <a href="#sandbox" class="cs-toc__link">
+                                <svg class="cs-toc__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5M12 22V12"/></svg>
+                                <span class="cs-toc__label">Sandbox</span>
+                            </a>
+                        </li>
+                        <li class="cs-toc__item">
+                            <a href="#reflection" class="cs-toc__link">
+                                <svg class="cs-toc__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                                <span class="cs-toc__label">Reflection</span>
+                            </a>
+                        </li>
+                    </ul>
+                </details>
+            </nav>
+            <div class="cs-toc-article">
+            <section class="case-study__hero-section">
+                <h1 class="case-study__hero-title">
+                    Second Wind Pro: <span class="case-study__hero-title-highlight">Revamping the existing website of an NIL agency</span>
+                </h1>
+                <div class="case-study__hero-subtitle">
+                    <div class="case-study__project-details">
+                        <div class="case-study__project-detail-item">
+                            <span class="case-study__project-detail-label">Product Sector:</span> NIL Sports Agency
+                        </div>
+                        <div class="case-study__project-detail-item">
+                            <span class="case-study__project-detail-label">Team:</span> Me &amp; Head of Sports
+                        </div>
+                        <div class="case-study__project-detail-item">
+                            <span class="case-study__project-detail-label">Duration:</span> 2 months
+                        </div>
+                        <div class="case-study__project-detail-item">
+                            <span class="case-study__project-detail-label">Tools:</span> Cursor, Claude &amp; ChatGPT
+                        </div>
+                        <div class="case-study__project-detail-item">
+                            <span class="case-study__project-detail-label">Deliverables:</span> <a href="https://second-wind-pro-v2.netlify.app/" class="case-study__related-link" target="_blank" rel="noopener noreferrer">Live Interactive Website</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="case-study__section" id="preface">
+                <div class="case-study__section-label">PREFACE</div>
+                <p class="case-study__section-text">
+                    AI can generate a landing page in seconds now. What it can't do is judge what it has created as inconsistencies in its design language or communicate a product and brand identity that is incoherent. That's the gap I wanted this project to prove.
+                </p>
+                <p class="case-study__section-text">
+                    I used Claude and ChatGPT throughout this project for first drafts, research, and exploring directions I hadn't considered. But nothing here shipped because the AI said so.
+                </p>
+                <p class="case-study__section-text">
+                    AI allowed me to produce a draft faster and put it in front of stakeholders quicker than ever before. Everything after that (what to keep, what to throw out, what a brand should actually feel like) was my design thinking.
+                </p>
+            </section>
+
+            <section class="case-study__section" id="about">
+                <div class="case-study__section-label">ABOUT THE COMPANY</div>
+                <p class="case-study__section-text">
+                    Second Wind Pro is built around the athlete: from representing them, helping them manage their money, and soon, giving their coaches a platform to build and manage rosters. The company's goal is to become the frontrunner in this rapidly growing and increasingly competitive sector.
+                </p>
+            </section>
+
+            <section class="case-study__section" id="overview">
+                <div class="case-study__section-label">OVERVIEW</div>
+                <p class="case-study__section-text">
+                    During my internship, Head of Sports, <a href="https://www.linkedin.com/in/lenny-melzer-044b602b6" target="_blank" rel="noopener noreferrer" class="case-study__related-link person-pop">Lenny Melzer<span class="person-pop__card" aria-hidden="true"><span class="person-pop__media"><img class="person-pop__img" src="lenny-melzer.jpg" alt="Lenny Melzer" width="116" height="116" decoding="async"></span><span class="person-pop__caption">Lenny Melzer</span></span></a>, approached me to redesign the company's website because its content, visuals, and brand identity were outdated and failed to highlight the company's unique value in the NIL (Name, Image, and Likeness) realm.
+                </p>
+            </section>
+
+            <section class="case-study__section" id="challenge">
+                <div class="case-study__section-label">CHALLENGE</div>
+                <h3 class="case-study__section-title">No design assets were established, except for a logo and their main color, purple.</h3>
+                <p class="case-study__section-text">
+                    Since that was all I had to work with, I built a design system from version 2 of the website onward, using Claude Design, and kept updating it to stay visually coherent as new use cases came up.
+                </p>
+                <div class="case-study__placeholder case-study__placeholder--large" aria-label="Design system visual placeholder">
+                    <div class="case-study__placeholder-content">
+                        <div class="case-study__placeholder-title">Design system (coming soon)</div>
+                        <div class="case-study__placeholder-subtitle">Tokens, type, and component foundations</div>
+                    </div>
+                </div>
+                <p class="case-study__section-caption">Design system overview</p>
+            </section>
+
+            <section class="case-study__section" id="outcome">
+                <div class="case-study__section-label">FINAL OUTCOME</div>
+                <p class="case-study__section-text">
+                    The redesigned site shipped and is live on Netlify.
+                </p>
+                <div class="swp-browser swp-browser--live" data-swp-embed="https://second-wind-pro-v2.netlify.app/">
+                    <div class="swp-browser__chrome">
+                        <div class="swp-browser__traffic" aria-hidden="true">
+                            <span class="swp-browser__dot swp-browser__dot--close"></span>
+                            <span class="swp-browser__dot swp-browser__dot--minimize"></span>
+                            <span class="swp-browser__dot swp-browser__dot--zoom"></span>
+                        </div>
+                        <div class="swp-browser__url" title="https://second-wind-pro-v2.netlify.app/">
+                            <span class="swp-browser__lock" aria-hidden="true">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 11V8a5 5 0 0 1 10 0v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    <rect x="5" y="11" width="14" height="10" rx="2" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </span>
+                            second-wind-pro-v2.netlify.app
+                        </div>
+                        <a
+                            class="swp-browser__open"
+                            href="https://second-wind-pro-v2.netlify.app/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >Open live ↗</a>
+                    </div>
+                    <div class="swp-browser__viewport">
+                        <div class="swp-browser__scaler">
+                            <iframe
+                                class="swp-browser__iframe"
+                                src="https://second-wind-pro-v2.netlify.app/"
+                                title="Interactive Second Wind Pro website (v2)"
+                                loading="lazy"
+                                allowfullscreen
+                                referrerpolicy="no-referrer"
+                            ></iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="case-study__section case-study__section--spaced" id="process">
+                <div class="case-study__section-label">HOW DID I GET HERE?</div>
+                <h3 class="case-study__section-title">It wasn't all sunshine and rainbows</h3>
+                <p class="case-study__section-text">
+                    Lenny had shared an LLM-generated prompt that outlined his vision for the website. It was remarkably detailed, defining the site's content and information hierarchy, but it left the brand identity largely unexplored.
+                </p>
+                <p class="case-study__section-text">
+                    At the time, I was still building my understanding of NIL and the research behind the Second Wind Pro AI platform. This project became an opportunity to move beyond simply organizing content and instead interpret how the company's mission, research, and product vision could be translated into a cohesive brand and user experience.
+                </p>
+                <p class="case-study__section-text">
+                    To gain further clarity, I copied the prompt that Lenny had sent over on Slack and pasted it into Claude with some direction:
+                </p>
+                <div class="swp-chat swp-chat--claude" aria-label="Claude chat excerpt">
+                    <div class="swp-chat__header">
+                        <span class="swp-chat__brand">
+                            <img class="swp-chat__logo" src="craft-icon-claude.png" alt="" width="24" height="24" decoding="async" aria-hidden="true">
+                            <span class="swp-chat__model">Claude</span>
+                        </span>
+                        <span class="swp-chat__meta">Design brief</span>
+                    </div>
+                    <div class="swp-chat__thread">
+                        <div class="swp-chat__row swp-chat__row--user">
+                            <div class="swp-chat__label">You</div>
+                            <div class="swp-chat__bubble swp-chat__bubble--user">
+                                Imagine you're a web designer. I need to design a landing page for Second Wind Pro with this format and layout. Make the background dark mode; their main color is purple. The hero section should be a sporty, inspirational video intro, but at the same time, keep some sections from the old website the same, like our services and how we work. Make it creative.
+                            </div>
+                        </div>
+                        <div class="swp-chat__row swp-chat__row--assistant swp-chat__row--artifact">
+                            <div class="swp-chat__label">
+                                <img class="swp-chat__label-logo" src="craft-icon-claude.png" alt="" width="16" height="16" decoding="async" aria-hidden="true">
+                                Claude
+                            </div>
+                            <div class="swp-chat__artifact">
+                                <div class="swp-browser swp-browser--live" data-swp-embed="https://second-wind-pro.netlify.app/">
+                                    <div class="swp-browser__chrome">
+                                        <div class="swp-browser__traffic" aria-hidden="true">
+                                            <span class="swp-browser__dot swp-browser__dot--close"></span>
+                                            <span class="swp-browser__dot swp-browser__dot--minimize"></span>
+                                            <span class="swp-browser__dot swp-browser__dot--zoom"></span>
+                                        </div>
+                                        <div class="swp-browser__url" title="https://second-wind-pro.netlify.app/">
+                                            <span class="swp-browser__lock" aria-hidden="true">
+                                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M7 11V8a5 5 0 0 1 10 0v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                                    <rect x="5" y="11" width="14" height="10" rx="2" stroke="currentColor" stroke-width="2"/>
+                                                </svg>
+                                            </span>
+                                            second-wind-pro.netlify.app
+                                        </div>
+                                        <a
+                                            class="swp-browser__open"
+                                            href="https://second-wind-pro.netlify.app/"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >Open live ↗</a>
+                                    </div>
+                                    <div class="swp-browser__viewport">
+                                        <div class="swp-browser__scaler">
+                                            <iframe
+                                                class="swp-browser__iframe"
+                                                src="https://second-wind-pro.netlify.app/"
+                                                title="Interactive Second Wind Pro version 1"
+                                                loading="lazy"
+                                                allowfullscreen
+                                                referrerpolicy="no-referrer"
+                                            ></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="case-study__section" id="version-1">
+                <h3 class="case-study__section-title">Version 1</h3>
+                <p class="case-study__section-text">
+                    Claude produced version 1 as a hypothesis: as a way to gather insight on the aesthetic direction and meet stakeholder expectations halfway.
+                </p>
+
+                <div class="swp-insight-grid">
+                    <article class="swp-insight swp-insight--jack">
+                        <header class="swp-insight__header">
+                            <span class="swp-insight__role">Engineer</span>
+                            <span class="swp-insight__name">Jack</span>
+                        </header>
+                        <p class="swp-insight__context">Industry knowledge I leaned on for this</p>
+                        <blockquote class="swp-insight__quote">
+                            “But the going trend is modern everything. Where it's at right now is more toward a high-end consulting firm. The elements I think are fine (banners, cards, etc); I bet if we choose a more blocky font and tighten up the dead space.”
+                        </blockquote>
+                    </article>
+                    <article class="swp-insight swp-insight--luke">
+                        <header class="swp-insight__header">
+                            <span class="swp-insight__role">CEO</span>
+                            <span class="swp-insight__name">Luke</span>
+                        </header>
+                        <p class="swp-insight__context">Brand identity feedback</p>
+                        <blockquote class="swp-insight__quote">
+                            “The aesthetic is leaning too far toward a high-end law firm. We need to capture a feeling that actually represents our brand identity.”
+                        </blockquote>
+                    </article>
+                </div>
+            </section>
+
+            <section class="case-study__section case-study__section--spaced" id="aesthetic">
+                <div class="case-study__section-label">WEBSITE AESTHETIC EXPLORATION</div>
+                <p class="case-study__section-text">
+                    That feedback sent me exploring the NIL agency space, along with sports-adjacent brands:
+                    <span class="swp-brand-chips">
+                        <span class="swp-brand-chip"><img class="swp-brand-chip__logo swp-brand-chip__logo--nike" src="nike-logo.png" alt="Nike"></span><span class="swp-brand-punct">,</span>
+                        <span class="swp-brand-chip"><img class="swp-brand-chip__logo swp-brand-chip__logo--ncaa" src="ncaa-logo.png" alt="NCAA"></span><span class="swp-brand-punct">, and</span>
+                        <span class="swp-brand-chip"><img class="swp-brand-chip__logo swp-brand-chip__logo--espn" src="espn-logo.png" alt="ESPN"></span>
+                    </span>.
+                    I wanted to understand two things from them: the tone and language of their copy and microcopy, and the feeling their aesthetics conveyed, especially typography.
+                </p>
+                <p class="case-study__section-text">
+                    I looked closely at Nike's typography specifically, since it has the “blocky” feel that Jack and <a href="https://www.linkedin.com/in/luke-mazur" target="_blank" rel="noopener noreferrer" class="case-study__related-link person-pop">Luke<span class="person-pop__card" aria-hidden="true"><span class="person-pop__media"><img class="person-pop__img" src="luke-mazur.jpg" alt="Luke Mazur" width="116" height="116" decoding="async"></span><span class="person-pop__caption">Luke Mazur</span></span></a> both desired. That led me to ask ChatGPT:
+                </p>
+                <div class="swp-chat swp-chat--chatgpt" aria-label="ChatGPT chat excerpt">
+                    <div class="swp-chat__header">
+                        <span class="swp-chat__brand">
+                            <svg class="swp-chat__logo" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                <path fill="currentColor" d="M22.282 9.821a5.985 5.985 0 0 0-.516-4.91 6.046 6.046 0 0 0-6.51-2.9A6.065 6.065 0 0 0 4.981 4.18a5.985 5.985 0 0 0-3.997 2.91 6.046 6.046 0 0 0 .743 7.096 5.98 5.98 0 0 0 .51 4.911 6.051 6.051 0 0 0 6.515 2.9A5.985 5.985 0 0 0 13.26 24a6.056 6.056 0 0 0 5.772-4.206 5.99 5.99 0 0 0 3.997-2.91 6.056 6.056 0 0 0-.743-7.063zM13.26 22.43a4.476 4.476 0 0 1-2.876-1.04l.141-.08 4.779-2.758a.795.795 0 0 0 .392-.681v-6.737l2.02 1.168a.071.071 0 0 1 .038.052v5.582a4.504 4.504 0 0 1-4.494 4.494zM3.6 18.304a4.47 4.47 0 0 1-.535-3.013l.142.085 4.783 2.758a.771.771 0 0 0 .78 0l5.843-3.368v2.332a.08.08 0 0 1-.033.062L9.74 19.95a4.5 4.5 0 0 1-6.14-1.646zM2.453 8.697a4.483 4.483 0 0 1 2.365-1.972V11.8a.766.766 0 0 0 .388.676l5.814 3.354-2.02 1.168a.071.071 0 0 1-.071 0l-4.83-2.787A4.504 4.504 0 0 1 2.453 8.697zm16.596 3.88-5.833-3.387 2.023-1.146a.071.071 0 0 1 .071 0l4.83 2.791a4.494 4.494 0 0 1-.676 8.104v-5.678a.79.79 0 0 0-.407-.667zm2.01-3.023-.141-.085-4.774-2.782a.776.776 0 0 0-.785 0L9.409 9.23V6.897a.066.066 0 0 1 .028-.061l4.83-2.787a4.5 4.5 0 0 1 6.791 4.66zM8.306 12.863l-2.02-1.163a.08.08 0 0 1-.038-.057V6.074a4.499 4.499 0 0 1 7.375-3.453l-.142.08L8.704 5.459a.795.795 0 0 0-.392.681zm1.097-2.365 2.602-1.5 2.607 1.5v2.999l-2.597 1.5-2.607-1.5z"/>
+                            </svg>
+                            <span class="swp-chat__model">ChatGPT</span>
+                        </span>
+                        <span class="swp-chat__meta">Typography research</span>
+                    </div>
+                    <div class="swp-chat__thread">
+                        <div class="swp-chat__row swp-chat__row--user">
+                            <div class="swp-chat__label">You</div>
+                            <div class="swp-chat__bubble swp-chat__bubble--user">
+                                What are some examples of blocky fonts for sports agencies that are sans serif?
+                            </div>
+                        </div>
+                        <div class="swp-chat__row swp-chat__row--assistant">
+                            <div class="swp-chat__label">
+                                <svg class="swp-chat__label-logo" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                    <path fill="currentColor" d="M22.282 9.821a5.985 5.985 0 0 0-.516-4.91 6.046 6.046 0 0 0-6.51-2.9A6.065 6.065 0 0 0 4.981 4.18a5.985 5.985 0 0 0-3.997 2.91 6.046 6.046 0 0 0 .743 7.096 5.98 5.98 0 0 0 .51 4.911 6.051 6.051 0 0 0 6.515 2.9A5.985 5.985 0 0 0 13.26 24a6.056 6.056 0 0 0 5.772-4.206 5.99 5.99 0 0 0 3.997-2.91 6.056 6.056 0 0 0-.743-7.063zM13.26 22.43a4.476 4.476 0 0 1-2.876-1.04l.141-.08 4.779-2.758a.795.795 0 0 0 .392-.681v-6.737l2.02 1.168a.071.071 0 0 1 .038.052v5.582a4.504 4.504 0 0 1-4.494 4.494zM3.6 18.304a4.47 4.47 0 0 1-.535-3.013l.142.085 4.783 2.758a.771.771 0 0 0 .78 0l5.843-3.368v2.332a.08.08 0 0 1-.033.062L9.74 19.95a4.5 4.5 0 0 1-6.14-1.646zM2.453 8.697a4.483 4.483 0 0 1 2.365-1.972V11.8a.766.766 0 0 0 .388.676l5.814 3.354-2.02 1.168a.071.071 0 0 1-.071 0l-4.83-2.787A4.504 4.504 0 0 1 2.453 8.697zm16.596 3.88-5.833-3.387 2.023-1.146a.071.071 0 0 1 .071 0l4.83 2.791a4.494 4.494 0 0 1-.676 8.104v-5.678a.79.79 0 0 0-.407-.667zm2.01-3.023-.141-.085-4.774-2.782a.776.776 0 0 0-.785 0L9.409 9.23V6.897a.066.066 0 0 1 .028-.061l4.83-2.787a4.5 4.5 0 0 1 6.791 4.66zM8.306 12.863l-2.02-1.163a.08.08 0 0 1-.038-.057V6.074a4.499 4.499 0 0 1 7.375-3.453l-.142.08L8.704 5.459a.795.795 0 0 0-.392.681zm1.097-2.365 2.602-1.5 2.607 1.5v2.999l-2.597 1.5-2.607-1.5z"/>
+                                </svg>
+                                ChatGPT
+                            </div>
+                            <div class="swp-chat__bubble swp-chat__bubble--assistant">
+                                <span class="swp-chat__assistant-status">Returned a list of sans-serif options, including fonts described as “Modern”</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="case-study__section-text">
+                    The output it generated didn't look much like Nike's type until I noticed the word “<strong class="swp-modern">Modern</strong>” in one of the descriptions. That was the actual feeling that was being asked of: not a sports-magazine aesthetic like v1, but something between formal and informal, fitting given the site's real audience is brands, athletes, and athletes' guardians. That “in-between” needed to show up not just in the aesthetics, but in the copy, microcopy, and accessibility of the design itself.
+                </p>
+
+                <h4 class="case-study__subsection-title case-study__subsection-title--spaced">Typography</h4>
+                <p class="case-study__section-text">
+                    I chose <strong class="swp-modern">Geist</strong> for its legibility, clean look, and large display size across sections, and because it sits right in that formal/informal middle ground the brand needed, leaning toward neither.
+                </p>
+
+                <h4 class="case-study__subsection-title case-study__subsection-title--spaced">Colors</h4>
+                <p class="case-study__section-text">
+                    Version 1 had an almost-black background with a touch of warm purple and cream text against it. I liked it at first; the contrast was there. But sitting with it longer told a different story. My eyes kept sliding off the page, and so did the stakeholders'. The background was too strong.
+                </p>
+                <div class="case-study__section-image">
+                    <img
+                        src="Comparison Cards.png"
+                        alt="Color comparison explorations"
+                        class="case-study__section-img"
+                        style="border: 1px solid #e0e0e0; cursor: pointer;"
+                        onclick="openImageModal(this)"
+                    />
+                </div>
+                <p class="case-study__section-caption">Color direction comparisons (Click to enlarge)</p>
+                <p class="case-study__section-text">
+                    The fix wasn't about accessibility; it was about how the page felt to spend time on. Second Wind Pro AI, our internal dashboard, used a <span class="swp-color-tag" title="#1A0535"><span class="swp-color-tag__swatch" style="background-color: #1A0535;" aria-hidden="true"></span><code class="swp-color-tag__hex">#1A0535</code></span> deep purple as its baseline, so I tested three directions off that: a saturated deep purple, a muted soft purple, and a navy-leaning version. I dropped real site content into each and picked the navy version: the one that let the content stand out instead of fighting the background.
+                </p>
+            </section>
+
+            <section class="case-study__section case-study__section--spaced" id="services">
+                <div class="case-study__section-label">WEBSITE SECTIONS EXPLORATION</div>
+                <h3 class="case-study__section-title">Our Services</h3>
+
+                <h4 class="case-study__subsection-title">v1</h4>
+                <p class="case-study__section-text">
+                    V1 was about reading stakeholder expectations, not final craft. The services section worked as a draft, but leaned entirely on text descriptions with no visuals doing any of the work.
+                </p>
+                <div class="swp-browser swp-browser--live swp-browser--section swp-browser--services" data-swp-embed="https://second-wind-pro.netlify.app/#services" data-swp-crop="services" data-swp-crop-y="0">
+                    <div class="swp-browser__chrome">
+                        <div class="swp-browser__traffic" aria-hidden="true">
+                            <span class="swp-browser__dot swp-browser__dot--close"></span>
+                            <span class="swp-browser__dot swp-browser__dot--minimize"></span>
+                            <span class="swp-browser__dot swp-browser__dot--zoom"></span>
+                        </div>
+                        <div class="swp-browser__url" title="https://second-wind-pro.netlify.app/#services">
+                            <span class="swp-browser__lock" aria-hidden="true">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 11V8a5 5 0 0 1 10 0v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    <rect x="5" y="11" width="14" height="10" rx="2" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </span>
+                            second-wind-pro.netlify.app/#services
+                        </div>
+                        <a
+                            class="swp-browser__open"
+                            href="https://second-wind-pro.netlify.app/#services"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >Open live ↗</a>
+                    </div>
+                    <div class="swp-browser__viewport">
+                        <div class="swp-browser__scaler">
+                            <iframe
+                                class="swp-browser__iframe"
+                                src="/embed/swp-v1/services"
+                                title="Interactive Second Wind Pro v1 Our Services section"
+                                loading="eager"
+                                allowfullscreen
+                                referrerpolicy="no-referrer"
+                            ></iframe>
+                        </div>
+                    </div>
+                </div>
+                <p class="case-study__section-caption">Services on v1</p>
+
+                <h4 class="case-study__subsection-title case-study__subsection-title--spaced">v2: Exploration #1</h4>
+                <p class="case-study__section-text">
+                    Shifted from a mouse-animated horizontal scroll into bento-box visuals. Reading all the service descriptions at once felt overwhelming, and it didn't match how most landing pages actually use bento layouts to communicate a solution.
+                </p>
+                <div class="case-study__section-image">
+                    <img
+                        src="exploration-of-services-1.png"
+                        alt="Services exploration 1"
+                        class="case-study__section-img"
+                        style="border: 1px solid #e0e0e0; cursor: pointer;"
+                        onclick="openImageModal(this)"
+                    />
+                </div>
+                <p class="case-study__section-caption">Services exploration #1 (Click to enlarge)</p>
+
+                <h4 class="case-study__subsection-title case-study__subsection-title--spaced">v2: Exploration #2</h4>
+                <p class="case-study__section-text">
+                    Focused on individual services one at a time, using a carousel to create a “hook effect”: pulling users in by surfacing one service at a time instead of all at once.
+                </p>
+                <div class="case-study__section-image">
+                    <img
+                        src="exploration-of-services-2.png"
+                        alt="Services exploration 2"
+                        class="case-study__section-img"
+                        style="border: 1px solid #e0e0e0; cursor: pointer;"
+                        onclick="openImageModal(this)"
+                    />
+                </div>
+                <p class="case-study__section-caption">Services exploration #2 (Click to enlarge)</p>
+
+                <h4 class="case-study__subsection-title case-study__subsection-title--spaced">v2: Live</h4>
+                <p class="case-study__section-text">
+                    The live version keeps the hook effect: to learn more, users scroll vertically or can click into individual services.
+                </p>
+                <div class="swp-browser swp-browser--live swp-browser--section swp-browser--services swp-browser--services-hook" data-swp-embed="https://second-wind-pro-v2.netlify.app/#services" data-swp-crop="services" data-swp-crop-y="0" data-swp-width="1100">
+                    <div class="swp-browser__chrome">
+                        <div class="swp-browser__traffic" aria-hidden="true">
+                            <span class="swp-browser__dot swp-browser__dot--close"></span>
+                            <span class="swp-browser__dot swp-browser__dot--minimize"></span>
+                            <span class="swp-browser__dot swp-browser__dot--zoom"></span>
+                        </div>
+                        <div class="swp-browser__url" title="https://second-wind-pro-v2.netlify.app/#services">
+                            <span class="swp-browser__lock" aria-hidden="true">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 11V8a5 5 0 0 1 10 0v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    <rect x="5" y="11" width="14" height="10" rx="2" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </span>
+                            second-wind-pro-v2.netlify.app/#services
+                        </div>
+                        <a
+                            class="swp-browser__open"
+                            href="https://second-wind-pro-v2.netlify.app/#services"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >Open live ↗</a>
+                    </div>
+                    <div class="swp-browser__viewport">
+                        <div class="swp-browser__scaler">
+                            <iframe
+                                class="swp-browser__iframe"
+                                src="/embed/swp-v2/services"
+                                title="Interactive Second Wind Pro v2 Our Services section"
+                                loading="eager"
+                                allowfullscreen
+                                referrerpolicy="no-referrer"
+                            ></iframe>
+                        </div>
+                    </div>
+                </div>
+                <p class="case-study__section-caption">Live services</p>
+            </section>
+
+            <section class="case-study__section case-study__section--spaced" id="athletes">
+                <div class="case-study__section-label">PRIORITIZATION &amp; TRADE-OFFS</div>
+                <h3 class="case-study__section-title">Meet the Athletes page</h3>
+
+                <h4 class="case-study__subsection-title">Approach #1</h4>
+                <p class="case-study__section-text">
+                    The first pass used a responsive card layout for player profiles. Two problems stood out: the two buttons (Read More / Partner Up) competed for priority with no clear primary action, and the spacing around each card's content felt heavy on the eye.
+                </p>
+                <div class="case-study__section-image">
+                    <img
+                        src="meet-the-athletes-page-exploration-1.png"
+                        alt="Meet the Athletes exploration 1"
+                        class="case-study__section-img"
+                        style="border: 1px solid #e0e0e0; cursor: pointer;"
+                        onclick="openImageModal(this)"
+                    />
+                </div>
+                <p class="case-study__section-caption">Athletes exploration #1 (Click to enlarge)</p>
+
+                <h4 class="case-study__subsection-title case-study__subsection-title--spaced">Approach #2</h4>
+                <p class="case-study__section-text">
+                    This iteration moved to a horizontal card layout to fix the spacing and repositioned the pills above the player's name instead of below it. Card body spacing still needed work.
+                </p>
+                <div class="case-study__section-image">
+                    <img
+                        src="meet-the-athletes-page-exploration-2.png"
+                        alt="Meet the Athletes exploration 2"
+                        class="case-study__section-img"
+                        style="border: 1px solid #e0e0e0; cursor: pointer;"
+                        onclick="openImageModal(this)"
+                    />
+                </div>
+                <p class="case-study__section-caption">Athletes exploration #2 (Click to enlarge)</p>
+
+                <h4 class="case-study__subsection-title case-study__subsection-title--spaced">Collaboration</h4>
+                <p class="case-study__section-text">
+                    At this point, I checked in with Lenny on progress. He said, “I like the progress 👍,” and then asked something that reframed the whole page: the agency represents 30+ athletes; could the current design actually support that number and more?
+                </p>
+                <p class="case-study__section-text">
+                    “No,” I said. “Anything more than six athletes would cause information overload.” I was wrong, but not about the overload. I was thinking about the content when I should have been thinking about the page's goal: <strong>helping brands find a player worth partnering with</strong>, not showing them a manageable number of faces.
+                </p>
+                <p class="case-study__section-text">
+                    That reframe changed the card design too. The partner button now lives inside the athlete's detail view, not on the card itself. The decision comes after the reading, not before it.
+                </p>
+                <p class="case-study__section-text">
+                    Once the goal was right, the rest followed from it. Pagination would break browsing every twenty athletes. A load-more button would ask brands to keep opting in before they'd found what they came for. Infinite scroll keeps them moving until a player earns a closer look.
+                </p>
+
+                <h4 class="case-study__subsection-title case-study__subsection-title--spaced">Approach #3: Live</h4>
+                <p class="case-study__section-text">
+                    The final version fixes the spacing, includes real athlete photos, and holds all 30+ athletes without the overload I'd originally worried about.
+                </p>
+                <div class="swp-browser swp-browser--live swp-browser--section" data-swp-embed="https://second-wind-pro-v2.netlify.app/meet-the-athletes" data-swp-crop="athletes" data-swp-crop-y="72">
+                    <div class="swp-browser__chrome">
+                        <div class="swp-browser__traffic" aria-hidden="true">
+                            <span class="swp-browser__dot swp-browser__dot--close"></span>
+                            <span class="swp-browser__dot swp-browser__dot--minimize"></span>
+                            <span class="swp-browser__dot swp-browser__dot--zoom"></span>
+                        </div>
+                        <div class="swp-browser__url" title="https://second-wind-pro-v2.netlify.app/meet-the-athletes">
+                            <span class="swp-browser__lock" aria-hidden="true">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 11V8a5 5 0 0 1 10 0v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    <rect x="5" y="11" width="14" height="10" rx="2" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </span>
+                            second-wind-pro-v2.netlify.app/meet-the-athletes
+                        </div>
+                        <a
+                            class="swp-browser__open"
+                            href="https://second-wind-pro-v2.netlify.app/meet-the-athletes"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >Open live ↗</a>
+                    </div>
+                    <div class="swp-browser__viewport">
+                        <div class="swp-browser__scaler">
+                            <iframe
+                                class="swp-browser__iframe"
+                                src="https://second-wind-pro-v2.netlify.app/meet-the-athletes"
+                                title="Interactive Second Wind Pro Meet the Athletes page"
+                                loading="eager"
+                                allowfullscreen
+                                referrerpolicy="no-referrer"
+                            ></iframe>
+                        </div>
+                    </div>
+                </div>
+                <p class="case-study__section-caption">Live Meet the Athletes</p>
+            </section>
+
+            <section class="case-study__section case-study__section--spaced" id="result">
+                <div class="case-study__section-label">RESULT</div>
+                <p class="case-study__section-text">
+                    The redesigned site shipped and is deployed on Netlify. I also presented the final version at a team stand-up, and both Lenny and Luke responded well to it. That mattered most for Luke: specifically, his earlier feedback on v1 was that the design felt like “a high-end law firm” rather than Second Wind Pro's own identity. Seeing that concern resolved in the final version confirmed the aesthetic exploration had actually gotten the brand identity right, not just landed on something “nicer.”
+                </p>
+                <p class="case-study__section-text">
+                    <a href="https://second-wind-pro-v2.netlify.app/" target="_blank" rel="noopener noreferrer">View the live site →</a>
+                </p>
+                <p class="case-study__section-text">
+                    This project also surfaced a workflow problem of its own: the constant back-and-forth between Cursor and Netlify just to preview a change on mobile led me to build a local, Figma-like sandbox that pulls directly from my Cursor project, letting me preview drafts across breakpoints and manage variations without redeploying.
+                </p>
+            </section>
+
+            <section class="case-study__section case-study__section--spaced" id="sandbox">
+                <div class="case-study__section-label">SWP SANDBOX</div>
+                <h3 class="case-study__section-title">An internal tool built to bridge the gap between Cursor and the deployed site</h3>
+                <p class="case-study__section-text">
+                    Redesigning the site surfaced a workflow problem of its own: every mobile or iPad check meant committing, deploying to Netlify, and looking again. I built a local, Figma-like sandbox between Cursor and the live site so I could preview drafts across breakpoints without that loop.
+                </p>
+                <p class="case-study__section-text">
+                    <a href="SWPSandbox.html" class="case-study__related-link">See that case study →</a>
+                </p>
+            </section>
+
+            <section class="case-study__conclusion" id="reflection">
+                <div class="case-study__conclusion-content">
+                    <div class="case-study__conclusion-label">
+                        REFLECTION
+                    </div>
+                    <div class="case-study__reflection-grid" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; margin-top: 24px;">
+                        <div style="display: flex; flex-direction: column; gap: 32px;">
+                            <div id="learned" class="cs-outline-anchor">
+                                <h2 class="case-study__reflection-title" style="font-size: 24px; margin-bottom: 16px;">
+                                    What I learned
+                                </h2>
+                                <div class="case-study__section-text">
+                                    <p style="margin-bottom: 16px;"><strong>Knowing who the section is for matters more than anything else.</strong></p>
+                                    <p style="margin-bottom: 24px;">When I was clear about the user and the goal, the design decisions came easier. When I wasn't, everything got fussy.</p>
+
+                                    <p style="margin-bottom: 16px;"><strong>Seeing designs live changes what you notice.</strong></p>
+                                    <p style="margin-bottom: 24px;">Reviewing them in a real browser instead of a static file showed things the mockup hid. Spacing looked fine on its own, but felt off next to real content.</p>
+
+                                    <p style="margin-bottom: 16px;"><strong>Design tokens carry a lot of the weight.</strong></p>
+                                    <p style="margin-bottom: 0;">Uploading the token file into Cursor kept color, typography, and spacing consistent across everything the team built after. Even sections I didn't touch stayed on-brand.</p>
+                                </div>
+                            </div>
+
+                            <div id="proud" class="cs-outline-anchor">
+                                <h2 class="case-study__reflection-title" style="font-size: 24px; margin-bottom: 16px;">
+                                    What I'm Proud Of
+                                </h2>
+                                <div class="case-study__section-text">
+                                    <p style="margin-bottom: 16px;"><strong>The system held up when real content came in.</strong></p>
+                                    <p style="margin-bottom: 0;">Thirty athletes, a testimonials section, a brand pitch flow that wasn't in the original spec: the system scaled without breaking. Tokens and patterns did the work.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="next-steps" class="cs-outline-anchor">
+                            <h2 class="case-study__reflection-title" style="font-size: 24px; margin-bottom: 16px;">
+                                Next Steps
+                            </h2>
+                            <div class="case-study__section-text">
+                                <p style="margin-bottom: 16px;"><strong>Train the judgment.</strong></p>
+                                <p style="margin-bottom: 24px;">AI can animate code now, but it doesn't know what feels right. The skill I want to deepen next is knowing when motion helps the interface and when it's just noise.</p>
+
+                                <p style="margin-bottom: 16px;"><strong>Get access to better tools.</strong></p>
+                                <p style="margin-bottom: 0;">Mobbin's MCP and Refero would've shortened the reference-gathering phase and given me stronger backing for pattern decisions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            </div>
+            </div>
+
+        </section>
+    </main>
+
+    <div id="imageModal" class="image-modal">
+        <div class="image-modal-content">
+            <span class="image-modal-close" onclick="closeImageModal()">&times;</span>
+            <img id="modalImage" class="image-modal-img" alt="Modal Image">
+            <p id="modalCaption" class="image-modal-caption"></p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer__content">
+            <p class="footer__contact">
+                Get in touch: <a href="mailto:oba12ayo@gmail.com" class="footer__email">oba12ayo@gmail.com</a>
+            </p>
+            <p class="footer__made-with">
+                Made with a lot of hours on
+                <svg class="footer__spotify-logo" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" fill="#1DB954"/>
+                </svg>
+            </p>
+        </div>
+    </footer>
+
+    <a href="#page" class="sqs-button-element--secondary" id="back-to-top" aria-label="Back to top">⬆️</a>
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="index.js?v=28"></script>
+    <script>
+    (function () {
+        if (window.__csOutlineInit) return;
+        if (!document.querySelector('.cs-toc')) return;
+        window.__csOutlineInit = true;
+
+        function hashId(href) {
+            if (!href) return '';
+            var idx = href.lastIndexOf('#');
+            return idx === -1 ? '' : href.slice(idx + 1);
+        }
+
+        var outlineLinks = Array.prototype.slice.call(document.querySelectorAll('.cs-toc__link'));
+        var seenIds = {};
+        var outlineTargets = [];
+
+        outlineLinks.forEach(function (link) {
+            var id = hashId(link.getAttribute('href'));
+            if (!id || seenIds[id]) return;
+            var el = document.getElementById(id);
+            if (!el) return;
+            seenIds[id] = true;
+            outlineTargets.push({ id: id, el: el });
+        });
+
+        if (!outlineTargets.length) return;
+
+        var marker = 112;
+        var tiePx = 56;
+        var ticking = false;
+        var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        function setActive(id) {
+            outlineLinks.forEach(function (link) {
+                var on = hashId(link.getAttribute('href')) === id;
+                link.classList.toggle('is-active', on);
+                if (on) link.setAttribute('aria-current', 'location');
+                else link.removeAttribute('aria-current');
+            });
+        }
+
+        function updateActive() {
+            var current = outlineTargets[0];
+            var currentDocTop = -Infinity;
+            outlineTargets.forEach(function (item) {
+                var rect = item.el.getBoundingClientRect();
+                var docTop = rect.top + window.pageYOffset;
+                if (rect.top <= marker && docTop > currentDocTop + tiePx) {
+                    current = item;
+                    currentDocTop = docTop;
+                }
+            });
+            setActive(current.id);
+        }
+
+        window.addEventListener('scroll', function () {
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(function () {
+                updateActive();
+                ticking = false;
+            });
+        }, { passive: true });
+        window.addEventListener('resize', updateActive);
+        updateActive();
+
+        outlineLinks.forEach(function (link) {
+            link.addEventListener('click', function (event) {
+                var id = hashId(link.getAttribute('href'));
+                var target = id ? document.getElementById(id) : null;
+                if (!target) return;
+                event.preventDefault();
+                target.scrollIntoView({
+                    behavior: reduceMotion ? 'auto' : 'smooth',
+                    block: 'start'
+                });
+                try { history.replaceState(null, '', window.location.href.split('#')[0] + '#' + id); } catch (err) {}
+            });
+        });
+    })();
+    </script>
+    <script>
+    (function () {
+        var DESKTOP_WIDTH = 1440;
+        var SERVICES_WIDTH = 1100;
+
+        function scaleLiveEmbed(browser) {
+            var viewport = browser.querySelector('.swp-browser__viewport');
+            var scaler = browser.querySelector('.swp-browser__scaler');
+            if (!viewport || !scaler) return;
+            var visibleWidth = viewport.clientWidth;
+            var visibleHeight = viewport.clientHeight;
+            if (visibleWidth < 1 || visibleHeight < 1) return;
+            var virtualWidth = DESKTOP_WIDTH;
+            var widthAttr = parseFloat(browser.getAttribute('data-swp-width'));
+            if (widthAttr > 0) {
+                virtualWidth = widthAttr;
+            } else if (browser.classList.contains('swp-browser--services')) {
+                virtualWidth = SERVICES_WIDTH;
+            }
+            var scale = visibleWidth / virtualWidth;
+            var cropY = 0;
+            if (browser.classList.contains('swp-browser--section')) {
+                cropY = parseFloat(browser.getAttribute('data-swp-crop-y')) || 0;
+            }
+            viewport.style.setProperty('--swp-embed-scale', String(scale));
+            viewport.style.setProperty('--swp-crop-y', String(cropY));
+            scaler.style.width = virtualWidth + 'px';
+            scaler.style.height = (visibleHeight / scale) + 'px';
+        }
+
+        function scaleAllLiveEmbeds() {
+            document.querySelectorAll('.swp-browser--live').forEach(scaleLiveEmbed);
+        }
+
+        scaleAllLiveEmbeds();
+        window.addEventListener('resize', scaleAllLiveEmbeds);
+
+        if (typeof ResizeObserver !== 'undefined') {
+            var resizeObserver = new ResizeObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    var browser = entry.target.closest('.swp-browser--live');
+                    if (browser) scaleLiveEmbed(browser);
+                });
+            });
+            document.querySelectorAll('.swp-browser--live .swp-browser__viewport').forEach(function (viewport) {
+                resizeObserver.observe(viewport);
+            });
+        }
+    })();
+    </script>
+</body>
+</html>
