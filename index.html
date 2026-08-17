@@ -151,13 +151,12 @@
         <section id="work" class="projects" aria-label="Work">
             <div class="projects__content">
                 <div class="projects__grid">
-                    <div class="project-card project-card--wip" data-project="second-wind-pro" aria-disabled="true">
+                    <div class="project-card">
                         <div class="project-card__image-container">
                             <img src="swp-v2-hero.png" alt="Second Wind Pro homepage hero: The Modern Athlete's NIL Agency" class="project-card__image">
                         </div>
                         <div class="project-card__content">
                             <div class="project-card__tags">
-                                <span class="project-card__tag project-card__tag--wip">WIP</span>
                                 <span class="project-card__tag">Internship</span>
                                 <span class="project-card__tag">NIL</span>
                                 <span class="project-card__tag">Brand Identity</span>
@@ -168,27 +167,8 @@
                                 Revamping the existing website of an NIL agency.
                             </p>
                         </div>
+                        <a href="SecondWindPro.html" class="project-card__link" aria-label="View Second Wind Pro case study"></a>
                     </div>
-                    <script>
-                    (function () {
-                        var host = location.hostname;
-                        var isPlayground = host === 'localhost' || host === '127.0.0.1' || location.port === '4100' || location.pathname.indexOf('/playground/') !== -1;
-                        if (!isPlayground) return;
-                        var card = document.querySelector('[data-project="second-wind-pro"]');
-                        if (!card) return;
-                        card.classList.remove('project-card--wip');
-                        card.removeAttribute('aria-disabled');
-                        var wipTag = card.querySelector('.project-card__tag--wip');
-                        if (wipTag) wipTag.remove();
-                        if (!card.querySelector('.project-card__link')) {
-                            var link = document.createElement('a');
-                            link.href = 'SecondWindPro.html';
-                            link.className = 'project-card__link';
-                            link.setAttribute('aria-label', 'View Second Wind Pro case study');
-                            card.appendChild(link);
-                        }
-                    })();
-                    </script>
 
                     <div class="project-card">
                         <div class="project-card__image-container">
