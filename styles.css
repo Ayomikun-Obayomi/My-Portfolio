@@ -6029,11 +6029,12 @@ body.case-study-page:has(.case-study--swp) .main {
 }
 
 .case-study--swp #version-1 {
-    margin-top: 16px;
+    margin-top: 48px;
 }
 
 .case-study--swp #version-1 > .case-study__section-title {
     margin-top: 0;
+    margin-bottom: 12px;
 }
 
 .case-study--swp .case-study__placeholder {
@@ -6698,7 +6699,11 @@ body.case-study-page:has(.case-study--swp) .main {
     }
 
     .case-study--swp #version-1 {
-        margin-top: 16px;
+        margin-top: 28px;
+    }
+
+    .case-study--swp #version-1 > .case-study__section-title {
+        margin-bottom: 8px;
     }
 
     .case-study--swp .case-study__section {

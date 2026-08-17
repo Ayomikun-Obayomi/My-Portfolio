@@ -30,9 +30,9 @@ main > *:not(#services) {
     ? `--svc-nav-offset: 0px;
   --svc-nav-height: 0px;
   --svc-nav-gap: 0px;`
-    : `--svc-nav-offset: 116px;
+    : `--svc-nav-offset: 88px;
   --svc-nav-height: 76px;
-  --svc-nav-gap: 32px;`}
+  --svc-nav-gap: 12px;`}
 }
 `;
 
@@ -97,7 +97,10 @@ ${hidePageSiblings}
   width: 100% !important;
   max-width: none !important;
   margin: 0 !important;
-  position: relative !important;
+}
+body > .nav {
+  display: flex !important;
+  visibility: visible !important;
 }
 @media (min-width: 981px) {
   html, body {
@@ -113,73 +116,11 @@ ${hidePageSiblings}
     height: 100% !important;
     min-height: 100% !important;
     overflow: hidden !important;
-    padding: 0 !important;
-  }
-  body > .nav {
-    display: flex !important;
-    visibility: visible !important;
-  }
-  .services-head {
-    display: flex !important;
-    top: 116px !important;
-    left: 28px !important;
-    right: 28px !important;
-  }
-  .services-track,
-  #servicesTrack {
-    display: flex !important;
-    padding: 176px 28px 48px !important;
-    gap: 28px !important;
-  }
-  .service-card {
-    width: 520px !important;
-    height: min(560px, calc(100% - 216px)) !important;
-  }
-  .services-progress {
-    display: block !important;
-    left: 28px !important;
-    right: 28px !important;
-    bottom: 24px !important;
   }
 }
 @media (max-width: 980px) {
   html, body {
     overflow-x: clip !important;
-  }
-  body > .nav {
-    display: flex !important;
-    visibility: visible !important;
-  }
-  #services,
-  #services.services {
-    height: auto !important;
-    min-height: 0 !important;
-    overflow: visible !important;
-    padding: 116px 20px 40px !important;
-    scroll-margin-top: 84px;
-  }
-  .services-head {
-    position: static !important;
-  }
-  .services-head .hint {
-    display: none !important;
-  }
-  .services-track,
-  #servicesTrack {
-    display: flex !important;
-    flex-direction: column !important;
-    height: auto !important;
-    padding: 16px 0 0 !important;
-    gap: 14px !important;
-    transform: none !important;
-  }
-  .service-card {
-    width: 100% !important;
-    height: auto !important;
-    padding: 22px !important;
-  }
-  .services-progress {
-    display: none !important;
   }
 }
 `;
@@ -215,27 +156,13 @@ const V1_MOBILE_CSS_FALLBACK = `
 .skip-link { display: none !important; }
 html { scroll-behavior: auto !important; }
 .swp-embed-nav-toggle { display: none !important; }
-html.swp-embed-v1-services { scroll-padding-top: 84px; }
-@media (min-width: 981px) {
-  html.swp-embed-v1-services .services-head { top: 116px !important; }
-  html.swp-embed-v1-services .services-track, html.swp-embed-v1-services #servicesTrack { padding: 176px 28px 48px !important; }
-  html.swp-embed-v1-services .service-card { height: min(560px, calc(100% - 216px)) !important; }
+html, body { overflow-x: clip; }
+html.swp-embed-v1-services .nav {
+  padding: 14px 40px;
+  background: rgba(10, 7, 16, 0.92);
 }
-@media (max-width: 980px) {
-  html, body { overflow-x: clip !important; max-width: 100% !important; }
-  .nav { flex-wrap: nowrap !important; align-items: center !important; }
-  .nav ul { display: none !important; }
-  .nav .cta { display: inline-flex !important; align-items: center !important; white-space: nowrap !important; font-size: 11px !important; padding: 8px 16px !important; margin-left: auto; }
-  .swp-embed-nav-toggle { display: inline-flex !important; }
-  .hero { height: auto !important; min-height: 0 !important; min-height: min(420px, 78dvh) !important; }
-  .hero-content { grid-template-columns: 1fr !important; padding: 116px 20px 28px !important; }
-  .hero h1 { font-size: clamp(32px, 8.6vw, 42px) !important; }
-  .hero-actions { flex-direction: column !important; }
-  #services, #services.services, .services { height: auto !important; min-height: 0 !important; overflow: visible !important; padding: 116px 20px 40px !important; scroll-margin-top: 84px; }
-  .services-head { position: static !important; }
-  .services-track, #servicesTrack { flex-direction: column !important; transform: none !important; height: auto !important; }
-  .service-card { width: 100% !important; height: auto !important; }
-  .roster-grid { grid-template-columns: 1fr !important; }
+@media (min-width: 981px) {
+  html.swp-embed-v1-services .services-head { top: 80px; }
 }
 `;
 
