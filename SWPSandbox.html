@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700&family=Mercury+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=212">
+    <link rel="stylesheet" href="styles.css?v=220">
 </head>
 <body id="page" class="case-study-page">
     <header class="header">
@@ -59,13 +59,13 @@
                         </li>
                         <li class="cs-toc__item">
                             <a href="#insight" class="cs-toc__link">
-                                <svg class="cs-toc__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12c.5.5 1 1.5 1 2h6c0-.5.5-1.5 1-2a7 7 0 0 0-4-12z"/></svg>
+                                <svg class="cs-toc__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 14h6"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
                                 <span class="cs-toc__label">Insight</span>
                             </a>
                         </li>
                         <li class="cs-toc__item">
                             <a href="#tool" class="cs-toc__link">
-                                <svg class="cs-toc__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4L15 7l-2.3 2.3"/></svg>
+                                <svg class="cs-toc__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
                                 <span class="cs-toc__label">The Tool</span>
                             </a>
                         </li>
@@ -127,7 +127,7 @@
                 <div class="case-study__section-label">CHALLENGE</div>
                 <h3 class="case-study__section-title">Every design check meant a round trip through GitHub and Netlify.</h3>
                 <p class="case-study__section-text">
-                    Redesigning the Second Wind Pro website surfaced a second problem I didn't expect to be solving: my own workflow. Every time I wanted to check whether a particular design element held up (athlete cards on mobile, services carousel on iPad), I had to commit to GitHub, deploy to Netlify, and go look. That loop was fine for one check. It was not fine for the number of times I needed to make it.
+                    Redesigning the Second Wind Pro website surfaced a second problem I didn't expect to be solving: <strong>my own workflow</strong>. Every time I wanted to check whether a particular design element held up (athlete cards on mobile, services carousel on iPad), I had to commit to GitHub, deploy to Netlify, and go look. That loop was fine for one check. It was not fine for the number of times I needed to make it.
                 </p>
             </section>
 
@@ -147,7 +147,6 @@
                     <li>Create, rename, and duplicate draft files pulled straight from the Cursor project, without touching GitHub or Netlify</li>
                     <li>Preview any draft across breakpoints (mobile, iPad, desktop) in one place</li>
                     <li>Keep a working history of drafts, so I can show progress as a sequence rather than a single “current version”</li>
-                    <li>Freeze a working copy into a version, and set a frozen version as live on Netlify when it's ready</li>
                 </ul>
                 <p class="case-study__section-text">
                     The homepage is a file library: Playground (the working copy), drafts, and frozen versions, each with a status (working, live, or frozen) and a homepage preview. Hovering a card opens Canvas or Open, depending on whether I need to mark something up or just look at it in the browser.
@@ -179,10 +178,10 @@
                     <li><strong>Design</strong>: cyan marks for intended design changes</li>
                 </ul>
                 <p class="case-study__section-text">
-                    The left rail holds the viewports I actually design against: Desktop XL 1440×900, Desktop 1280×832, Breakpoint 980×800, Tablet 768×1024, Mobile 390×844, and Mobile SM. Marks save per viewport, so a mobile note stays on mobile. The preview iframe uses the real pixel width, so CSS media queries kick in correctly instead of scaling a desktop layout down.
+                    The left rail holds the viewports I actually design against: Desktop XL (1440×900), Desktop (1280×832), Breakpoint (980×800), Tablet (768×1024), Mobile (390×844), and Mobile SM (555×870). Marks save per viewport, so a mobile note stays on mobile. The preview iframe uses the real pixel width, so CSS media queries kick in correctly instead of scaling a desktop layout down.
                 </p>
                 <p class="case-study__section-text">
-                    From the canvas I can copy notes into Cursor, or open the folder in Cursor and keep going. The point is to stay in the loop between looking and making, without a deploy in the middle.
+                    From the canvas I can copy notes into Cursor, or open the folder in Cursor and keep going. The point is to stay in the loop between looking and making, <strong>without a deploy in the middle</strong>.
                 </p>
                 <div class="case-study__section-image">
                     <img

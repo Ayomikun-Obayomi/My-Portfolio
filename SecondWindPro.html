@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700&family=Mercury+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=212">
+    <link rel="stylesheet" href="styles.css?v=221">
 </head>
 <body id="page" class="case-study-page">
     <header class="header">
@@ -161,13 +161,16 @@
                 <p class="case-study__section-text">
                     Since that was all I had to work with, I built a design system from version 2 of the website onward, using Claude Design, and kept updating it to stay visually coherent as new use cases came up.
                 </p>
-                <div class="case-study__placeholder case-study__placeholder--large" aria-label="Design system visual placeholder">
-                    <div class="case-study__placeholder-content">
-                        <div class="case-study__placeholder-title">Design system (coming soon)</div>
-                        <div class="case-study__placeholder-subtitle">Tokens, type, and component foundations</div>
-                    </div>
+                <div class="case-study__section-image">
+                    <img
+                        src="SWP Design System.png"
+                        alt="Second Wind Pro design system, showing the Athlete Card component with type, color, and layout tokens"
+                        class="case-study__section-img"
+                        style="border: 1px solid #e0e0e0; cursor: pointer;"
+                        onclick="openImageModal(this)"
+                    />
                 </div>
-                <p class="case-study__section-caption">Design system overview</p>
+                <p class="case-study__section-caption">SWP design system (Click to enlarge)</p>
             </section>
 
             <section class="case-study__section" id="outcome">
@@ -175,7 +178,7 @@
                 <p class="case-study__section-text">
                     The redesigned site shipped and is live on Netlify.
                 </p>
-                <div class="swp-browser swp-browser--live" data-swp-embed="https://second-wind-pro-v2.netlify.app/">
+                <div class="swp-browser swp-browser--live swp-browser--v2-home" data-swp-embed="https://second-wind-pro-v2.netlify.app/">
                     <div class="swp-browser__chrome">
                         <div class="swp-browser__traffic" aria-hidden="true">
                             <span class="swp-browser__dot swp-browser__dot--close"></span>
@@ -246,7 +249,7 @@
                                 Claude
                             </div>
                             <div class="swp-chat__artifact">
-                                <div class="swp-browser swp-browser--live" data-swp-embed="https://second-wind-pro.netlify.app/">
+                                <div class="swp-browser swp-browser--live swp-browser--v1-home" data-swp-embed="https://second-wind-pro.netlify.app/">
                                     <div class="swp-browser__chrome">
                                         <div class="swp-browser__traffic" aria-hidden="true">
                                             <span class="swp-browser__dot swp-browser__dot--close"></span>
@@ -273,9 +276,9 @@
                                         <div class="swp-browser__scaler">
                                             <iframe
                                                 class="swp-browser__iframe"
-                                                src="https://second-wind-pro.netlify.app/"
+                                                src="/embed/swp-v1/home"
                                                 title="Interactive Second Wind Pro version 1"
-                                                loading="lazy"
+                                                loading="eager"
                                                 allowfullscreen
                                                 referrerpolicy="no-referrer"
                                             ></iframe>
@@ -398,7 +401,7 @@
                 <p class="case-study__section-text">
                     V1 was about reading stakeholder expectations, not final craft. The services section worked as a draft, but leaned entirely on text descriptions with no visuals doing any of the work.
                 </p>
-                <div class="swp-browser swp-browser--live swp-browser--section swp-browser--services" data-swp-embed="https://second-wind-pro.netlify.app/#services" data-swp-crop="services" data-swp-crop-y="0">
+                <div class="swp-browser swp-browser--live swp-browser--section swp-browser--services swp-browser--v1-services" data-swp-embed="https://second-wind-pro.netlify.app/#services" data-swp-crop="services" data-swp-crop-y="0" data-swp-width="1440">
                     <div class="swp-browser__chrome">
                         <div class="swp-browser__traffic" aria-hidden="true">
                             <span class="swp-browser__dot swp-browser__dot--close"></span>
@@ -790,6 +793,7 @@
     (function () {
         var DESKTOP_WIDTH = 1440;
         var SERVICES_WIDTH = 1100;
+        var MOBILE_MQ = '(max-width: 768px)';
 
         function scaleLiveEmbed(browser) {
             var viewport = browser.querySelector('.swp-browser__viewport');
@@ -798,6 +802,13 @@
             var visibleWidth = viewport.clientWidth;
             var visibleHeight = viewport.clientHeight;
             if (visibleWidth < 1 || visibleHeight < 1) return;
+            if (window.matchMedia(MOBILE_MQ).matches) {
+                viewport.style.setProperty('--swp-embed-scale', '1');
+                viewport.style.setProperty('--swp-crop-y', '0');
+                scaler.style.width = '100%';
+                scaler.style.height = '100%';
+                return;
+            }
             var virtualWidth = DESKTOP_WIDTH;
             var widthAttr = parseFloat(browser.getAttribute('data-swp-width'));
             if (widthAttr > 0) {

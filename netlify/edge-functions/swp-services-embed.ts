@@ -1,6 +1,7 @@
 import type { Config, Context } from "@netlify/edge-functions";
 
 const EMBEDS: Record<string, string> = {
+  "/embed/swp-v1/home": "https://second-wind-pro.netlify.app",
   "/embed/swp-v1/services": "https://second-wind-pro.netlify.app",
   "/embed/swp-v2/services": "https://second-wind-pro-v2.netlify.app",
 };
@@ -8,6 +9,7 @@ const EMBEDS: Record<string, string> = {
 function isolateCss(isV2: boolean) {
   // Hide page-level chrome only. Never display:none descendants of #services —
   // v2 tabs/panels toggle hidden/is-active themselves, and JS may move nodes.
+  // v1 keeps the live sticky `.nav` so the services crop matches visiting #services.
   const hidePageSiblings = `
 body > header,
 body > footer,
@@ -24,12 +26,18 @@ main > *:not(#services) {
   display: block !important;
   visibility: visible !important;
   border: 0 !important;
-  --svc-nav-offset: 0px;
+  ${isV2
+    ? `--svc-nav-offset: 0px;
   --svc-nav-height: 0px;
-  --svc-nav-gap: 0px;
+  --svc-nav-gap: 0px;`
+    : `--svc-nav-offset: 116px;
+  --svc-nav-height: 76px;
+  --svc-nav-gap: 32px;`}
 }
 `;
 
+  // Desktop isolation keeps the laptop-crop layout. Below 981px (SWP's own
+  // mobile breakpoint) leave live CSS alone so cards/tabs match the phone site.
   if (isV2) {
     return `
 html {
@@ -52,7 +60,6 @@ main {
 }
 ${hidePageSiblings}
 #services {
-  padding: 24px var(--gutter, 40px) 0 !important;
   margin: 0 !important;
   width: 100% !important;
   max-width: none !important;
@@ -64,6 +71,11 @@ ${hidePageSiblings}
 .svc-stack-inner {
   top: 0 !important;
 }
+@media (min-width: 981px) {
+  #services {
+    padding: 24px var(--gutter, 40px) 0 !important;
+  }
+}
 `;
   }
 
@@ -71,60 +83,110 @@ ${hidePageSiblings}
 html, body {
   margin: 0 !important;
   padding: 0 !important;
-  height: 100% !important;
   min-height: 0 !important;
-  overflow: hidden !important;
   overscroll-behavior: none;
   background: #0c0814;
 }
 main {
-  height: 100% !important;
-  overflow: hidden !important;
   padding: 0 !important;
   margin: 0 !important;
 }
 ${hidePageSiblings}
 #services,
 #services.services {
-  height: 100% !important;
-  min-height: 100% !important;
   width: 100% !important;
   max-width: none !important;
-  overflow: hidden !important;
-  padding: 0 !important;
   margin: 0 !important;
   position: relative !important;
 }
-.services-head {
-  display: flex !important;
-  top: 20px !important;
-  left: 28px !important;
-  right: 28px !important;
+@media (min-width: 981px) {
+  html, body {
+    height: 100% !important;
+    overflow: hidden !important;
+  }
+  main {
+    height: 100% !important;
+    overflow: hidden !important;
+  }
+  #services,
+  #services.services {
+    height: 100% !important;
+    min-height: 100% !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+  }
+  body > .nav {
+    display: flex !important;
+    visibility: visible !important;
+  }
+  .services-head {
+    display: flex !important;
+    top: 116px !important;
+    left: 28px !important;
+    right: 28px !important;
+  }
+  .services-track,
+  #servicesTrack {
+    display: flex !important;
+    padding: 176px 28px 48px !important;
+    gap: 28px !important;
+  }
+  .service-card {
+    width: 520px !important;
+    height: min(560px, calc(100% - 216px)) !important;
+  }
+  .services-progress {
+    display: block !important;
+    left: 28px !important;
+    right: 28px !important;
+    bottom: 24px !important;
+  }
 }
-.services-track,
-#servicesTrack {
-  display: flex !important;
-  padding: 72px 28px 36px !important;
-  gap: 28px !important;
-}
-.service-card {
-  width: 520px !important;
-  height: min(600px, calc(100% - 96px)) !important;
-}
-.services-progress {
-  display: block !important;
-  left: 28px !important;
-  right: 28px !important;
-  bottom: 24px !important;
+@media (max-width: 980px) {
+  html, body {
+    overflow-x: clip !important;
+  }
+  body > .nav {
+    display: flex !important;
+    visibility: visible !important;
+  }
+  #services,
+  #services.services {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    padding: 116px 20px 40px !important;
+    scroll-margin-top: 84px;
+  }
+  .services-head {
+    position: static !important;
+  }
+  .services-head .hint {
+    display: none !important;
+  }
+  .services-track,
+  #servicesTrack {
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
+    padding: 16px 0 0 !important;
+    gap: 14px !important;
+    transform: none !important;
+  }
+  .service-card {
+    width: 100% !important;
+    height: auto !important;
+    padding: 22px !important;
+  }
+  .services-progress {
+    display: none !important;
+  }
 }
 `;
 }
 
-function isolateLiveSection(html: string, origin: string) {
-  const originUrl = origin.replace(/\/$/, "");
-  const isV2 = /second-wind-pro-v2/.test(originUrl);
+function rewriteAssetUrls(html: string, originUrl: string) {
   let out = html;
-
   out = out.replace(
     /(href|src|action|poster)=(["'])\/(?!\/)/gi,
     `$1=$2${originUrl}/`,
@@ -139,14 +201,150 @@ function isolateLiveSection(html: string, origin: string) {
   } else {
     out = out.replace(/<head([^>]*)>/i, `<head$1>\n  ${baseTag}`);
   }
+  return out;
+}
+
+function injectHead(html: string, inject: string) {
+  if (/<\/head>/i.test(html)) {
+    return html.replace(/<\/head>/i, `${inject}</head>`);
+  }
+  return inject + html;
+}
+
+const V1_MOBILE_CSS_FALLBACK = `
+.skip-link { display: none !important; }
+html { scroll-behavior: auto !important; }
+.swp-embed-nav-toggle { display: none !important; }
+html.swp-embed-v1-services { scroll-padding-top: 84px; }
+@media (min-width: 981px) {
+  html.swp-embed-v1-services .services-head { top: 116px !important; }
+  html.swp-embed-v1-services .services-track, html.swp-embed-v1-services #servicesTrack { padding: 176px 28px 48px !important; }
+  html.swp-embed-v1-services .service-card { height: min(560px, calc(100% - 216px)) !important; }
+}
+@media (max-width: 980px) {
+  html, body { overflow-x: clip !important; max-width: 100% !important; }
+  .nav { flex-wrap: nowrap !important; align-items: center !important; }
+  .nav ul { display: none !important; }
+  .nav .cta { display: inline-flex !important; align-items: center !important; white-space: nowrap !important; font-size: 11px !important; padding: 8px 16px !important; margin-left: auto; }
+  .swp-embed-nav-toggle { display: inline-flex !important; }
+  .hero { height: auto !important; min-height: 0 !important; min-height: min(420px, 78dvh) !important; }
+  .hero-content { grid-template-columns: 1fr !important; padding: 116px 20px 28px !important; }
+  .hero h1 { font-size: clamp(32px, 8.6vw, 42px) !important; }
+  .hero-actions { flex-direction: column !important; }
+  #services, #services.services, .services { height: auto !important; min-height: 0 !important; overflow: visible !important; padding: 116px 20px 40px !important; scroll-margin-top: 84px; }
+  .services-head { position: static !important; }
+  .services-track, #servicesTrack { flex-direction: column !important; transform: none !important; height: auto !important; }
+  .service-card { width: 100% !important; height: auto !important; }
+  .roster-grid { grid-template-columns: 1fr !important; }
+}
+`;
+
+async function loadV1MobileCss(req: Request) {
+  try {
+    const cssUrl = new URL("/embed/swp-v1-mobile.css", req.url);
+    const res = await fetch(cssUrl.toString(), { headers: { Accept: "text/css" } });
+    if (res.ok) return await res.text();
+  } catch {
+    // Studio or a cold origin may not serve the file; use the compact fallback.
+  }
+  return V1_MOBILE_CSS_FALLBACK;
+}
+
+function v1HomeMobileScript() {
+  return `<script id="swp-embed-home-lock">
+(function () {
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  function pin() {
+    if (location.hash) {
+      try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {}
+    }
+    window.scrollTo(0, 0);
+  }
+  pin();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', pin);
+  }
+  window.addEventListener('load', pin);
+  window.addEventListener('hashchange', pin);
+
+  function lockServices() {
+    if (window.innerWidth > 980) return;
+    var track = document.getElementById('servicesTrack');
+    if (track) {
+      track.style.transform = 'none';
+      track.style.willChange = 'auto';
+    }
+  }
+  lockServices();
+  window.addEventListener('resize', lockServices);
+  setInterval(lockServices, 400);
+
+  function mountNav() {
+    var nav = document.querySelector('.nav');
+    if (!nav || nav.querySelector('.swp-embed-nav-toggle')) return;
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'swp-embed-nav-toggle';
+    btn.setAttribute('aria-label', 'Open menu');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.innerHTML = '<span></span><span></span><span></span>';
+    nav.appendChild(btn);
+    function close() {
+      document.body.classList.remove('swp-embed-nav-open');
+      btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('aria-label', 'Open menu');
+    }
+    btn.addEventListener('click', function () {
+      var open = document.body.classList.toggle('swp-embed-nav-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+    nav.addEventListener('click', function (e) {
+      if (e.target.closest('ul a')) close();
+    });
+    if (window.matchMedia) {
+      var mq = window.matchMedia('(max-width: 980px)');
+      var onChange = function (e) { if (!e.matches) close(); };
+      if (mq.addEventListener) mq.addEventListener('change', onChange);
+      else if (mq.addListener) mq.addListener(onChange);
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', mountNav);
+  } else {
+    mountNav();
+  }
+})();
+</script>`;
+}
+
+function frameV1Home(html: string, origin: string, css: string) {
+  const originUrl = origin.replace(/\/$/, "");
+  // Desktop: laptop crop (~1440×800) so 100vh matches live composition.
+  // Phone: overlay compact layout in the ~375px iframe only.
+  const inject = `<style id="swp-embed-home">${css || V1_MOBILE_CSS_FALLBACK}</style>
+${v1HomeMobileScript()}`;
+
+  return injectHead(rewriteAssetUrls(html, originUrl), inject);
+}
+
+function isolateLiveSection(html: string, origin: string, extraCss = "", extraScript = "") {
+  const originUrl = origin.replace(/\/$/, "");
+  const isV2 = /second-wind-pro-v2/.test(originUrl);
+  let out = rewriteAssetUrls(html, originUrl);
 
   const rootSel = "#services";
+  const overlay = extraCss
+    ? `<style id="swp-embed-home">${extraCss}</style>
+<script>document.documentElement.classList.add('swp-embed-v1-services');</script>${extraScript}`
+    : "";
   const inject = `<style id="swp-embed-isolate">${isolateCss(isV2)}</style>
+${overlay}
 <script id="swp-embed-lock">
 (function () {
   if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
   function pin() {
-    if (${isV2 ? "true" : "false"}) window.scrollTo(0, 0);
+    window.scrollTo(0, 0);
     document.querySelectorAll('video').forEach(function (v) {
       if (v.closest('${rootSel}')) return;
       try { v.pause(); } catch (e) {}
@@ -173,12 +371,7 @@ function isolateLiveSection(html: string, origin: string) {
 })();
 </script>`;
 
-  if (/<\/head>/i.test(out)) {
-    out = out.replace(/<\/head>/i, `${inject}</head>`);
-  } else {
-    out = inject + out;
-  }
-  return out;
+  return injectHead(out, inject);
 }
 
 export default async (req: Request, _context: Context) => {
@@ -205,7 +398,20 @@ export default async (req: Request, _context: Context) => {
     return new Response("Upstream error", { status: 502 });
   }
 
-  const html = isolateLiveSection(await upstream.text(), origin);
+  const source = await upstream.text();
+  let html: string;
+  if (url.pathname === "/embed/swp-v1/home") {
+    html = frameV1Home(source, origin, await loadV1MobileCss(req));
+  } else if (url.pathname === "/embed/swp-v1/services") {
+    html = isolateLiveSection(
+      source,
+      origin,
+      await loadV1MobileCss(req),
+      v1HomeMobileScript(),
+    );
+  } else {
+    html = isolateLiveSection(source, origin);
+  }
   const headers = new Headers({
     "Content-Type": "text/html; charset=utf-8",
     "Cache-Control": "public, max-age=60",
@@ -216,6 +422,6 @@ export default async (req: Request, _context: Context) => {
 };
 
 export const config: Config = {
-  path: ["/embed/swp-v1/services", "/embed/swp-v2/services"],
+  path: ["/embed/swp-v1/home", "/embed/swp-v1/services", "/embed/swp-v2/services"],
   cache: "manual",
 };

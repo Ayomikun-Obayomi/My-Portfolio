@@ -1171,7 +1171,8 @@ section:first-of-type {
     outline: none;
     opacity: 1;
     visibility: visible;
-    filter: none;
+    transform: translateY(0);
+    transition: opacity 0.22s ease, transform 0.22s ease, visibility 0s linear 0s;
     z-index: 2;
 }
 
@@ -1195,23 +1196,11 @@ section:first-of-type {
     object-fit: contain;
     /* PNG is 1024² with the A in the center; inset zooms to the mark without cropping it */
     object-view-box: inset(27.2% 30.8% 28.8% 24.5%);
-    opacity: 1;
-    visibility: visible;
-    filter: none;
 }
 
-/* Hide nav + frosted pill on scroll down; logo stays in place */
+/* Hide logo + nav + frosted pill on scroll down; show again on scroll up */
 .header--hidden {
     pointer-events: none;
-}
-
-.header--hidden .header__logo,
-.header--hidden .header__logo-image {
-    pointer-events: auto;
-    opacity: 1;
-    visibility: visible;
-    filter: none;
-    transform: none;
 }
 
 .header--hidden .header__inner::before,
@@ -1219,6 +1208,7 @@ section:first-of-type {
     opacity: 0;
 }
 
+.header--hidden .header__logo,
 .header--hidden .nav {
     opacity: 0;
     visibility: hidden;
@@ -1245,7 +1235,9 @@ section:first-of-type {
 
 @media (prefers-reduced-motion: reduce) {
     .header__inner::before,
+    .header__logo,
     .nav,
+    .header--hidden .header__logo,
     .header--hidden .nav {
         transition-duration: 0s;
         transition-delay: 0s;
@@ -5321,20 +5313,108 @@ body.work-page .work-page__projects .projects__grid {
     line-height: 1.2;
 }
 
-.person-pop:focus-visible .person-pop__card {
-    opacity: 1;
-    visibility: visible;
-    transform: var(--person-pop-show);
-    box-shadow:
-        0 1px 2px rgba(0, 0, 0, 0.04),
-        0 8px 24px rgba(0, 0, 0, 0.08);
+@media (min-width: 769px) {
+    .person-pop:focus-visible .person-pop__card,
+    .person-pop.is-open .person-pop__card {
+        opacity: 1;
+        visibility: visible;
+        transform: var(--person-pop-show);
+        box-shadow:
+            0 1px 2px rgba(0, 0, 0, 0.04),
+            0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .person-pop:focus-visible .person-pop__card::before,
+    .person-pop.is-open .person-pop__card::before {
+        border-color: #8864ff;
+    }
 }
 
-.person-pop:focus-visible .person-pop__card::before {
-    border-color: #8864ff;
+button.person-pop {
+    appearance: none;
+    -webkit-appearance: none;
+    background: none;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    font-weight: 600;
+    font-size: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    color: #8134df;
+    cursor: pointer;
+    text-align: inherit;
+    vertical-align: baseline;
+    -webkit-tap-highlight-color: transparent;
 }
 
-@media (hover: hover) and (pointer: fine) {
+button.person-pop:hover {
+    color: #6b21a8;
+}
+
+.person-pop--shot .person-pop__card {
+    width: 148px;
+}
+
+.person-pop--shot .person-pop__img {
+    height: 224px;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.person-pop--shot-tablet .person-pop__card {
+    width: 196px;
+}
+
+.person-pop--shot-tablet .person-pop__img {
+    height: 236px;
+}
+
+@media (max-width: 640px) {
+    .person-pop--shot {
+        white-space: normal;
+    }
+
+    .person-pop--shot .person-pop__card {
+        width: 140px;
+    }
+
+    .person-pop--shot-tablet .person-pop__card {
+        width: 168px;
+    }
+
+    .person-pop--shot .person-pop__img,
+    .person-pop--shot-tablet .person-pop__img {
+        height: 200px;
+    }
+}
+
+/* Desktop: hover previews. Mobile / touch: no floating cards, no inline preview chips. */
+.person-pop-shots {
+    display: none;
+}
+
+@media (max-width: 768px), (hover: none), (pointer: coarse) {
+    .person-pop__card {
+        display: none;
+    }
+
+    button.person-pop {
+        pointer-events: none;
+        cursor: inherit;
+        color: inherit;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Athlete-card (and leftover services) mobile preview shots stay hidden on phone. */
+    .person-pop-shots,
+    .person-pop-shots__item--athlete {
+        display: none;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) and (min-width: 769px) {
     .person-pop:hover .person-pop__card {
         opacity: 1;
         visibility: visible;
@@ -5850,7 +5930,7 @@ body.work-page .work-page__projects .projects__grid {
 
 .case-study--swp .cs-toc-article > .case-study__hero-section {
     order: 1;
-    margin-top: 8px;
+    margin-top: 0;
     margin-bottom: 40px;
 }
 
@@ -5867,6 +5947,17 @@ body.work-page .work-page__projects .projects__grid {
     .case-study--swp .cs-toc-article > .case-study__section,
     .case-study--swp .cs-toc-article > .case-study__conclusion {
         order: 3;
+    }
+
+    /* Phone + tablet: drop Contents so it doesn't sit between title and article. */
+    .case-study--swp .cs-toc {
+        display: none;
+        margin: 0;
+    }
+
+    /* Flex items don't collapse margins; --spaced was stacking 50+48. */
+    .case-study--swp .case-study__section--spaced {
+        margin-bottom: 0;
     }
 }
 
@@ -5919,7 +6010,30 @@ body.work-page .work-page__projects .projects__grid {
 }
 
 .case-study--swp .case-study__hero-section {
-    margin-top: 8px;
+    margin-top: 0;
+}
+
+/* Sticky header is in flow; 64px main margin was leftover from a fixed bar. */
+body.case-study-page:has(.case-study--swp) .main {
+    margin-top: 16px;
+    min-height: calc(100vh - 16px);
+}
+
+/* Version 1 continues the Claude artifact — don't treat it as a new chapter. */
+.case-study--swp #process.case-study__section--spaced {
+    margin-bottom: 0;
+}
+
+.case-study--swp #process .swp-chat:last-child {
+    margin-bottom: 0;
+}
+
+.case-study--swp #version-1 {
+    margin-top: 16px;
+}
+
+.case-study--swp #version-1 > .case-study__section-title {
+    margin-top: 0;
 }
 
 .case-study--swp .case-study__placeholder {
@@ -6035,6 +6149,22 @@ body.work-page .work-page__projects .projects__grid {
     overflow: hidden;
 }
 
+/* v1 Claude home: live hero is height:100vh; min-height:720px at a laptop
+   crop (~1440×800), not a tall 100vh inside a scaled iframe. Size the
+   chrome to that proportion so the navbar-to-footer-of-hero composition matches. */
+.case-study--swp .swp-browser--v1-home .swp-browser__viewport {
+    height: auto;
+    aspect-ratio: 1440 / 800;
+}
+
+/* v2 live home: 16:10 laptop crop so the 100vh hero (flex-centered
+   headline) sits in the middle of the chrome, like a real laptop. */
+.case-study--swp .swp-browser--v2-home .swp-browser__viewport {
+    height: auto;
+    aspect-ratio: 16 / 10;
+    background: #0d0e1a;
+}
+
 .case-study--swp .swp-browser__scaler {
     position: absolute;
     top: 0;
@@ -6048,6 +6178,10 @@ body.work-page .work-page__projects .projects__grid {
 
 .case-study--swp .swp-browser--services .swp-browser__scaler {
     width: 1100px;
+}
+
+.case-study--swp .swp-browser--v1-services .swp-browser__scaler {
+    width: 1440px;
 }
 
 .case-study--swp .swp-browser__iframe {
@@ -6105,8 +6239,16 @@ body.work-page .work-page__projects .projects__grid {
     height: min(820px, 82vh);
 }
 
+/* v1 services: 16:10 laptop crop so nav + “What We Do” + cards sit in
+   the middle of the chrome, not jammed under the sticky bar. */
+.case-study--swp .swp-browser--v1-services .swp-browser__viewport {
+    height: auto;
+    aspect-ratio: 16 / 10;
+    background: #0c0814;
+}
+
 .case-study--swp .swp-browser--services-hook .swp-browser__viewport {
-    height: min(960px, 90vh);
+    height: min(620px, 68vh);
 }
 
 /* Sandbox walkthrough: same window chrome as live embeds, 16:10 slot for video or placeholder */
@@ -6543,27 +6685,133 @@ body.work-page .work-page__projects .projects__grid {
 }
 
 @media (max-width: 768px) {
-    .case-study--swp .swp-browser__chrome {
-        flex-wrap: wrap;
-        gap: 8px;
+    body.case-study-page:has(.case-study--swp) .main {
+        margin-top: 8px;
+        min-height: calc(100vh - 8px);
     }
 
-    .case-study--swp .swp-browser__url {
-        order: 3;
-        flex-basis: 100%;
-        font-size: 12px;
+    /* Phone: one gap between sections — desktop --spaced stacks 50+48. */
+    .case-study--swp .cs-toc-article > .case-study__hero-section,
+    .case-study--swp .case-study__hero-section {
+        margin-top: 0;
+        margin-bottom: 24px;
+    }
+
+    .case-study--swp #version-1 {
+        margin-top: 16px;
+    }
+
+    .case-study--swp .case-study__section {
+        margin-top: 32px;
+        margin-bottom: 0;
+    }
+
+    .case-study--swp .cs-toc-article > .case-study__hero-section + .case-study__section,
+    .case-study--swp .cs-toc-article > .case-study__section:first-child {
+        margin-top: 0;
+    }
+
+    .case-study--swp .case-study__section--spaced {
+        margin-top: 40px;
+        margin-bottom: 0;
+    }
+
+    .case-study--swp .case-study__section-title {
+        margin-top: 8px;
+        margin-bottom: 12px;
+    }
+
+    .case-study--swp .case-study__subsection-title {
+        margin-top: 20px;
+        margin-bottom: 8px;
+    }
+
+    .case-study--swp .case-study__subsection-title--spaced,
+    .case-study--swp .case-study__section-title--spaced {
+        margin-top: 28px;
+    }
+
+    .case-study--swp .case-study__section-text + .case-study__section-text {
+        margin-top: 12px;
+    }
+
+    .case-study--swp .case-study__section-text + .case-study__section-image,
+    .case-study--swp .case-study__section-list + .case-study__section-image {
+        margin-top: 16px;
+    }
+
+    .case-study--swp .case-study__section-list {
+        margin: 12px 0;
+    }
+
+    .case-study--swp .case-study__section-list li {
+        margin-bottom: 10px;
+    }
+
+    .case-study--swp .case-study__section-image {
+        margin: 16px 0 8px;
+    }
+
+    .case-study--swp .case-study__section-caption {
+        margin-top: 8px;
+        margin-bottom: 0;
+    }
+
+    .case-study--swp .swp-browser {
+        margin: 16px 0 8px;
+    }
+
+    .case-study--swp .case-study__placeholder {
+        margin: 16px 0 8px;
+        padding: 32px 16px;
+        min-height: 180px;
+    }
+
+    .case-study--swp .case-study__conclusion {
+        margin-top: 48px;
+    }
+
+    /* Phone: live SWP at its own mobile CSS — no laptop chrome, no 1440 scale. */
+    .case-study--swp .swp-browser:not(.swp-browser--player) .swp-browser__chrome {
+        display: none;
+    }
+
+    .case-study--swp .swp-browser__scaler {
+        width: 100% !important;
+        height: 100% !important;
+        transform: none;
+    }
+
+    .case-study--swp .swp-browser--section .swp-browser__iframe {
+        height: 100%;
+        transform: none;
     }
 
     .case-study--swp .swp-browser__viewport {
-        height: min(480px, 62vh);
+        height: min(560px, 68vh);
+    }
+
+    .case-study--swp .swp-browser--v1-home .swp-browser__viewport {
+        height: min(560px, 68vh);
+        aspect-ratio: auto;
+    }
+
+    .case-study--swp .swp-browser--v2-home .swp-browser__viewport {
+        height: min(680px, 84vh);
+        aspect-ratio: auto;
     }
 
     .case-study--swp .swp-browser--services .swp-browser__viewport {
-        height: min(640px, 72vh);
+        height: min(580px, 70vh);
+    }
+
+    .case-study--swp .swp-browser--v1-services .swp-browser__viewport {
+        height: min(680px, 84vh);
+        aspect-ratio: auto;
     }
 
     .case-study--swp .swp-browser--services-hook .swp-browser__viewport {
-        height: min(760px, 80vh);
+        height: min(560px, 68vh);
     }
 
     .case-study--swp .swp-browser--player .swp-browser__viewport {
@@ -6583,15 +6831,30 @@ body.work-page .work-page__projects .projects__grid {
 
 @media (max-width: 480px) {
     .case-study--swp .swp-browser__viewport {
-        height: min(400px, 56vh);
+        height: min(520px, 64vh);
+    }
+
+    .case-study--swp .swp-browser--v1-home .swp-browser__viewport {
+        height: min(520px, 64vh);
+        aspect-ratio: auto;
+    }
+
+    .case-study--swp .swp-browser--v2-home .swp-browser__viewport {
+        height: min(640px, 80vh);
+        aspect-ratio: auto;
     }
 
     .case-study--swp .swp-browser--services .swp-browser__viewport {
-        height: min(560px, 68vh);
+        height: min(540px, 66vh);
+    }
+
+    .case-study--swp .swp-browser--v1-services .swp-browser__viewport {
+        height: min(640px, 80vh);
+        aspect-ratio: auto;
     }
 
     .case-study--swp .swp-browser--services-hook .swp-browser__viewport {
-        height: min(680px, 76vh);
+        height: min(520px, 64vh);
     }
 
     .case-study--swp .swp-browser--player .swp-browser__viewport {
