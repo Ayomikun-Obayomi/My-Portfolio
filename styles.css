@@ -6254,9 +6254,10 @@ body.case-study-page:has(.case-study--swp) .main {
 
 /* Sandbox walkthrough: same window chrome as live embeds, 16:10 slot for video or placeholder */
 .case-study--swp .swp-browser--player .swp-browser__viewport {
+    position: relative;
     height: auto;
     aspect-ratio: 16 / 10;
-    background: #f6f5f2;
+    background: #111;
     display: flex;
     align-items: stretch;
 }
@@ -6273,13 +6274,19 @@ body.case-study-page:has(.case-study--swp) .main {
     background: transparent;
 }
 
-.case-study--swp .swp-browser--player video {
+.case-study--swp .swp-browser--player video,
+.case-study--swp .swp-browser--player .swp-browser__iframe {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: contain;
     background: #111;
     border: 0;
+}
+
+.case-study--swp .swp-browser--player .swp-browser__iframe {
+    position: absolute;
+    inset: 0;
 }
 
 /* Agent-style color tag chip */
