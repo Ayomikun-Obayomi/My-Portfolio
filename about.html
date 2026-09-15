@@ -4,188 +4,188 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>About - Ayo Portfolio</title>
-    <link rel="icon" type="image/png" href="logo for folio.png?v=3" sizes="128x128">
+    <link rel="icon" type="image/png" href="ayo-ice-diamond-purple.png?v=6" sizes="128x128">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mercury+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=215">
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Mercury+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=493">
 </head>
 <body id="page" class="about-page">
-    <header class="header">
-        <div class="header__inner">
-        <a href="index.html" class="header__logo">
-            <img src="logo for folio.png?v=3" alt="Ayo Logo" class="header__logo-image" width="32" height="32">
-        </a>
-        <nav class="nav">
-            <ul class="nav__menu">
-                <li class="nav__item"><a href="index.html#work" class="nav__link">Work</a></li>
-                <li class="nav__item"><a href="about.html" class="nav__link nav__link--active">About</a></li>
-                <li class="nav__item"><a href="Ayomikun-Ayo+Obayomi's Resume.pdf" target="_blank" rel="noopener noreferrer" class="nav__link">Resume</a></li>
-            </ul>
-            <button class="nav__hamburger" aria-label="Toggle navigation menu" id="mobileDrawerToggle">
-                <span class="nav__hamburger-line"></span>
-                <span class="nav__hamburger-line"></span>
-                <span class="nav__hamburger-line"></span>
-            </button>
-        </nav>
-        </div>
-    </header>
-    <div id="mobileDrawer" class="nav__menu nav__menu--mobile" aria-hidden="true">
-        <ul class="nav__menu-list">
-            <li class="nav__item"><a href="index.html#work" class="nav__link">Work</a></li>
-            <li class="nav__item"><a href="about.html" class="nav__link nav__link--active">About</a></li>
-            <li class="nav__item"><a href="Ayomikun-Ayo+Obayomi's Resume.pdf" target="_blank" rel="noopener noreferrer" class="nav__link">Resume</a></li>
-        </ul>
-    </div>
 
-    <main class="main">
-        <section class="about-hero">
-            <div class="about-hero__content">
-                <h1 class="about-hero__title">Hi, I'm <span class="hero__emphasis">Ayo</span></h1>
-                <p class="about-hero__subtitle">Nice to meet you <span class="emoji-wave">👋🏿</span></p>
-                <p class="about-hero__intro">Let me properly introduce myself:</p>
+<main class="main">
+        <section class="about-story" aria-label="About Ayo">
+            <div class="about-story__inner">
+                <p class="about-story__eyebrow">Nice to meet you <span aria-hidden="true">👋🏿</span></p>
+                <h1 class="about-story__title">Hi, I’m <span class="hero__emphasis">Ayo</span></h1>
+
+                <div class="about-story__prose">
+                    <figure class="about-story__figure about-story__figure--lead">
+                        <img src="Me.jpeg" alt="Ayo smiling outdoors" width="900" height="1200" decoding="async" fetchpriority="high">
+                    </figure>
+
+                    <p>
+                        My full name is Ayomikun, which means “my joy is full.” That joy shows up in the work I do, designing products that make people’s lives a little easier, and in the quieter habit of being in nature with my phone taking pictures as you scroll through.
+                    </p>
+                    <p>
+                        Creativity has always been part of me. I went from dreaming of becoming a chef, to exploring software development, to finding my path in UX design. Along the way I landed in West Lafayette, Indiana, we love corn out here.
+                    </p>
+
+                    <p>
+                        I enjoy experiencing and taking pictures of nature. One of them is Scotland. I came home with a full camera roll and the itch to go again, especially the food.
+                    </p>
+
+                    <figure class="about-story__figure about-story__figure--pair" aria-label="Scotland photos">
+                        <figure class="about-story__shot">
+                            <img src="waterfall.jpeg" alt="Waterfall cascading down a hillside in Scotland" width="1200" height="900" decoding="async" loading="lazy">
+                            <figcaption>On a waterfall hillside</figcaption>
+                        </figure>
+                        <figure class="about-story__shot">
+                            <img src="visit to Scotland.jpeg" alt="Ayo standing behind a mountain overlook in Scotland" width="1200" height="900" decoding="async" loading="lazy">
+                            <figcaption>Me behind the mountain</figcaption>
+                        </figure>
+                    </figure>
+
+                    <figure class="about-story__figure about-story__figure--pair" aria-label="More Scotland photos">
+                        <figure class="about-story__shot">
+                            <img src="sheep.jpeg" alt="Sheep on a hillside in Scotland" width="1000" height="1200" decoding="async" loading="lazy">
+                            <figcaption>Some random sheep on a hill</figcaption>
+                        </figure>
+                        <figure class="about-story__shot">
+                            <img src="By the lake.jpeg" alt="Ayo by a lake in Scotland" width="1600" height="1000" decoding="async" loading="lazy">
+                            <figcaption>Me by the lake</figcaption>
+                        </figure>
+                    </figure>
+
+                    <p>
+                        Away from the screen you’ll usually find me playing soccer, jogging, trying to be a fashion icon, hiking nature trails, listening to music, practicing calisthenics, hanging out with friends, and watching anime.
+                    </p>
+
+                    <section class="about-story__watched" aria-labelledby="watched-list-heading">
+                        <h2 id="watched-list-heading" class="about-story__watched-title">Here’s my watched list</h2>
+                        <div class="about-watched-carousel" data-watched-carousel>
+                            <button type="button" class="about-watched-carousel__nav about-watched-carousel__nav--prev" aria-label="Previous title" data-watched-prev>
+                                <span aria-hidden="true">←</span>
+                            </button>
+                            <div class="about-watched-carousel__box">
+                                <div class="about-watched-carousel__viewport" aria-live="polite">
+                                    <ul class="about-watched-carousel__track">
+                                        <li class="about-watched-carousel__slide">
+                                            <figure class="about-watched-carousel__figure">
+                                                <img src="assets/watched/one-punch-man.jpg" alt="" width="460" height="690" loading="lazy" decoding="async">
+                                                <figcaption>One Punch Man — rewatching</figcaption>
+                                            </figure>
+                                        </li>
+                                        <li class="about-watched-carousel__slide">
+                                            <figure class="about-watched-carousel__figure">
+                                                <img src="assets/watched/jojos.jpg" alt="" width="460" height="690" loading="lazy" decoding="async">
+                                                <figcaption>JoJo’s</figcaption>
+                                            </figure>
+                                        </li>
+                                        <li class="about-watched-carousel__slide">
+                                            <figure class="about-watched-carousel__figure">
+                                                <img src="assets/watched/demon-slayer.jpg" alt="" width="460" height="690" loading="lazy" decoding="async">
+                                                <figcaption>Demon Slayer</figcaption>
+                                            </figure>
+                                        </li>
+                                        <li class="about-watched-carousel__slide">
+                                            <figure class="about-watched-carousel__figure">
+                                                <img src="assets/watched/kurokos-basketball.jpg" alt="" width="460" height="690" loading="lazy" decoding="async">
+                                                <figcaption>Kuroko’s Basketball</figcaption>
+                                            </figure>
+                                        </li>
+                                        <li class="about-watched-carousel__slide">
+                                            <figure class="about-watched-carousel__figure">
+                                                <img src="assets/watched/my-hero-academia.jpg" alt="" width="460" height="690" loading="lazy" decoding="async">
+                                                <figcaption>My Hero Academia</figcaption>
+                                            </figure>
+                                        </li>
+                                        <li class="about-watched-carousel__slide">
+                                            <figure class="about-watched-carousel__figure">
+                                                <img src="assets/watched/dr-stone.jpg" alt="" width="460" height="690" loading="lazy" decoding="async">
+                                                <figcaption>Dr. Stone</figcaption>
+                                            </figure>
+                                        </li>
+                                        <li class="about-watched-carousel__slide">
+                                            <figure class="about-watched-carousel__figure">
+                                                <img src="assets/watched/evangelion.jpg" alt="" width="460" height="690" loading="lazy" decoding="async">
+                                                <figcaption>Evangelion</figcaption>
+                                            </figure>
+                                        </li>
+                                        <li class="about-watched-carousel__slide">
+                                            <figure class="about-watched-carousel__figure">
+                                                <img src="assets/watched/baki.jpg" alt="" width="460" height="690" loading="lazy" decoding="async">
+                                                <figcaption>Baki</figcaption>
+                                            </figure>
+                                        </li>
+                                        <li class="about-watched-carousel__slide">
+                                            <figure class="about-watched-carousel__figure">
+                                                <img src="assets/watched/seven-deadly-sins.jpg" alt="" width="460" height="690" loading="lazy" decoding="async">
+                                                <figcaption>Seven Deadly Sins</figcaption>
+                                            </figure>
+                                        </li>
+                                        <li class="about-watched-carousel__slide">
+                                            <figure class="about-watched-carousel__figure">
+                                                <img src="assets/watched/parasyte.jpg" alt="" width="460" height="690" loading="lazy" decoding="async">
+                                                <figcaption>Parasyte 🔫</figcaption>
+                                            </figure>
+                                        </li>
+                                        <li class="about-watched-carousel__slide">
+                                            <figure class="about-watched-carousel__figure">
+                                                <img src="assets/watched/castlevania.jpg" alt="" width="460" height="690" loading="lazy" decoding="async">
+                                                <figcaption>Castlevania</figcaption>
+                                            </figure>
+                                        </li>
+                                        <li class="about-watched-carousel__slide">
+                                            <figure class="about-watched-carousel__figure">
+                                                <img src="assets/watched/hunter-x-hunter.png" alt="" width="460" height="690" loading="lazy" decoding="async">
+                                                <figcaption>Hunter x Hunter</figcaption>
+                                            </figure>
+                                        </li>
+                                        <li class="about-watched-carousel__slide">
+                                            <figure class="about-watched-carousel__figure">
+                                                <img src="assets/watched/naruto.jpg" alt="" width="460" height="690" loading="lazy" decoding="async">
+                                                <figcaption>Naruto</figcaption>
+                                            </figure>
+                                        </li>
+                                        <li class="about-watched-carousel__slide">
+                                            <figure class="about-watched-carousel__figure">
+                                                <img src="assets/watched/naruto-shippuden.png" alt="" width="460" height="690" loading="lazy" decoding="async">
+                                                <figcaption>Naruto Shippuden</figcaption>
+                                            </figure>
+                                        </li>
+                                        <li class="about-watched-carousel__slide">
+                                            <figure class="about-watched-carousel__figure">
+                                                <img src="assets/watched/hajime-no-ippo.png" alt="" width="460" height="690" loading="lazy" decoding="async">
+                                                <figcaption>Hajime no Ippo</figcaption>
+                                            </figure>
+                                        </li>
+                                        <li class="about-watched-carousel__slide">
+                                            <figure class="about-watched-carousel__figure">
+                                                <img src="assets/watched/fire-force.jpg" alt="" width="460" height="690" loading="lazy" decoding="async">
+                                                <figcaption>Fire Force (done)</figcaption>
+                                            </figure>
+                                        </li>
+                                        <li class="about-watched-carousel__slide">
+                                            <figure class="about-watched-carousel__figure">
+                                                <img src="assets/watched/chainsaw-man.png" alt="" width="460" height="690" loading="lazy" decoding="async">
+                                                <figcaption>Chainsaw Man</figcaption>
+                                            </figure>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="about-watched-carousel__dots" data-watched-dots role="tablist" aria-label="Watched list slides"></div>
+                            </div>
+                            <button type="button" class="about-watched-carousel__nav about-watched-carousel__nav--next" aria-label="Next title" data-watched-next>
+                                <span aria-hidden="true">→</span>
+                            </button>
+                        </div>
+                    </section>
+                </div>
             </div>
         </section>
-
-        <section class="about-content">
-            <div class="bento-grid">
-                <!-- Profile Image Card -->
-                <div class="bento-grid__card bento-grid__profile" style="border: 1px solid #e0e0e0;">
-                    <img 
-                        src="Me.jpeg" 
-                        alt="This is who I am" 
-                        class="bento-grid__profile-image"
-                    />
-                </div>
-                
-                <!-- Location Card -->
-                <div class="bento-grid__card bento-grid__location" style="border: 1px solid #e0e0e0;">
-                    <div class="bento-grid__location-content">
-                        <div class="bento-grid__location-pin">📍</div>
-                        <div class="bento-grid__location-city">West Lafayette, Indiana</div>
-                        <div class="bento-grid__location-subtitle">We love corn out here</div>
-                    </div>
-                </div>
-                
-                <!-- Interests Card -->
-                <div class="bento-grid__card bento-grid__interests" style="border: 1px solid #e0e0e0;">
-                    <div class="bento-grid__interests-title">Interests</div>
-                                    <div class="bento-grid__interests-grid">
-                    <div class="bento-grid__interests-item" onclick="openInterestModal('Soccer', 'Playing soccer has taught me the value of teamwork and collaboration. Working with diverse teammates helps me understand different perspectives and create solutions that work for everyone.')">
-                        <span class="bento-grid__interests-emoji">⚽</span>
-                        <span>Soccer</span>
-                    </div>
-                    <div class="bento-grid__interests-item" onclick="openInterestModal('Nature Walks', 'Exploring nature trails gives me fresh perspectives and sharpens my critical thinking. These moments of discovery help me approach UX problems with renewed creativity and see solutions from unexpected angles.')">
-                        <span class="bento-grid__interests-emoji">🥾</span>
-                        <span>Nature walks</span>
-                    </div>
-                    <div class="bento-grid__interests-item" onclick="openInterestModal('Jogging', 'Jogging helps me clear my mind and stay energized. It\'s my daily ritual for maintaining both physical and mental well-being.')">
-                        <span class="bento-grid__interests-emoji">🏃🏿‍♂️</span>
-                        <span>Jogging</span>
-                    </div>
-                    <div class="bento-grid__interests-item" onclick="openInterestModal('Music', 'Music is my constant companion. From discovering new artists to creating playlists, it helps me focus and express my creativity.')">
-                        <span class="bento-grid__interests-emoji">🎵</span>
-                        <span>Music</span>
-                    </div>
-                    <div class="bento-grid__interests-item" onclick="openInterestModal('Photography', 'Photography teaches me to see the world through different lenses - literally and metaphorically. I enjoy capturing moments and exploring different angles and perspectives.')">
-                        <span class="bento-grid__interests-emoji">📸</span>
-                        <span>Photography</span>
-                    </div>
-                    <div class="bento-grid__interests-item" onclick="openInterestModal('Calisthenics', 'Calisthenics pushes me to be ambitious and try new things. This mindset drives my UX approach - I\'m always exploring innovative solutions and pushing boundaries to create better user experiences.')">
-                        <span class="bento-grid__interests-emoji">💪🏿</span>
-                        <span>Calisthenics</span>
-                    </div>
-                </div>
-                <button class="bento-grid__interests-button">
-                    Click on one of my interests to learn more
-                </button>
-            </div>
-                
-                <!-- Who Am I Card -->
-                <div class="bento-grid__card bento-grid__content" style="border: 1px solid #e0e0e0;">
-                    <div class="bento-grid__content-text">
-                        <div class="bento-grid__content-title">👤 Who am I?</div>
-                        <div class="bento-grid__content-description">
-                            My full name is Ayomikun, which means "my joy is full." My joy comes from knowing that I designed a product that impacts people's lives through product thinking. Also, taking my phone everywhere to take pictures of the beautiful moments in life.
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Philosophy Card -->
-                <div class="bento-grid__card bento-grid__content bento-grid__content--philosophy" style="border: 1px solid #e0e0e0;">
-                    <div class="bento-grid__content-text">
-                        <div class="bento-grid__content-title bento-grid__content-title--small"> 💡 My Philosophy</div>
-                        <div class="bento-grid__content-description bento-grid__content-description--tight">
-                            "Connection creates creativity." Building strong relationships and listening with empathy are essential to meaningful design.
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Journey Card -->
-                <div class="bento-grid__card bento-grid__content bento-grid__content--journey" style="border: 1px solid #e0e0e0;">
-                    <div class="bento-grid__content-text">
-                        <div class="bento-grid__content-title bento-grid__content-title--small">📚 My Journey </div>
-                        <div class="bento-grid__content-description bento-grid__content-description--tight">
-                            Creativity has always been a part of me. From dreaming of becoming a chef to exploring software development, and eventually finding my path in UX design.
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Scotland Photo -->
-                <div class="bento-grid__photo bento-grid__photo--scotland">
-                    <img 
-                        src="visit to Scotland.jpeg"
-                        alt="Scotland adventure" 
-                        class="bento-grid__photo-image"
-                    />
-                </div>
-                
-                <!-- Waterfall Photo -->
-                <div class="bento-grid__photo bento-grid__photo--waterfall">
-                    <img 
-                        src="waterfall.jpeg"
-                        alt="Beautiful waterfall" 
-                        class="bento-grid__photo-image"
-                    />
-                </div>
-                
-                <!-- Sheep Photo -->
-                <div class="bento-grid__photo bento-grid__photo--sheep">
-                    <img 
-                        src="sheep.jpeg"
-                        alt="Adorable sheep" 
-                        class="bento-grid__photo-image"
-                    />
-                </div>
-                
-                <!-- By the Lake Photo -->
-                <div class="bento-grid__photo bento-grid__photo--lake">
-                    <img 
-                        src="By the lake.jpeg"
-                        alt="Peaceful lake moment" 
-                        class="bento-grid__photo-image"
-                    />
-                </div>
-            </div>
-        </section>
-
-       
     </main>
 
-    <script src="index.js?v=28"></script>
-
-    <!-- Interests Modal -->
-    <div id="interestsModal" class="interests-modal">
-        <div class="interests-modal-content">
-            <div class="interests-modal-header">
-                <h3 class="interests-modal-title" id="modalTitle">Interest</h3>
-                <button class="interests-modal-close" onclick="closeInterestModal()">&times;</button>
-            </div>
-            <div class="interests-modal-body">
-                <p class="interests-modal-description" id="modalDescription">Description will appear here.</p>
-            </div>
-        </div>
-    </div>
+    <script src="index.js?v=493"></script>
 
     <footer class="footer">
         <div class="footer__content">
@@ -202,25 +202,5 @@
     </footer>
 
     <a href="#page" class="sqs-button-element--secondary" id="back-to-top">⬆️</a>
-
-    <script>
-        function openInterestModal(title, description) {
-            document.getElementById('modalTitle').textContent = title;
-            document.getElementById('modalDescription').textContent = description;
-            document.getElementById('interestsModal').style.display = 'block';
-        }
-
-        function closeInterestModal() {
-            document.getElementById('interestsModal').style.display = 'none';
-        }
-
-        // Close modal when clicking outside of it
-        window.onclick = function(event) {
-            const modal = document.getElementById('interestsModal');
-            if (event.target === modal) {
-                modal.style.display = 'none';
-            }
-        }
-    </script>
 </body>
 </html>

@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Ayo - Product Designer Portfolio</title>
-    <link rel="icon" type="image/png" href="logo for folio.png?v=3" sizes="128x128">
+    <link rel="icon" type="image/png" href="ayo-ice-diamond-purple.png?v=6" sizes="128x128">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mercury+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=215">
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700&family=Mercury+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=484">
     <script>
         (function () {
             if (location.hash !== '#work') return;
@@ -19,227 +19,289 @@
     </script>
 </head>
 <body id="page" class="home-page">
-    <header class="header">
-        <div class="header__inner">
-        <a href="index.html" class="header__logo">
-            <img src="logo for folio.png?v=3" alt="Ayo Logo" class="header__logo-image" width="32" height="32">
-        </a>
-        <nav class="nav">
-            <ul class="nav__menu">
-                <li class="nav__item"><a href="#work" class="nav__link nav__link--active">Work</a></li>
-                <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
-                <li class="nav__item"><a href="Ayomikun-Ayo+Obayomi's Resume.pdf" target="_blank" rel="noopener noreferrer" class="nav__link">Resume</a></li>
-            </ul>
-            <button class="nav__hamburger" aria-label="Toggle navigation menu" id="mobileDrawerToggle">
-                <span class="nav__hamburger-line"></span>
-                <span class="nav__hamburger-line"></span>
-                <span class="nav__hamburger-line"></span>
-            </button>
-        </nav>
-        </div>
-    </header>
-    <div id="mobileDrawer" class="nav__menu nav__menu--mobile" aria-hidden="true">
-        <ul class="nav__menu-list">
-            <li class="nav__item"><a href="#work" class="nav__link nav__link--active">Work</a></li>
-            <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
-            <li class="nav__item"><a href="Ayomikun-Ayo+Obayomi's Resume.pdf" target="_blank" rel="noopener noreferrer" class="nav__link">Resume</a></li>
-        </ul>
-    </div>
-
     <main class="main">
-        <section id="hero" class="hero">
-            <div class="hero__content">
-            <div class="hero__scene" aria-hidden="true">
-                <div class="hero__scene-stage" id="heroSceneStage">
-                    <!-- Tote bag — markup kept for reuse; styles in styles.css (.hero__tote*)
-                    <div class="hero__prop hero__prop--tote">
-                        <div class="hero__tote">
-                            <span class="hero__tote-handle hero__tote-handle--left"></span>
-                            <span class="hero__tote-handle hero__tote-handle--right"></span>
-                            <span class="hero__tote-body"></span>
-                        </div>
-                    </div>
-                    -->
-                    <div class="hero__prop hero__prop--matcha">
-                        <img
-                            class="hero__matcha-img"
-                            src="matcha image.png"
-                            alt=""
-                            width="200"
-                            height="200"
-                            loading="eager"
-                            decoding="async"
-                        >
-                    </div>
+        <div class="home-classic">
+            <!-- Bio -->
+            <header class="hp-bio">
+                <div class="hp-bio__top">
+                    <img class="hp-bio__avatar" src="frozone.jpg" alt="Frozone from The Incredibles, used as Ayo’s avatar" width="64" height="64" decoding="async">
+                    <img class="hp-bio__mark" src="ayo-ice-diamond-purple.png?v=6" alt="" width="40" height="40" decoding="async" aria-hidden="true">
                 </div>
-            </div>
-                <h1 class="hero__title">
-                    <span class="hero__title-intro">Hi, I'm <span class="hero__emphasis hero__ayo">
-                        <span class="hero__ayo-inline">
-                            <span class="hero__ayo-name">Ayo</span>
-                            <span class="hero__ayo-tools">
-                                <button type="button" class="hero__ayo-btn hero__ayo-btn--listen" aria-label="Listen to Yoruba pronunciation of Àyọ̀">
-                                    <svg class="hero__ayo-btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                        <path d="M11 5L6 9H3v6h3l5 4V5z" fill="currentColor"/>
-                                        <path d="M15.54 8.46a5 5 0 010 7.07M19.07 4.93a10 10 0 010 14.14" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
-                                    </svg>
-                                </button>
-                                <button type="button" class="hero__ayo-btn hero__ayo-btn--meaning" id="hero-ayo-meaning-btn" aria-expanded="false" aria-controls="hero-ayo-meaning">Check meaning</button>
-                            </span>
-                        </span>
-                        <span class="hero-ayo-pop" id="hero-ayo-meaning" role="dialog" aria-labelledby="hero-ayo-meaning-btn" hidden>
-                            <span class="hero-ayo-pop__card">
-                                <span class="hero-ayo-pop__head">
-                                    <span class="hero-ayo-pop__word">Ayo</span>
-                                    <span class="hero-ayo-pop__flag" role="img" aria-label="Nigeria">
-                                        <svg class="hero-ayo-pop__flag-svg" width="22" height="15" viewBox="0 0 24 16" aria-hidden="true">
-                                            <rect width="8" height="16" fill="#008751"/>
-                                            <rect x="8" width="8" height="16" fill="#ffffff"/>
-                                            <rect x="16" width="8" height="16" fill="#008751"/>
-                                        </svg>
-                                    </span>
-                                </span>
-                                <span class="hero-ayo-pop__pronounce">
-                                    <span class="hero-ayo-pop__ipa" lang="yo">/à.jɔ̀/</span>
-                                </span>
-                                <span class="hero-ayo-pop__meta">noun · Yoruba <span class="hero-ayo-pop__orth">Àyọ̀</span></span>
-                                <p class="hero-ayo-pop__def"><strong>Joy.</strong> Short for Ayomikun — “my joy is full.”</p>
-                            </span>
-                        </span>
-                        <audio class="hero-ayo-pop__clip" preload="metadata">
-                            <source src="ayo-pronunciation.m4a?v=yor" type="audio/mp4">
-                            <source src="ayo-pronunciation-yoruba.wav?v=yor" type="audio/wav">
-                        </audio>
-                    </span></span><span class="hero__title-lead">a product designer building <span class="hero__emphasis">consumer products</span> from <span class="hero__emphasis hero__nowrap">0 → 1</span>, guided by <span class="hero__emphasis hero__craft">
-                        <span class="hero__craft-word">craft</span><span class="hero-craft-pop" aria-label="Design tools: Cursor, Figma, Claude">
-                            <span class="hero-craft-pop__stack">
-                                <span class="hero-craft-pop__card hero-craft-pop__card--tilt-left">
-                                    <span class="hero-craft-pop__media hero-craft-pop__media--tool">
-                                        <span class="hero-craft-pop__tool" aria-hidden="true">
-                                            <img class="hero-craft-pop__logo" src="craft-icon-cursor.png" alt="" width="48" height="48" decoding="async">
-                                        </span>
-                                        <span class="hero-craft-pop__caption">Cursor</span>
-                                    </span>
-                                </span>
-                                <span class="hero-craft-pop__card hero-craft-pop__card--center">
-                                    <span class="hero-craft-pop__media hero-craft-pop__media--tool">
-                                        <span class="hero-craft-pop__tool" aria-hidden="true">
-                                            <img class="hero-craft-pop__logo" src="craft-icon-figma-only.png" alt="" width="48" height="48" decoding="async">
-                                        </span>
-                                        <span class="hero-craft-pop__caption">Figma</span>
-                                    </span>
-                                </span>
-                                <span class="hero-craft-pop__card hero-craft-pop__card--tilt-right">
-                                    <span class="hero-craft-pop__media hero-craft-pop__media--tool">
-                                        <span class="hero-craft-pop__tool" aria-hidden="true">
-                                            <img class="hero-craft-pop__logo" src="craft-icon-claude.png" alt="" width="48" height="48" decoding="async">
-                                        </span>
-                                        <span class="hero-craft-pop__caption">Claude</span>
-                                    </span>
-                                </span>
-                            </span>
-                        </span>
-                    </span>, and built for <span class="hero__emphasis">delight</span> <span class="hero__craft-emoji" role="img" aria-label="star-struck">🤩</span></span>
-                </h1>
-                <div class="hero__actions">
-                    <a href="#work" class="hero__cta hero__cta--primary">View my work</a>
-                    <a href="about.html" class="hero__cta hero__cta--secondary">Learn about me</a>
+                <h1 class="hp-bio__greeting">Hi, I’m Ayo <span aria-hidden="true">👋🏿</span></h1>
+                <p class="hp-bio__lead">
+                    I fix broken workflows, including my own, with
+                    <span class="hb-bio__tools" aria-label="Cursor, Figma, and Claude">
+                        <img src="craft-icon-cursor.png" alt="" width="20" height="20" decoding="async">
+                        <img src="craft-icon-figma-only.png" alt="" width="20" height="20" decoding="async">
+                        <img src="craft-icon-claude.png" alt="" width="20" height="20" decoding="async">
+                    </span>
+                </p>
+                <p class="hp-bio__more">
+                    I ship products that make people’s lives a little easier.
+                </p>
+                <div class="hp-bio__links">
+                    <a class="hb-btn hb-btn--primary" href="about.html">About me</a>
+                    <a class="hb-btn hb-btn--ghost" href="Ayomikun-Ayo+Obayomi's Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
                 </div>
-            </div>
-        </section>
+            </header>
 
-        <section id="work" class="projects" aria-label="Work">
-            <div class="projects__content">
-                <div class="projects__grid">
-                    <div class="project-card">
-                        <div class="project-card__image-container">
-                            <img src="swp-v2-hero.png" alt="Second Wind Pro homepage hero: The Modern Athlete's NIL Agency" class="project-card__image">
-                        </div>
-                        <div class="project-card__content">
-                            <div class="project-card__tags">
-                                <span class="project-card__tag">Internship</span>
-                                <span class="project-card__tag">NIL</span>
-                                <span class="project-card__tag">Brand Identity</span>
-                                <span class="project-card__tag">Web Design</span>
+            <!-- Projects: list + hover/focus preview stage -->
+            <section class="hp-work" id="work" aria-label="Selected projects">
+                <div class="hp-work__layout">
+                    <ul class="hp-list" role="list">
+                        <li class="hp-list__item">
+                            <a
+                                class="hp-item"
+                                href="SecondWindPro.html"
+                                data-project="swp"
+                                data-state="idle"
+                                aria-describedby="hp-desc-swp"
+                            >
+                                <div class="hp-item__text">
+                                    <h2 class="hp-item__title">Second Wind Pro</h2>
+                                    <p class="hp-item__desc" id="hp-desc-swp">Revamped an NIL agency site and built a sandbox to optimize my workflow.</p>
+                                </div>
+                            </a>
+                            <div class="hp-item__media" data-mobile-preview="swp">
+                                <img src="swp-v2-hero.png?v=2" alt="Second Wind Pro homepage redesign" width="640" height="400" loading="lazy" decoding="async">
                             </div>
-                            <h3 class="project-card__title">Second Wind Pro</h3>
-                            <p class="project-card__description">
-                                Revamping the existing website of an NIL agency.
-                            </p>
-                        </div>
-                        <a href="SecondWindPro.html" class="project-card__link" aria-label="View Second Wind Pro case study"></a>
-                    </div>
+                        </li>
 
-                    <div class="project-card">
-                        <div class="project-card__image-container">
-                            <img src="JobQuestCover-image.png" alt="Job Quest Project" class="project-card__image">
-                        </div>
-                        <div class="project-card__content">
-                            <div class="project-card__tags">
-                                <span class="project-card__tag">Apprenticeship</span>
-                                <span class="project-card__tag">Job Search</span>
-                                <span class="project-card__tag">Learning Experience</span>
-                                <span class="project-card__tag">Product Design</span>
+                        <li class="hp-list__item">
+                            <a
+                                class="hp-item"
+                                href="JobQuest.html"
+                                data-project="jq"
+                                data-state="idle"
+                                aria-describedby="hp-desc-jq"
+                            >
+                                <div class="hp-item__text">
+                                    <h2 class="hp-item__title">Job Quest</h2>
+                                    <p class="hp-item__desc" id="hp-desc-jq">Leveraging AI to help guide entry-level job seekers in writing their resumes and preparing for interviews.</p>
+                                </div>
+                            </a>
+                            <div class="hp-item__media hp-item__media--jq" data-mobile-preview="jq">
+                                <div class="jq-motion" data-jq-motion>
+                                    <div class="jq-motion__overlay" aria-hidden="true">
+                                        <div class="jq-motion__stage">
+                                            <div class="jq-card-pos">
+                                                <div class="jq-card">
+                                                    <p class="jq-card__label">Suggestion:</p>
+                                                    <div class="jq-card__group">
+                                                        <p class="jq-card__body">Led a 5-person team to address low search relevance by developing and deploying a machine-learning–based ranking model; improved result accuracy by 12%, and resolving key user-experience gaps.</p>
+                                                        <div class="jq-card__footer">
+                                                            <div class="jq-card__icons">
+                                                                <img src="jq-assets/copy.svg" alt="" width="24" height="24">
+                                                                <img src="jq-assets/thumbs-up.svg" alt="" width="24" height="24">
+                                                                <img src="jq-assets/more-horizontal.svg" alt="" width="24" height="24">
+                                                            </div>
+                                                            <span class="jq-help">Help me understand</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="jq-think">Thinking…</div>
+                                            <div class="jq-ai">
+                                                <div class="jq-ai__scroll">
+                                                    <div class="jq-ai__bubble">Help me understand, Led a 5-person team to address low search relevance by developing and deploying a machine-learning–based ranking model; improved result accuracy by 12%, and resolving key user-experience gaps.</div>
+                                                    <div class="jq-ai__output">
+                                                        <div class="jq-ai__stack">
+                                                            <div class="jq-ai__head">
+                                                                <div class="jq-ai__emblem">
+                                                                    <span class="jq-ai__avatars">
+                                                                        <img src="jq-assets/avatar-194.png" alt="" width="20" height="20">
+                                                                        <img src="jq-assets/avatar-196.png" alt="" width="20" height="20">
+                                                                        <img src="jq-assets/avatar-195.png" alt="" width="20" height="20">
+                                                                    </span>
+                                                                    <span class="jq-ai__count">+1</span>
+                                                                </div>
+                                                                <div class="jq-ai__lede">
+                                                                    <p>Got it — let’s break this down in plain language first, then show how an entry-level job seeker can write something similar using the<br><strong>Problem</strong> → <strong>Action </strong>→ <strong>Result</strong> structure in an <em>ATS-friendly way</em>.</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="jq-ai__sec">
+                                                                <div class="jq-ai__rich">
+                                                                    <p class="jq-ai__h">1. What this sentence is really saying (simple explanation)</p>
+                                                                    <p>“Led a 5-person team to address low search relevance by developing and deploying a machine-learning–based ranking model; improved result accuracy by 12%, and resolving key user-experience gaps.”</p>
+                                                                    <p>In simple terms:</p>
+                                                                    <ul>
+                                                                        <li><strong>Problem</strong>: Users weren’t getting good or relevant search results.</li>
+                                                                        <li><strong>What was done</strong>: A small team worked together to improve how results were ranked using data and machine learning.</li>
+                                                                        <li><strong>Result</strong>: Search results became more accurate (12% better), and user frustrations were reduced.</li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="jq-ai__chips">
+                                                                    <span>Google Careers</span>
+                                                                    <span>MIT Careers</span>
+                                                                    <span>Harvard Extension</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="jq-ai__react">
+                                                            <img src="jq-assets/thumbs-up-sm.svg" alt="" width="16" height="16">
+                                                            <img src="jq-assets/copy-sm.svg" alt="" width="16" height="16">
+                                                            <img src="jq-assets/more-horizontal-sm.svg" alt="" width="16" height="16">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="jq-ai__field">
+                                                    <div class="jq-ai__field-input">
+                                                        <p>Ask me or search for anything...</p>
+                                                    </div>
+                                                    <div class="jq-ai__field-bottom">
+                                                        <span class="jq-ai__send"><img src="jq-assets/arrow-narrow-up.svg" alt="" width="14" height="14"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <h3 class="project-card__title">Job Quest</h3>
-                            <p class="project-card__description">
-                                Turning resume writing and interview prep into a guided learning experience for entry-level job seekers.
-                            </p>
-                        </div>
-                        <a href="JobQuest.html" class="project-card__link" aria-label="View Job Quest case study"></a>
-                    </div>
+                        </li>
 
-                    <div class="project-card">
-                        <div class="project-card__image-container">
-                            <img src="coverimagetheguild.png" alt="Guild Gaming Project" class="project-card__image">
-                        </div>
-                        <div class="project-card__content">
-                            <div class="project-card__tags">
-                                <span class="project-card__tag">Internship</span>
-                                <span class="project-card__tag">AI</span>
-                                <span class="project-card__tag">Productivity</span>
-                                <span class="project-card__tag">Event Management</span>
-                                <span class="project-card__tag">Data Analytics</span>
+                        <li class="hp-list__item">
+                            <a
+                                class="hp-item"
+                                href="GuildGaming.html"
+                                data-project="guild"
+                                data-state="idle"
+                                aria-describedby="hp-desc-guild"
+                            >
+                                <div class="hp-item__text">
+                                    <h2 class="hp-item__title">Guild Gaming</h2>
+                                    <p class="hp-item__desc" id="hp-desc-guild">Turning post-event chaos into clear actionable insights, so organizers aren’t left guessing.</p>
+                                </div>
+                            </a>
+                            <div class="hp-item__media" data-mobile-preview="guild">
+                                <video src="guild-gaming-case-study-bg.mp4?v=3" poster="coverimagetheguild.png?v=3" muted loop playsinline autoplay preload="auto"></video>
                             </div>
-                            <h3 class="project-card__title">Guild Gaming</h3>
-                            <p class="project-card__description">
-                                Seamlessly elevating the experience of planning and hosting events for event organizers.
-                            </p>
-                        </div>
-                        <a href="GuildGaming.html" class="project-card__link" aria-label="View Guild Gaming project details"></a>
-                    </div>
+                        </li>
 
-                    <div class="project-card">
-                        <div class="project-card__image-container">
-                            <img src="Baseball.png" alt="Baseball Little League Calendar App" class="project-card__image">
-                        </div>
-                        <div class="project-card__content">
-                            <div class="project-card__tags">
-                                <span class="project-card__tag">University-Sponsored Project</span>
-                                <span class="project-card__tag">Sports Productivity</span>
-                                <span class="project-card__tag">B2C</span>
-                                <span class="project-card__tag">Product Design</span>
+                        <li class="hp-list__item">
+                            <a
+                                class="hp-item"
+                                href="BaseballLittleLeague.html"
+                                data-project="baseball"
+                                data-state="idle"
+                                aria-describedby="hp-desc-baseball"
+                            >
+                                <div class="hp-item__text">
+                                    <h2 class="hp-item__title">Baseball Little League</h2>
+                                    <p class="hp-item__desc" id="hp-desc-baseball">From around 300 weekly emails and text messages to a space where coaches and parents communicate seamlessly.</p>
+                                </div>
+                            </a>
+                            <div class="hp-item__media" data-mobile-preview="baseball">
+                                <img src="Baseball.png?v=2" alt="Baseball Little League product screens" width="640" height="400" loading="lazy" decoding="async">
                             </div>
-                            <h3 class="project-card__title">Baseball Little League</h3>
-                            <p class="project-card__description">
-                                Designing a communication platform to enhance organizational collaboration amongst Parents, Coaches, & Children.
-                            </p>
+                        </li>
+                    </ul>
+
+                    <aside class="hp-stage" aria-hidden="true">
+                        <div class="hp-stage__frame">
+                            <div class="hp-stage__panel is-active" data-preview="swp">
+                                <img class="hp-stage__media" src="swp-v2-hero.png?v=2" alt="" width="960" height="600" decoding="async">
+                            </div>
+
+                            <div class="hp-stage__panel hp-stage__panel--jq" data-preview="jq">
+                                <div class="jq-motion" data-jq-motion>
+                                    <div class="jq-motion__overlay" aria-hidden="true">
+                                        <div class="jq-motion__stage">
+                                            <div class="jq-card-pos">
+                                                <div class="jq-card">
+                                                    <p class="jq-card__label">Suggestion:</p>
+                                                    <div class="jq-card__group">
+                                                        <p class="jq-card__body">Led a 5-person team to address low search relevance by developing and deploying a machine-learning–based ranking model; improved result accuracy by 12%, and resolving key user-experience gaps.</p>
+                                                        <div class="jq-card__footer">
+                                                            <div class="jq-card__icons">
+                                                                <img src="jq-assets/copy.svg" alt="" width="24" height="24">
+                                                                <img src="jq-assets/thumbs-up.svg" alt="" width="24" height="24">
+                                                                <img src="jq-assets/more-horizontal.svg" alt="" width="24" height="24">
+                                                            </div>
+                                                            <span class="jq-help">Help me understand</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="jq-think">Thinking…</div>
+                                            <div class="jq-ai">
+                                                <div class="jq-ai__scroll">
+                                                    <div class="jq-ai__bubble">Help me understand, Led a 5-person team to address low search relevance by developing and deploying a machine-learning–based ranking model; improved result accuracy by 12%, and resolving key user-experience gaps.</div>
+                                                    <div class="jq-ai__output">
+                                                        <div class="jq-ai__stack">
+                                                            <div class="jq-ai__head">
+                                                                <div class="jq-ai__emblem">
+                                                                    <span class="jq-ai__avatars">
+                                                                        <img src="jq-assets/avatar-194.png" alt="" width="20" height="20">
+                                                                        <img src="jq-assets/avatar-196.png" alt="" width="20" height="20">
+                                                                        <img src="jq-assets/avatar-195.png" alt="" width="20" height="20">
+                                                                    </span>
+                                                                    <span class="jq-ai__count">+1</span>
+                                                                </div>
+                                                                <div class="jq-ai__lede">
+                                                                    <p>Got it — let’s break this down in plain language first, then show how an entry-level job seeker can write something similar using the<br><strong>Problem</strong> → <strong>Action </strong>→ <strong>Result</strong> structure in an <em>ATS-friendly way</em>.</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="jq-ai__sec">
+                                                                <div class="jq-ai__rich">
+                                                                    <p class="jq-ai__h">1. What this sentence is really saying (simple explanation)</p>
+                                                                    <p>“Led a 5-person team to address low search relevance by developing and deploying a machine-learning–based ranking model; improved result accuracy by 12%, and resolving key user-experience gaps.”</p>
+                                                                    <p>In simple terms:</p>
+                                                                    <ul>
+                                                                        <li><strong>Problem</strong>: Users weren’t getting good or relevant search results.</li>
+                                                                        <li><strong>What was done</strong>: A small team worked together to improve how results were ranked using data and machine learning.</li>
+                                                                        <li><strong>Result</strong>: Search results became more accurate (12% better), and user frustrations were reduced.</li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="jq-ai__chips">
+                                                                    <span>Google Careers</span>
+                                                                    <span>MIT Careers</span>
+                                                                    <span>Harvard Extension</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="jq-ai__react">
+                                                            <img src="jq-assets/thumbs-up-sm.svg" alt="" width="16" height="16">
+                                                            <img src="jq-assets/copy-sm.svg" alt="" width="16" height="16">
+                                                            <img src="jq-assets/more-horizontal-sm.svg" alt="" width="16" height="16">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="jq-ai__field">
+                                                    <div class="jq-ai__field-input">
+                                                        <p>Ask me or search for anything...</p>
+                                                    </div>
+                                                    <div class="jq-ai__field-bottom">
+                                                        <span class="jq-ai__send"><img src="jq-assets/arrow-narrow-up.svg" alt="" width="14" height="14"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hp-stage__panel" data-preview="guild">
+                                <video class="hp-stage__media" src="guild-gaming-case-study-bg.mp4?v=3" poster="coverimagetheguild.png?v=3" muted loop playsinline autoplay preload="auto"></video>
+                            </div>
+
+                            <div class="hp-stage__panel" data-preview="baseball">
+                                <img class="hp-stage__media" src="Baseball.png?v=2" alt="" width="960" height="600" loading="lazy" decoding="async">
+                            </div>
                         </div>
-                        <a href="BaseballLittleLeague.html" class="project-card__link" aria-label="View Baseball Little League case study"></a>
-                    </div>
+                    </aside>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </main>
 
     <footer class="footer">
-        <div class="footer__content">
-            <p class="footer__contact">
+        <div class="hp-foot">
+            <p class="hp-foot__mail">
                 Get in touch: <a href="mailto:oba12ayo@gmail.com" class="footer__email">oba12ayo@gmail.com</a>
             </p>
-            <p class="footer__made-with">
+            <p class="hp-foot__made">
                 Made with a lot of hours on
-                <svg class="footer__spotify-logo" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="footer__spotify-logo" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" fill="#1DB954"/>
                 </svg>
             </p>
@@ -248,6 +310,6 @@
 
     <a href="#page" class="sqs-button-element--secondary" id="back-to-top" aria-label="Back to top">⬆️</a>
 
-    <script src="index.js?v=28"></script>
+    <script src="index.js?v=100"></script>
 </body>
 </html>
